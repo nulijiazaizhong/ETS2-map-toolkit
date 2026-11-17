@@ -1,0 +1,84 @@
+diff --git a/TsMap/TsItem/TsCityItem.cs b/TsMap/TsItem/TsCityItem.cs
+index 66ba048..252c733 100644
+--- a/TsMap/TsItem/TsCityItem.cs
++++ b/TsMap/TsItem/TsCityItem.cs
+@@ -9,6 +9,7 @@ namespace TsMap.TsItem
+     {
+         public TsCity City { get; private set; }
+         public ulong NodeUid { get; private set; }
++        public string SourceArchive => Path.GetFileName(Sector.GetUberFile().Entry.GetArchiveFile().GetPath());
+         public float Width { get; private set; }
+         public float Height { get; private set; }
+         public TsCityItem(TsSector sector, int startOffset) : base(sector, startOffset)
+@@ -22,6 +23,7 @@ namespace TsMap.TsItem
+             var fileOffset = startOffset + 0x34; // Set position at start of flags
+ 
+             Hidden = (MemoryHelper.ReadUint8(Sector.Stream, fileOffset) & 0x01) != 0;
++            DlcGuard = MemoryHelper.ReadUint8(Sector.Stream, fileOffset + 0x01);
+             var cityId = MemoryHelper.ReadUInt64(Sector.Stream, fileOffset + 0x05);
+             City = Sector.Mapper.LookupCity(cityId);
+             if (City == null)
+diff --git a/TsMap/TsMapper.cs b/TsMap/TsMapper.cs
+index fceb5a7..3a40831 100644
+--- a/TsMap/TsMapper.cs
++++ b/TsMap/TsMapper.cs
+@@ -439,7 +439,11 @@ namespace TsMap
+ 
+         public void ExportInfo(ExportFlags exportFlags, string exportPath)
+         {
+-            if (exportFlags.IsActive(ExportFlags.CityList)) ExportCities(exportFlags, exportPath);
++            if (exportFlags.IsActive(ExportFlags.CityList))
++            {
++                ExportCities(exportFlags, exportPath);
++                ExportDlcSectors(exportPath);
++            }
+             if (exportFlags.IsActive(ExportFlags.CountryList)) ExportCountries(exportFlags, exportPath);
+             if (exportFlags.IsActive(ExportFlags.OverlayList)) ExportOverlays(exportFlags, exportPath);
+         }
+@@ -457,6 +461,20 @@ namespace TsMap
+                 var cityJObj = JObject.FromObject(city.City);
+                 cityJObj["X"] = city.X;
+                 cityJObj["Y"] = city.Z;
++                cityJObj["Width"] = city.Width;
++                cityJObj["Height"] = city.Height;
++                cityJObj["CenterX"] = city.X + city.Width / 2;
++                cityJObj["CenterY"] = city.Z + city.Height / 2;
++                cityJObj["DlcGuard"] = city.DlcGuard;
++                cityJObj["SourceArchive"] = city.SourceArchive;
++                var cityNode = GetNodeByUid(city.NodeUid);
++                if (cityNode != null)
++                {
++                    cityJObj["NodeX"] = cityNode.X;
++                    cityJObj["NodeY"] = cityNode.Z;
++                }
++                cityJObj["MapXOffsets"] = new JArray(city.City.XOffsets);
++                cityJObj["MapYOffsets"] = new JArray(city.City.YOffsets);
+                 if (_countriesLookup.ContainsKey(ScsToken.StringToToken(city.City.Country)))
+                 {
+                     var country = _countriesLookup[ScsToken.StringToToken(city.City.Country)];
+@@ -484,6 +502,25 @@ namespace TsMap
+             }
+             File.WriteAllText(Path.Combine(path, "Cities.json"), citiesJArr.ToString(Formatting.Indented));
+         }
++        public void ExportDlcSectors(string path)
++        {
++            var sectorsJArr = new JArray();
++            foreach (var sectorFile in _sectorFiles)
++            {
++                var name = Path.GetFileNameWithoutExtension(sectorFile);
++                if (!name.StartsWith("sec") || name.Length < 13) continue;
++                var file = UberFileSystem.Instance.GetFile(sectorFile);
++                if (file == null) continue;
++                sectorsJArr.Add(new JObject
++                {
++                    ["Archive"] = Path.GetFileName(file.Entry.GetArchiveFile().GetPath()),
++                    ["X"] = int.Parse(name.Substring(3, 5)),
++                    ["Y"] = int.Parse(name.Substring(8, 5))
++                });
++            }
++            File.WriteAllText(Path.Combine(path, "DlcSectors.json"), sectorsJArr.ToString(Formatting.Indented));
++        }
++
+         /// <summary>
+         /// Creates a json file with the positions and names (w/ localizations) of all countries
+         /// </summary>

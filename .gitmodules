@@ -1,0 +1,3 @@
+[submodule "tools/ts-map"]
+	path = tools/ts-map
+	url = https://github.com/dariowouters/ts-map.git
