@@ -103,3 +103,7 @@ https://example.com/?x=-28130&y=-4971&heading=1.94&zoom=6&tiles=tmp_s1&mp_id=593
 - [Leaflet](https://leafletjs.com/) 1.9.4 随静态站点提供，许可证位于 `ets2-map/public/vendor/LEAFLET-LICENSE.txt`。
 
 地图数据版权归 SCS Software 所有。公开部署前请确认拥有相关游戏内容的再分发权限。本项目与 SCS Software、TruckersMP 无隶属关系。
+
+## 开源许可
+
+本项目代码采用 [MIT License](LICENSE)。TsMap 使用 MIT 许可，Leaflet 使用 BSD-2-Clause 许可，具体以各自许可证为准。游戏资源、地图数据及生成图片不属于本项目 MIT 许可的授权范围。
