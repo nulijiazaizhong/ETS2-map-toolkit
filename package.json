@@ -14,5 +14,8 @@
   },
   "dependencies": {
     "@edgeone/pages-blob": "0.0.19"
+  },
+  "devDependencies": {
+    "wrangler": "^4.164.0"
   }
 }
