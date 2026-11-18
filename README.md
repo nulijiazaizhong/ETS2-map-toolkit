@@ -49,7 +49,7 @@ cd ETS2-map-toolkit
 - Windows、Git Bash 和 Git
 - 已安装的 ETS2 及需要生成的地图 DLC
 - .NET Framework 4.7.2 开发组件
-- Node.js 18+
+- Node.js 22+（Wrangler 要求；Makers 使用 22.11.0）
 - Python 3，以及 Pillow、NumPy、SciPy、OpenCV：
 
 ```bash
