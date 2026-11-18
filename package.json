@@ -10,10 +10,12 @@
     "preview": "node ets2-map/scripts/serve.mjs --dist",
     "verify": "node ets2-map/scripts/verify.mjs",
     "manifest": "node ets2-map/scripts/manifest.mjs",
-    "upload:edgeone": "node deploy/edgeone/upload.mjs"
+    "upload:edgeone": "node deploy/edgeone/upload.mjs",
+    "upload:cloudflare": "node deploy/cloudflare/upload.mjs"
   },
   "dependencies": {
-    "@edgeone/pages-blob": "0.0.19"
+    "@edgeone/pages-blob": "0.0.19",
+    "aws4fetch": "^1.0.20"
   },
   "devDependencies": {
     "wrangler": "^4.164.0"

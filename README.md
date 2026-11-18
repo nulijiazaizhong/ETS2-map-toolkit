@@ -447,29 +447,39 @@ npx wrangler r2 bucket create ets2-map
 
 如果使用其他桶名，同时修改根目录 `wrangler.toml` 和 `wrangler.worker.toml` 中的 `bucket_name`。两个文件中的绑定名 `MAP_DATA` 不要修改，函数通过它访问桶。
 
-### 2. 批量上传 R2 对象
+### 2. 从项目目录批量上传 R2 对象
 
-单文件可用 Wrangler：
+全量地图包含 17 万余个对象，使用项目提供的 S3 并发上传脚本，不要逐个启动 Wrangler。
 
-```bash
-npx wrangler r2 object put ets2-map/v1.62/tmp_s1/6/12/7.png --file data/maps/v1.62/tmp_s1/6/12/7.png --remote
-```
+在 Cloudflare 控制台进入 **R2 object storage**，在 **Account Details** 旁选择 **Manage API Tokens**，创建 Account API Token：
 
-全量地图不应逐个启动 Wrangler。推荐使用支持 S3 的 `rclone`：
+1. 权限选择 **Object Read & Write**。
+2. 可将范围限制为 `ets2-map` 桶。
+3. 创建后取得 **Access Key ID** 和 **Secret Access Key**。
+4. 在 Cloudflare 控制台取得账户 ID。
 
-1. 在 Cloudflare R2 控制台创建具有目标桶读写权限的 API Token，并取得 Access Key ID、Secret Access Key 和账户 ID。
-2. 执行 `rclone config`，新建名为 `ets2-r2` 的远程存储。
-3. 存储类型选择 `s3`，服务商选择 `Cloudflare`，填写上述密钥。
-4. Endpoint 填写 `https://<账户ID>.r2.cloudflarestorage.com`，不要附加桶名。
+官方说明：<https://developers.cloudflare.com/r2/api/s3/tokens/>。
 
-然后在本机仓库根目录执行：
+在本机当前终端设置环境变量，不要将密钥提交到 Git 或发到聊天中：
 
 ```bash
-rclone copy data/maps/v1.62 ets2-r2:ets2-map/v1.62 --transfers=16 --checkers=32 --progress
-rclone check data/maps/v1.62 ets2-r2:ets2-map/v1.62
+export CLOUDFLARE_ACCOUNT_ID="账户 ID"
+export CLOUDFLARE_R2_ACCESS_KEY_ID="Access Key ID"
+export CLOUDFLARE_R2_SECRET_ACCESS_KEY="Secret Access Key"
+export CLOUDFLARE_R2_BUCKET="ets2-map"
+export MAP_VERSION="v1.62"
+npm run upload:cloudflare
 ```
 
-`rclone copy` 会把源目录中的内容复制到目标前缀，因此目标中的 `v1.62` 不能省略。最终键必须是 `v1.62/tmp_s1/6/12/7.png`，不能包含 `data/maps/`。密钥只放在 rclone 的本地配置中，不要提交到 Git。
+PowerShell 使用 `$env:变量名="值"` 设置相同环境变量。脚本使用 8 路并发，单文件失败会自动重试 3 次。对象键保持 `<版本>/<相对路径>`，例如 `v1.62/tmp_s1/6/12/7.png`，不能包含 `data/maps/` 前缀。
+
+上传中断时执行：
+
+```bash
+npm run upload:cloudflare -- --resume
+```
+
+`--resume` 使用 R2 对象清单跳过已有文件，只补传缺失对象。看到 `Progress 175904/175904 objects for v1.62` 才表示当前清单全部处理完成。
 
 ### 3A. 部署到 Cloudflare Pages
 
@@ -484,22 +494,26 @@ MAP_DATA -> ets2-map R2 桶
 直接部署：
 
 ```bash
-npm run build
+npm run build:cloud
 npx wrangler pages deploy ets2-map/dist-cloud --project-name ets2-map-toolkit --branch main
 ```
 
 首次执行时按 Wrangler 提示创建或选择 Pages 项目。构建会把 `deploy/cloudflare/pages/[[path]].js` 复制为 `dist-cloud/functions/[[path]].js`，由它处理地图请求，其余请求交给静态页面。
 
-也可以使用 Cloudflare Git 集成，仓库根目录保持不变，构建命令填写 `npm run build`，输出目录填写 `ets2-map/dist-cloud`。使用根目录 Wrangler 配置后，应以该文件作为 Pages 配置的来源；修改绑定时同步修改并提交 `wrangler.toml`。
+也可以使用 Cloudflare Git 集成，仓库根目录保持不变，构建命令填写 `npm run build:cloud`，输出目录填写 `ets2-map/dist-cloud`。使用根目录 Wrangler 配置后，应以该文件作为 Pages 配置的来源；修改绑定时同步修改并提交 `wrangler.toml`。
 
 ### 3B. 或部署到 Cloudflare Worker
 
 ```bash
-npm run build
+npm run build:cloud
 npx wrangler deploy --config wrangler.worker.toml
 ```
 
 根目录 `wrangler.worker.toml` 使用 `deploy/cloudflare/worker.js` 作为入口，并把 `ets2-map/dist-cloud` 绑定为 `ASSETS`。Worker 只把有效地图路径发送到 R2，其他路径由静态资源处理。
+
+优先通过 **Workers Builds** 连接 GitHub：在 Cloudflare 控制台进入 **Workers & Pages**，选择 `ets2-map-toolkit` Worker，打开 **Settings > Builds**，在 **Git Repository** 中选择 **Manage**。授权 Cloudflare GitHub 应用并选择 `nulijiazaizhong/ETS2-map-toolkit`，生产分支为 `main`，构建命令为 `npm run build:cloud`，部署命令为 `npx wrangler deploy --config wrangler.worker.toml`。保存后推送提交即可自动构建和部署。
+
+R2 对象不会随 Worker 静态资源上传。地图数据变化时仍需在本机执行 `npm run upload:cloudflare` 或 `--resume`。
 
 ### 4. 绑定 Cloudflare 自定义域名
 
@@ -517,7 +531,7 @@ curl -I https://map.yean.team/tmp_s1/6/12/7.png
 上传新目录，例如：
 
 ```bash
-rclone copy data/maps/v1.63 ets2-r2:ets2-map/v1.63 --transfers=16 --checkers=32 --progress
+MAP_VERSION=v1.63 npm run upload:cloudflare
 ```
 
 然后将 `wrangler.toml`、`wrangler.worker.toml` 中的 `MAP_VERSION` 改为 `v1.63`，重新部署使用的平台。旧版本对象无需删除。
