@@ -447,41 +447,56 @@ npx wrangler r2 bucket create ets2-map
 
 如果使用其他桶名，同时修改根目录 `wrangler.toml` 和 `wrangler.worker.toml` 中的 `bucket_name`。两个文件中的绑定名 `MAP_DATA` 不要修改，函数通过它访问桶。
 
-### 2. 从项目目录批量上传 R2 对象
+### 2. Connect GitHub 并在构建时上传 R2（推荐）
 
-全量地图包含 17 万余个对象，使用项目提供的 S3 并发上传脚本，不要逐个启动 Wrangler。
+优先使用 **Connect GitHub / Workers Builds**，在构建时直接把仓库中的地图数据上传到 R2，无需用户在本机安装游戏或手动上传。
 
-在 Cloudflare 控制台进入 **R2 object storage**，在 **Account Details** 旁选择 **Manage API Tokens**，创建 Account API Token：
+在 Cloudflare 控制台进入 **R2 object storage**，在 **Account Details** 旁选择 **Manage API Tokens**，创建 Account API Token：权限选择 **Object Read & Write**，可将范围限制为 `ets2-map` 桶。创建后取得 **Access Key ID**、**Secret Access Key** 和账户 ID。官方说明：<https://developers.cloudflare.com/r2/api/s3/tokens/>。
 
-1. 权限选择 **Object Read & Write**。
-2. 可将范围限制为 `ets2-map` 桶。
-3. 创建后取得 **Access Key ID** 和 **Secret Access Key**。
-4. 在 Cloudflare 控制台取得账户 ID。
+进入 **Workers & Pages**，创建或选择 `ets2-map-toolkit` Worker，打开 **Settings > Builds**，在 **Git Repository** 中选择 **Manage**。授权 Cloudflare GitHub 应用，并选择 `nulijiazaizhong/ETS2-map-toolkit` 仓库。
 
-官方说明：<https://developers.cloudflare.com/r2/api/s3/tokens/>。
+在 Workers Builds 的构建环境变量中设置：
 
-在本机当前终端设置环境变量，不要将密钥提交到 Git 或发到聊天中：
+```text
+CLOUDFLARE_ACCOUNT_ID=实际账户 ID
+CLOUDFLARE_R2_ACCESS_KEY_ID=实际 Access Key ID
+CLOUDFLARE_R2_SECRET_ACCESS_KEY=实际 Secret Access Key
+CLOUDFLARE_R2_BUCKET=ets2-map
+MAP_VERSION=v1.62
+```
+
+密钥必须保存在受保护的环境变量中，不要写入源码、Wrangler 配置或 GitHub。
+
+构建设置如下：
+
+```text
+生产分支：main
+构建命令：npm run build:cloud && npm run upload:cloudflare -- --resume
+部署命令：npx wrangler deploy --config wrangler.worker.toml
+根目录：保持仓库根目录
+```
+
+每次 GitHub 推送都会构建轻量页面，读取 `data/maps/` 中 `MAP_VERSION` 对应的目录，查询 R2 清单并只上传缺失对象，最后部署 Worker。上传失败会使构建失败。首次上传仍需处理 17 万余个对象；后续 `--resume` 构建只补传缺失文件。对象键为 `<版本>/<相对路径>`，不能包含 `data/maps/` 前缀。
+
+官方 Git 集成说明：<https://developers.cloudflare.com/workers/ci-cd/builds/git-integration/index.html>。
+
+### 3. 备用：本机直接上传或断点续传
+
+本机上传适合首次手动初始化、云端构建上传失败后的恢复，或不希望通过 Git 构建上传的情况。在当前终端设置与上文相同的环境变量，然后执行：
 
 ```bash
-export CLOUDFLARE_ACCOUNT_ID="账户 ID"
-export CLOUDFLARE_R2_ACCESS_KEY_ID="Access Key ID"
-export CLOUDFLARE_R2_SECRET_ACCESS_KEY="Secret Access Key"
-export CLOUDFLARE_R2_BUCKET="ets2-map"
-export MAP_VERSION="v1.62"
 npm run upload:cloudflare
 ```
 
-PowerShell 使用 `$env:变量名="值"` 设置相同环境变量。脚本使用 8 路并发，单文件失败会自动重试 3 次。对象键保持 `<版本>/<相对路径>`，例如 `v1.62/tmp_s1/6/12/7.png`，不能包含 `data/maps/` 前缀。
-
-上传中断时执行：
+PowerShell 使用 `$env:变量名="值"` 设置环境变量。脚本使用 8 路并发，单文件失败会自动重试 3 次。上传中断时执行：
 
 ```bash
 npm run upload:cloudflare -- --resume
 ```
 
-`--resume` 使用 R2 对象清单跳过已有文件，只补传缺失对象。看到 `Progress 175904/175904 objects for v1.62` 才表示当前清单全部处理完成。
+`--resume` 使用 R2 对象清单跳过已有文件，只补传缺失对象。看到 `Progress 175904/175904 objects for v1.62` 才表示当前清单全部处理完成。不要将密钥提交到 Git 或发到聊天中。
 
-### 3A. 部署到 Cloudflare Pages
+### 4A. 部署到 Cloudflare Pages
 
 根目录 `wrangler.toml` 已包含：
 
@@ -502,7 +517,7 @@ npx wrangler pages deploy ets2-map/dist-cloud --project-name ets2-map-toolkit --
 
 也可以使用 Cloudflare Git 集成，仓库根目录保持不变，构建命令填写 `npm run build:cloud`，输出目录填写 `ets2-map/dist-cloud`。使用根目录 Wrangler 配置后，应以该文件作为 Pages 配置的来源；修改绑定时同步修改并提交 `wrangler.toml`。
 
-### 3B. 或部署到 Cloudflare Worker
+### 4B. 或部署到 Cloudflare Worker
 
 ```bash
 npm run build:cloud
@@ -511,11 +526,9 @@ npx wrangler deploy --config wrangler.worker.toml
 
 根目录 `wrangler.worker.toml` 使用 `deploy/cloudflare/worker.js` 作为入口，并把 `ets2-map/dist-cloud` 绑定为 `ASSETS`。Worker 只把有效地图路径发送到 R2，其他路径由静态资源处理。
 
-优先通过 **Workers Builds** 连接 GitHub：在 Cloudflare 控制台进入 **Workers & Pages**，选择 `ets2-map-toolkit` Worker，打开 **Settings > Builds**，在 **Git Repository** 中选择 **Manage**。授权 Cloudflare GitHub 应用并选择 `nulijiazaizhong/ETS2-map-toolkit`，生产分支为 `main`，构建命令为 `npm run build:cloud`，部署命令为 `npx wrangler deploy --config wrangler.worker.toml`。保存后推送提交即可自动构建和部署。
+Connect GitHub 的构建上传配置见上文推荐流程。此处 CLI 命令用于不经过 Git 集成的手动部署。
 
-R2 对象不会随 Worker 静态资源上传。地图数据变化时仍需在本机执行 `npm run upload:cloudflare` 或 `--resume`。
-
-### 4. 绑定 Cloudflare 自定义域名
+### 5. 绑定 Cloudflare 自定义域名
 
 在 Pages 或 Worker 的自定义域名设置中添加 `map.yean.team`。如果域名 DNS 已托管在 Cloudflare，通常可直接完成绑定；否则按控制台提示添加 CNAME。完成后验证：
 
@@ -526,15 +539,11 @@ curl -I https://map.yean.team/tmp_s1/6/12/7.png
 
 第一个地址固定读取 `v1.62`，第二个地址读取 Wrangler 配置中的 `MAP_VERSION`。
 
-### 5. Cloudflare 版本更新
+### 6. Cloudflare 版本更新
 
-上传新目录，例如：
+以 `v1.63` 为例，将新地图提交到 `data/maps/v1.63/`，把构建环境变量及 `wrangler.toml`、`wrangler.worker.toml` 中的 `MAP_VERSION` 改为 `v1.63`，再推送代码。Git 构建会使用 `--resume` 上传新版本对象并部署，旧版本无需删除。
 
-```bash
-MAP_VERSION=v1.63 npm run upload:cloudflare
-```
-
-然后将 `wrangler.toml`、`wrangler.worker.toml` 中的 `MAP_VERSION` 改为 `v1.63`，重新部署使用的平台。旧版本对象无需删除。
+不经过 Git 构建时，也可在本机执行 `MAP_VERSION=v1.63 npm run upload:cloudflare`，然后重新部署。
 
 ---
 
