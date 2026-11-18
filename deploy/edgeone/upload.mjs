@@ -31,9 +31,14 @@ const resume = process.argv.includes('--resume');
 console.log(`Upload concurrency: ${concurrency}`);
 const existing = new Set();
 if (resume) {
-  const { blobs } = await store.list({ prefix: `${version}/` });
-  for (const blob of blobs) existing.add(blob.key);
-  console.log(`Resume enabled: found ${existing.size} existing objects for ${version}`);
+  try {
+    const { blobs } = await store.list({ prefix: `${version}/` });
+    for (const blob of blobs) existing.add(blob.key);
+    console.log(`Resume enabled: found ${existing.size} existing objects for ${version}`);
+  } catch (error) {
+    if (error.statusCode !== 403) throw error;
+    console.warn(`Blob LIST is denied; uploading all objects instead. ${error.message}`);
+  }
 }
 let cursor = 0;
 let completed = 0;
