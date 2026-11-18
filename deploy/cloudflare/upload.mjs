@@ -15,6 +15,11 @@ const endpoint = `https://${accountId}.r2.cloudflarestorage.com`;
 const dataDir = await resolveDataDir();
 const version = path.basename(dataDir);
 const client = new AwsClient({ accessKeyId, secretAccessKey, service: 's3', region: 'auto', retries: 4 });
+const concurrency = Number(process.env.CLOUDFLARE_UPLOAD_CONCURRENCY || 128);
+if (!Number.isInteger(concurrency) || concurrency < 1 || concurrency > 256) {
+  throw new Error('CLOUDFLARE_UPLOAD_CONCURRENCY must be an integer between 1 and 256.');
+}
+console.log(`Upload concurrency: ${concurrency}`);
 const files = [];
 async function collect(directory) {
   for (const entry of await readdir(directory, { withFileTypes: true })) {
@@ -85,5 +90,5 @@ async function uploadWorker() {
     }
   }
 }
-await Promise.all(Array.from({ length: 8 }, uploadWorker));
+await Promise.all(Array.from({ length: concurrency }, uploadWorker));
 console.log(`Uploaded map ${version} to Cloudflare R2 bucket ${bucket}.`);

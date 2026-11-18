@@ -63,6 +63,8 @@ MAP_VERSION=v1.62
 
 首次上传仍需处理 17 万余个对象。后续构建使用 `--resume` 增量补传，避免每次修改页面都覆盖全部对象。对象键为 `<版本>/<相对路径>`，例如 `v1.62/tmp_s1/6/12/7.png`，不能包含 `data/maps/` 前缀。
 
+上传默认使用 128 路并发，单文件失败会自动重试 3 次。遇到 R2 限流或网络不稳定时，可通过 `CLOUDFLARE_UPLOAD_CONCURRENCY` 将并发调整为 32、16 或 8。构建超时后再次运行相同命令，会从已有对象继续。
+
 官方 Git 集成说明：<https://developers.cloudflare.com/workers/ci-cd/builds/git-integration/index.html>。
 
 ## 3. 验证部署
@@ -86,7 +88,7 @@ curl https://example.com/v1.62/map-manifest.json
 npm run upload:cloudflare
 ```
 
-PowerShell 使用 `$env:变量名="值"` 设置环境变量。脚本使用 8 路并发，单文件失败会自动重试 3 次。
+PowerShell 使用 `$env:变量名="值"` 设置环境变量。脚本默认使用 128 路并发，单文件失败会自动重试 3 次。
 
 上传中断时执行：
 

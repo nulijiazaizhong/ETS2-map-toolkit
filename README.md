@@ -472,6 +472,8 @@ MAP_VERSION=v1.62
 
 每次 GitHub 推送都会构建轻量页面，读取 `data/maps/` 中 `MAP_VERSION` 对应的目录，查询 R2 清单并只上传缺失对象，最后部署 Worker。上传失败会使构建失败。首次上传仍需处理 17 万余个对象；后续 `--resume` 构建只补传缺失文件。对象键为 `<版本>/<相对路径>`，不能包含 `data/maps/` 前缀。
 
+上传默认使用 128 路并发，单文件失败会自动重试 3 次。遇到 R2 限流或网络不稳定时，可通过 `CLOUDFLARE_UPLOAD_CONCURRENCY` 将并发调整为 32、16 或 8。构建超时后再次运行相同命令，会从已有对象继续。
+
 官方 Git 集成说明：<https://developers.cloudflare.com/workers/ci-cd/builds/git-integration/index.html>。
 
 ### 3. 备用：本机直接上传或断点续传
@@ -482,7 +484,7 @@ MAP_VERSION=v1.62
 npm run upload:cloudflare
 ```
 
-PowerShell 使用 `$env:变量名="值"` 设置环境变量。脚本使用 8 路并发，单文件失败会自动重试 3 次。上传中断时执行：
+PowerShell 使用 `$env:变量名="值"` 设置环境变量。脚本默认使用 128 路并发，单文件失败会自动重试 3 次。上传中断时执行：
 
 ```bash
 npm run upload:cloudflare -- --resume
