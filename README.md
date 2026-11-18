@@ -11,7 +11,7 @@ data/maps/
 ets2-map/
   public/                 轻量静态页面，不含提取数据
   scripts/                本地服务、校验、清单和构建脚本
-  dist/                   完整服务器静态产物，包含默认和版本化瓦片
+  dist/                   完整服务器静态产物，仅包含版本化地图数据
   dist-cloud/             轻量云端产物，瓦片由 Blob/R2 提供
 shared/map-data.js        各运行时共用的路由、版本和响应规则
 deploy/
@@ -80,7 +80,7 @@ npm install
 npm run dev
 ```
 
-访问 `http://localhost:8080`。开发服务同时提供 `ets2-map/public/` 和当前版本数据。`npm run build && npm run preview` 会直接预览完整 `dist/`，包含默认路径和固定版本路径的全部瓦片。
+访问 `http://localhost:8080`。开发服务同时提供 `ets2-map/public/` 和当前版本数据。`npm run build && npm run preview` 会直接预览完整 `dist/`，页面通过自动生成的 `map-config.js` 使用 `v1.62/` 版本路径。
 
 ```bash
 npm run verify
@@ -90,7 +90,7 @@ npm run build
 
 ## 瓦片地址与版本
 
-无版本地址使用服务端配置的 `MAP_VERSION`，保持原有插件配置兼容：
+Node 服务和云端函数的无版本地址使用服务端配置的 `MAP_VERSION`，保持原有插件配置兼容。完整静态 `dist/` 只保留版本化地址，不提供根目录 `ets/`、`tmp_s1/`：
 
 ```text
 https://example.com/ets/{z}/{x}/{y}.png
@@ -182,7 +182,7 @@ rsync -av --progress data/maps/ user@server:/srv/ets2-map-toolkit/data/maps/
 }
 ```
 
-完整构建会把当前版本数据复制到 `dist/` 根目录和 `dist/v1.62/`，使无版本与固定版本地址都能直接用于静态托管；因此 `dist/` 需要约两倍地图数据的磁盘空间。如果数据已经生成但缺少清单，可执行 `npm run manifest`。然后运行完整校验和构建：
+完整构建只把当前版本数据复制到 `dist/v1.62/`，不会保留重复的根目录 `ets/`、`tmp_s1/` 和元数据。生成的 `map-config.js` 会让页面自动请求版本路径；普通静态托管和插件均应使用 `/v1.62/...` 地址。如果数据已经生成但缺少清单，可执行 `npm run manifest`。然后运行完整校验和构建：
 
 ```bash
 cd /srv/ets2-map-toolkit

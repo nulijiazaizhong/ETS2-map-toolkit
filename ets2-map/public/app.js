@@ -359,7 +359,7 @@
 
   async function init() {
     try {
-      const requestedVersion = new URLSearchParams(window.location.search).get('version');
+      const requestedVersion = new URLSearchParams(window.location.search).get('version') || window.ETS2_MAP_VERSION;
       const dataPrefix = /^v\d+\.\d+$/.test(requestedVersion || '') ? `./${requestedVersion}` : '.';
       [info, cities, dlcRegions, backgroundInfo] = await Promise.all([
         fetchJson(`${dataPrefix}/TileMapInfo.json?v=2`),
