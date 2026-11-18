@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "node ets2-map/scripts/build.mjs",
+    "build:cloud": "node ets2-map/scripts/build.mjs --cloud-only",
     "dev": "node ets2-map/scripts/serve.mjs",
     "preview": "node ets2-map/scripts/serve.mjs --dist",
     "verify": "node ets2-map/scripts/verify.mjs",

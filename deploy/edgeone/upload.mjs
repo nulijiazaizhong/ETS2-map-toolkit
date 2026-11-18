@@ -21,7 +21,7 @@ async function collect(directory) {
 await collect(dataDir);
 if (!files.length) throw new Error(`No map data found in ${dataDir}`);
 
-const store = getStore({ name: process.env.EDGEONE_BLOB_STORE || 'ets2-map', projectId, token });
+const store = getStore({ name: process.env.EDGEONE_BLOB_STORE || 'ets2-map', projectId, token, consistency: 'strong' });
 let cursor = 0;
 let completed = 0;
 async function uploadWorker() {

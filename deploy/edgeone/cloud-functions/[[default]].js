@@ -11,7 +11,7 @@ export async function onRequest(context) {
   const location = mapDataLocation(new URL(context.request.url).pathname, context.env.MAP_VERSION);
   if (!location) return new Response('Not found', { status: 404, headers: corsHeaders });
   try {
-    const store = getStore(context.env.EDGEONE_BLOB_STORE || 'ets2-map');
+    const store = getStore({ name: context.env.EDGEONE_BLOB_STORE || 'ets2-map', consistency: 'strong' });
     const body = await store.get(location.key, { type: 'arrayBuffer' });
     if (body === null) return new Response('Not found', { status: 404, headers: corsHeaders });
     return new Response(context.request.method === 'HEAD' ? null : body, {

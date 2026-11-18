@@ -326,7 +326,7 @@ Blob SDK 文档：<https://makers.edgeone.link/document/blob-storage>。
 
 ```text
 安装命令：npm install
-构建命令：npm run build
+构建命令：npm run build:cloud
 输出目录：./ets2-map/dist-cloud
 Node 版本：22.11.0
 ```
@@ -384,7 +384,7 @@ curl -I https://map.yean.team/v1.62/tmp_s1/6/12/7.png
 curl https://map.yean.team/v1.62/map-manifest.json
 ```
 
-无版本地址使用 `MAP_VERSION`，`/v1.62/...` 固定读取指定版本。Blob 默认最终一致，刚上传的对象可能需要短暂等待。更多说明见 `deploy/edgeone/README.md`。
+无版本地址使用 `MAP_VERSION`，`/v1.62/...` 固定读取指定版本。函数使用强一致 Blob 读取，上传完成后即可读取最新对象。更多说明见 `deploy/edgeone/README.md`。
 
 ### 4. 可选：让 Git 构建同时上传 Blob
 
@@ -408,7 +408,7 @@ MAP_VERSION=v1.62
 改为：
 
 ```json
-"buildCommand": "npm run build && npm run upload:edgeone"
+"buildCommand": "npm run build:cloud && npm run upload:edgeone"
 ```
 
 之后每次 Git 构建都会先构建页面，再上传 `MAP_VERSION` 对应的完整版本目录；上传失败会使构建失败，上传成功后才会完成部署。
@@ -419,7 +419,7 @@ MAP_VERSION=v1.62
 - 当前上传脚本没有增量跳过机制，同名对象会全部覆盖。
 - 全量上传会显著延长构建时间，并增加 API 请求和存储操作量。
 - API Token 必须配置为受保护的构建环境变量，不能提交到 `edgeone.json`。
-- 只更新页面时，推荐保持默认 `npm run build`；只有地图数据变化时才在本机执行 `npm run upload:edgeone`。
+- 只更新页面时，推荐保持默认 `npm run build:cloud`；只有地图数据变化时才在本机执行 `npm run upload:edgeone`。
 
 ### 5. Makers 版本更新
 
