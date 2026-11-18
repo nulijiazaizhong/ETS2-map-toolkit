@@ -309,46 +309,61 @@ sudo systemctl restart ets2-map
 
 ## 方式二：EdgeOne Makers + Blob
 
-此方式把静态页面和 Functions 部署到 Makers，把约 17 万个地图文件上传到 Blob。函数根据 URL 中的版本读取对象，因此不会触及静态部署的瓦片文件数量限制。
+推荐流程是 **Git 集成负责构建页面与 Functions，本地脚本负责上传 Blob**。地图数据不进入云端静态产物，函数根据 URL 中的版本读取 Blob。
+
+```text
+Git 提交 -> Makers 自动构建 dist-cloud/ 和 Functions
+本机 data/maps/v1.62/ -> npm run upload:edgeone -> Makers Blob
+```
 
 Blob SDK 文档：<https://makers.edgeone.link/document/blob-storage>。
 
-### 1. 在本机准备数据
+### 1. 使用 Git 集成创建 Makers 项目
 
-```bash
-npm ci
-npm run verify
-npm run manifest
-npm run build
+在 Makers 控制台选择 **Git 集成**，导入仓库根目录。不要只选择 `ets2-map/` 或 `deploy/edgeone/` 作为根目录。
+
+根目录 `edgeone.json` 已声明：
+
+```text
+安装命令：npm install
+构建命令：npm run build
+输出目录：./ets2-map/dist-cloud
+Node 版本：22.11.0
 ```
 
-确认本机存在 `data/maps/v1.62/map-manifest.json`。如果改变了默认版本，可设置 `MAP_VERSION`，上传脚本会以该环境变量为准。
+在项目环境变量中设置：
 
-### 2. 创建 Makers 项目和 Blob 上传凭证
+```text
+MAP_VERSION=v1.62
+EDGEONE_BLOB_STORE=ets2-map
+```
 
-在 EdgeOne Makers 控制台创建项目，取得：
+`EDGEONE_BLOB_STORE` 可省略，默认值为 `ets2-map`。触发首次构建后，Makers 会生成静态页面、根目录 `cloud-functions/` 和轻量 `dist-cloud/`。此时地图请求会返回 404，直到本地数据上传完成。
 
-- 项目 ID，形式通常类似 `pages-xxxxxxxx`。
-- 可访问该项目的 API Token。
+Functions 运行时不需要项目 ID 或 API Token，平台会自动关联当前项目的 Blob。
 
-不要把 Token 写入 `package.json`、README、函数代码或 Git。以下命令只在本机当前 Git Bash 终端设置环境变量：
+### 2. 在本机准备并上传地图数据
+
+本机克隆仓库后，仓库已经包含当前版本数据，无需重新安装游戏或提取瓦片：
+
+```bash
+git clone --recursive https://github.com/nulijiazaizhong/ETS2-map-toolkit.git
+cd ETS2-map-toolkit
+npm ci
+npm run verify
+```
+
+在 Makers 控制台取得项目 ID 和具有 Blob 写入权限的 API Token，并在当前 Git Bash 终端设置：
 
 ```bash
 export EDGEONE_PROJECT_ID="pages-xxxxxxxx"
 export EDGEONE_API_TOKEN="替换为真实 Token"
 export EDGEONE_BLOB_STORE="ets2-map"
 export MAP_VERSION="v1.62"
-```
-
-`EDGEONE_BLOB_STORE` 可省略，默认就是 `ets2-map`。
-
-### 3. 上传地图到 Blob
-
-```bash
 npm run upload:edgeone
 ```
 
-脚本使用 8 路并发，每 500 个对象输出一次进度。全量上传耗时取决于网络，请保持终端运行。对象键必须保持以下结构：
+上传脚本使用 8 路并发，每 500 个对象输出一次进度。全量上传耗时取决于网络，请保持终端运行。对象键必须保持以下结构：
 
 ```text
 v1.62/ets/6/12/7.png
@@ -358,53 +373,66 @@ v1.62/Background.png
 v1.62/map-manifest.json
 ```
 
-不要上传成 `data/maps/v1.62/...`，否则函数会返回 404。重复上传同一版本会覆盖同名对象，但不会删除旧版本；当前脚本也不会跳过已存在对象。
+不要上传成 `data/maps/v1.62/...`，否则函数会返回 404。同一版本重复上传会覆盖同名对象，但不会删除旧版本；当前脚本不会跳过已存在对象。Token 只从环境变量读取，不要写入仓库或构建日志。
 
-### 4. 部署 Makers 项目
+### 3. 绑定域名并验证
 
-推荐使用 Git 集成导入仓库根目录。根目录 `edgeone.json` 已声明：
-
-```text
-安装命令：npm install
-构建命令：npm run build
-输出目录：./ets2-map/dist-cloud
-Node 版本：22.11.0
-```
-
-构建过程会将 `deploy/edgeone/cloud-functions/` 复制到平台识别的根目录 `cloud-functions/`，同时复制到 `dist-cloud/cloud-functions/` 供直接上传使用。
-
-在 Makers 项目环境变量中设置：
-
-```text
-MAP_VERSION=v1.62
-EDGEONE_BLOB_STORE=ets2-map
-```
-
-Makers Functions 运行时不需要 `EDGEONE_PROJECT_ID` 和 `EDGEONE_API_TOKEN`，SDK 会自动关联当前项目。上传 Token 只应保存在本机。
-
-也可以不使用 Git 集成，直接在 Makers 控制台上传构建后的 `ets2-map/dist-cloud/`。其中已包含静态页面、`edgeone.json` 和 Functions，但 Blob 数据仍需按上一步单独上传。
-
-### 5. 绑定域名并验证
-
-在 Makers 控制台为项目添加 `map.yean.team`，按照控制台给出的记录值配置 DNS CNAME，并等待证书生效。然后检查：
+等待首次构建和本地上传都完成后，在 Makers 控制台为项目添加 `map.yean.team`，按照控制台给出的记录值配置 DNS CNAME，并等待证书生效。然后检查：
 
 ```bash
 curl -I https://map.yean.team/v1.62/tmp_s1/6/12/7.png
 curl https://map.yean.team/v1.62/map-manifest.json
 ```
 
-Blob 默认采用最终一致读取，刚上传的对象可能需要短暂等待。更多参数见 `deploy/edgeone/README.md`。
+无版本地址使用 `MAP_VERSION`，`/v1.62/...` 固定读取指定版本。Blob 默认最终一致，刚上传的对象可能需要短暂等待。更多说明见 `deploy/edgeone/README.md`。
 
-### 6. Makers 版本更新
+### 4. 可选：让 Git 构建同时上传 Blob
 
-以 `v1.63` 为例：
+可以通过修改构建命令实现，但**不建议作为默认流程**。Makers 构建环境不属于 Functions 运行时，因此必须额外向构建环境提供项目 ID 和 API Token。
+
+在项目构建环境变量中设置：
+
+```text
+EDGEONE_PROJECT_ID=pages-xxxxxxxx
+EDGEONE_API_TOKEN=替换为真实 Token
+EDGEONE_BLOB_STORE=ets2-map
+MAP_VERSION=v1.62
+```
+
+将根目录 `edgeone.json` 的 `buildCommand` 从：
+
+```json
+"buildCommand": "npm run build"
+```
+
+改为：
+
+```json
+"buildCommand": "npm run build && npm run upload:edgeone"
+```
+
+之后每次 Git 构建都会先构建页面，再上传 `MAP_VERSION` 对应的完整版本目录；上传失败会使构建失败，上传成功后才会完成部署。
+
+注意：
+
+- 每次推送都会重新上传 17 万余个对象，即使只修改了页面或文档。
+- 当前上传脚本没有增量跳过机制，同名对象会全部覆盖。
+- 全量上传会显著延长构建时间，并增加 API 请求和存储操作量。
+- API Token 必须配置为受保护的构建环境变量，不能提交到 `edgeone.json`。
+- 只更新页面时，推荐保持默认 `npm run build`；只有地图数据变化时才在本机执行 `npm run upload:edgeone`。
+
+### 5. Makers 版本更新
+
+以 `v1.63` 为例，在本机上传新版本：
 
 ```bash
 export MAP_VERSION="v1.63"
 npm run upload:edgeone
 ```
 
-上传完成后，在 Makers 环境变量中把 `MAP_VERSION` 改为 `v1.63` 并重新部署。这样无版本地址切换到新地图，而 `/v1.62/...` 和 `/v1.63/...` 都可以独立访问。
+上传完成后，将 Makers 项目的 `MAP_VERSION` 改为 `v1.63` 并重新部署。旧版本对象无需删除，`/v1.62/...` 与 `/v1.63/...` 可以并存。
+
+如果启用了构建时上传，则还需在构建环境变量中同步更新 `MAP_VERSION`。
 
 ---
 
