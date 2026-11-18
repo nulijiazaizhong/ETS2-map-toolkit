@@ -57,7 +57,7 @@ v1.62/Cities.json
 v1.62/map-manifest.json
 ```
 
-不要添加 `data/maps/` 前缀。单文件上传失败会自动重试 3 次。
+不要添加 `data/maps/` 前缀。上传默认使用 32 路并发，单文件失败会自动重试 3 次。遇到平台限流或网络不稳定时，可通过 `EDGEONE_UPLOAD_CONCURRENCY` 将并发调整为 16 或 8。构建超时后再次运行相同命令，会利用 `--resume` 从已有对象继续。
 
 ### 构建上传的代价
 

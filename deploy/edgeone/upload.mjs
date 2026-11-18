@@ -23,7 +23,12 @@ await collect(dataDir);
 if (!files.length) throw new Error(`No map data found in ${dataDir}`);
 
 const store = getStore({ name: process.env.EDGEONE_BLOB_STORE || 'ets2-map', projectId, token, consistency: 'strong' });
+const concurrency = Number(process.env.EDGEONE_UPLOAD_CONCURRENCY || 32);
+if (!Number.isInteger(concurrency) || concurrency < 1 || concurrency > 64) {
+  throw new Error('EDGEONE_UPLOAD_CONCURRENCY must be an integer between 1 and 64.');
+}
 const resume = process.argv.includes('--resume');
+console.log(`Upload concurrency: ${concurrency}`);
 const existing = new Set();
 if (resume) {
   const { blobs } = await store.list({ prefix: `${version}/` });
@@ -57,5 +62,5 @@ async function uploadWorker() {
     }
   }
 }
-await Promise.all(Array.from({ length: 8 }, uploadWorker));
+await Promise.all(Array.from({ length: concurrency }, uploadWorker));
 console.log(`Uploaded map ${version} to EdgeOne Blob store ${process.env.EDGEONE_BLOB_STORE || 'ets2-map'}.`);
