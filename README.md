@@ -349,19 +349,13 @@ MAP_VERSION=v1.62
 
 `EDGEONE_BLOB_STORE` 可省略，默认值为 `ets2-map`。API Token 必须保存在受保护的环境变量中，不要写入 `edgeone.json`、源码或 Git。
 
-将根目录 `edgeone.json` 的 `buildCommand` 从：
+根目录 `edgeone.json` 默认使用：
 
 ```json
-"buildCommand": "npm run build:cloud"
+"buildCommand": "npm run build:cloud && npm run upload:edgeone -- --resume"
 ```
 
-改为：
-
-```json
-"buildCommand": "npm run build:cloud && npm run upload:edgeone"
-```
-
-提交并推送该修改后，Makers 会自动构建并直接从 Git 仓库读取 `data/maps/v1.62/`，再上传到当前项目的 Blob。上传失败会使构建失败，上传成功后才完成部署。
+该配置会覆盖控制台中的同名构建设置，应以仓库文件为准。推送代码后，Makers 会自动构建并直接从 Git 仓库读取 `data/maps/v1.62/`，再上传到当前项目的 Blob。上传失败会使构建失败，上传成功后才完成部署。
 
 对象键为 `<版本>/<相对路径>`，例如：
 
@@ -375,7 +369,7 @@ v1.62/map-manifest.json
 
 不要添加 `data/maps/` 前缀。单文件上传失败会自动重试 3 次。
 
-注意：每次 Git 构建都会重新上传 17 万余个对象，默认不启用 `--resume`。这会显著延长构建时间并增加 API 请求量。只希望更新页面时，可临时恢复 `npm run build:cloud`，避免重新上传地图。
+注意：首次 Git 构建需要上传 17 万余个对象，会显著延长构建时间并增加 API 请求量。后续默认使用 `--resume` 查询清单并只补传缺失对象。只希望更新页面时，可临时恢复 `npm run build:cloud`，避免读取和上传地图。
 
 ### 3. 绑定域名并验证
 
