@@ -7,6 +7,5 @@ tools/__pycache__/
 tools/exporter/bin/
 tools/exporter/obj/
 ets2-map/dist/
+ets2-map/dist-cloud/
 ets2-map/node_modules/
-data/maps/*
-!data/maps/active.json

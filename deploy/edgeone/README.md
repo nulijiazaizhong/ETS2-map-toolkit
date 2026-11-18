@@ -1,6 +1,6 @@
 # EdgeOne Makers
 
-此目录包含 Blob 上传脚本和 Makers Node.js Functions。构建时函数会复制到根目录 `cloud-functions/`（Git 集成识别）及 `ets2-map/dist/cloud-functions/`（直接上传识别），源码仍只保留在这里。
+此目录包含 Blob 上传脚本和 Makers Node.js Functions。构建时函数会复制到根目录 `cloud-functions/`（Git 集成识别）及 `ets2-map/dist-cloud/cloud-functions/`（直接上传识别），源码仍只保留在这里。
 
 ## 1. 上传版本数据
 
@@ -34,7 +34,7 @@ EDGEONE_BLOB_STORE=ets2-map
 
 `EDGEONE_BLOB_STORE` 可省略，默认值为 `ets2-map`。Makers Functions 内不需要项目 ID 或 API Token；平台会自动绑定当前项目的 Blob。
 
-也可以将构建后的 `ets2-map/dist/` 直接上传，其中已包含 `edgeone.json`、`cloud-functions/` 和静态页面，但不包含瓦片。
+也可以将构建后的 `ets2-map/dist-cloud/` 直接上传，其中已包含 `edgeone.json`、`cloud-functions/` 和静态页面，但不包含瓦片。
 
 部署后以下地址均可读取同一对象：
 

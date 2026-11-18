@@ -1,5 +1,5 @@
 name = "ets2-map-toolkit"
-pages_build_output_dir = "./ets2-map/dist"
+pages_build_output_dir = "./ets2-map/dist-cloud"
 compatibility_date = "2026-11-18"
 
 [vars]

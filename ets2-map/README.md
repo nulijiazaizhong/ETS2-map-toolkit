@@ -29,7 +29,7 @@ data/maps/<游戏版本>/
   map-manifest.json
 ```
 
-`data/maps/active.json` 选择本地默认版本。生成器从游戏程序读取版本，不会把瓦片写入 `public/` 或 `dist/`。
+`data/maps/active.json` 选择本地默认版本。生成器从游戏程序读取版本，不会把瓦片写入 `public/`；构建会将完整数据复制到服务器产物 `dist/`，云端轻量产物为 `dist-cloud/`。
 
 ## 运行
 
@@ -51,7 +51,7 @@ npm run build
 npm run preview
 ```
 
-`dist/` 仅包含静态页面和平台函数。`preview` 会同时提供 `dist/` 与当前版本数据，不复制瓦片。校验覆盖瓦片数量与尺寸、城市和国家数据、多语言、前端资源、版本路由以及每个地图 DLC 的代表城市。
+`dist/` 包含完整静态页面、默认瓦片和 `v<大版本>/` 固定版本瓦片，可直接上传到普通静态服务器。`dist-cloud/` 只包含页面和平台函数，供 EdgeOne/Cloudflare 配合对象存储使用。`preview` 直接读取完整 `dist/`。校验覆盖瓦片数量与尺寸、城市和国家数据、多语言、前端资源、版本路由以及每个地图 DLC 的代表城市。
 
 ## 插件瓦片源
 

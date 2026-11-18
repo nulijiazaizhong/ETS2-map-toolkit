@@ -6,9 +6,10 @@ import { mapCacheControl, mapContentType, mapDataLocation } from '../../shared/m
 import { resolveDataDir } from './data.mjs';
 
 const appRoot = fileURLToPath(new URL('../', import.meta.url));
-const staticRoot = path.join(appRoot, process.argv.includes('--dist') ? 'dist' : 'public');
+const useDist = process.argv.includes('--dist');
+const staticRoot = path.join(appRoot, useDist ? 'dist' : 'public');
 const dataRoot = await resolveDataDir();
-const mapsRoot = path.dirname(dataRoot);
+const mapsRoot = useDist ? staticRoot : path.dirname(dataRoot);
 const activeVersion = path.basename(dataRoot);
 const port = Number(process.env.PORT || 8080);
 const mimeTypes = {

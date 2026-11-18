@@ -1,6 +1,6 @@
 {
   "buildCommand": "npm run build",
   "installCommand": "npm install",
-  "outputDirectory": "./ets2-map/dist",
+  "outputDirectory": "./ets2-map/dist-cloud",
   "nodeVersion": "22.11.0"
 }

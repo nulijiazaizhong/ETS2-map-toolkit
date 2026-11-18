@@ -7,11 +7,12 @@
 ```text
 data/maps/
   active.json             本地默认地图版本（提交到 Git）
-  <游戏版本>/             该版本的瓦片、底图和元数据（不提交到 Git）
+  <游戏版本>/             该版本的瓦片、底图和元数据（随仓库提供）
 ets2-map/
   public/                 轻量静态页面，不含提取数据
   scripts/                本地服务、校验、清单和构建脚本
-  dist/                   部署产物，不含瓦片和提取元数据
+  dist/                   完整服务器静态产物，包含默认和版本化瓦片
+  dist-cloud/             轻量云端产物，瓦片由 Blob/R2 提供
 shared/map-data.js        各运行时共用的路由、版本和响应规则
 deploy/
   edgeone/                EdgeOne Makers Functions 与 Blob 上传脚本
@@ -39,7 +40,7 @@ git clone --recursive https://github.com/nulijiazaizhong/ETS2-map-toolkit.git
 cd ETS2-map-toolkit
 ```
 
-如果克隆时忘记 `--recursive`，一键脚本也会自动初始化子模块。
+仓库包含完整地图数据，克隆需要下载数百 MB。只需要当前版本时可在 `git clone` 命令中加入 `--depth 1` 减少历史数据下载。如果克隆时忘记 `--recursive`，一键脚本也会自动初始化子模块。
 
 ## 准备环境
 
@@ -63,7 +64,7 @@ python -m pip install pillow numpy scipy opencv-python
 bash tools/rebuild-all.sh "F:/Game/steam/steamapps/common/Euro Truck Simulator 2" "C:/Users/bi/AppData/Roaming/TruckersMP/installation/data/ets2/mods"
 ```
 
-脚本会初始化 TsMap、解包基础资源和全部地图 DLC、生成 `/ets` 瓦片，并在 MOD 目录存在时生成 `/tmp_s1` 瓦片。随后拼接官方底图、生成精细 DLC 边界、校验数据、写入版本清单并构建轻量 `dist/`。原始游戏及 MOD 文件不会被修改。
+脚本会初始化 TsMap、解包基础资源和全部地图 DLC、生成 `/ets` 瓦片，并在 MOD 目录存在时生成 `/tmp_s1` 瓦片。随后拼接官方底图、生成精细 DLC 边界、校验数据、写入版本清单，并构建完整 `dist/` 与轻量 `dist-cloud/`。原始游戏及 MOD 文件不会被修改。
 
 单独生成：
 
@@ -79,7 +80,7 @@ npm install
 npm run dev
 ```
 
-访问 `http://localhost:8080`。本地服务同时提供 `ets2-map/public/` 和当前版本数据。`npm run build && npm run preview` 可从 `dist/` 预览部署页面，数据仍直接读取版本目录，不会复制进 `dist/`。
+访问 `http://localhost:8080`。开发服务同时提供 `ets2-map/public/` 和当前版本数据。`npm run build && npm run preview` 会直接预览完整 `dist/`，包含默认路径和固定版本路径的全部瓦片。
 
 ```bash
 npm run verify
@@ -113,12 +114,12 @@ https://example.com/?x=-28130&y=-4971&heading=1.94&zoom=6&tiles=tmp_s1&version=v
 
 | 方式 | 页面位置 | 地图数据位置 | 适用场景 |
 | --- | --- | --- | --- |
-| 普通服务器 | `ets2-map/dist/` | 服务器 `data/maps/<版本>/` | 已有 VPS、Nginx 和域名 |
-| EdgeOne Makers | Makers 静态资源与 Functions | Makers Blob | 希望使用 EdgeOne 加速和对象存储 |
-| Cloudflare Pages | Pages 静态资源与 Functions | Cloudflare R2 | 希望使用 Pages，少量服务端代码 |
-| Cloudflare Worker | Worker 静态资源与 Worker | Cloudflare R2 | 希望统一由 Worker 控制请求 |
+| 普通服务器 | `ets2-map/dist/` | 已包含在 `dist/` 和 `data/maps/<版本>/` | 已有 VPS、Nginx 和域名 |
+| EdgeOne Makers | `ets2-map/dist-cloud/` 与 Functions | Makers Blob | 希望使用 EdgeOne 加速和对象存储 |
+| Cloudflare Pages | `ets2-map/dist-cloud/` 与 Functions | Cloudflare R2 | 希望使用 Pages，少量服务端代码 |
+| Cloudflare Worker | `ets2-map/dist-cloud/` 与 Worker | Cloudflare R2 | 希望统一由 Worker 控制请求 |
 
-**无论采用哪种方式，都不要只部署 Git 中的文件或只上传 `dist/`。** 大型地图数据默认不提交到 Git，`dist/` 也不包含瓦片。服务器必须单独复制 `data/maps/`，云端必须单独上传对象。
+仓库包含当前版本的完整地图数据。普通服务器可直接部署完整的 `ets2-map/dist/`，无需再复制瓦片；EdgeOne 和 Cloudflare 使用轻量 `ets2-map/dist-cloud/`，仍需将数据分别上传到 Blob 或 R2。
 
 以下示例均使用：
 
@@ -158,13 +159,13 @@ npm ci
 npm run build
 ```
 
-Git 克隆完成后还没有真实地图数据。将本机已经提取的整个 `data/maps/` 上传到服务器，例如在本机执行：
+仓库已经包含 `v1.62` 地图数据。如果使用的是本机新生成但尚未提交到仓库的版本，可额外同步整个目录：
 
 ```bash
 rsync -av --progress data/maps/ user@server:/srv/ets2-map-toolkit/data/maps/
 ```
 
-将 `user@server` 替换为实际 SSH 用户和地址。上传后至少应存在：
+将 `user@server` 替换为实际 SSH 用户和地址。克隆或同步后至少应存在：
 
 ```text
 /srv/ets2-map-toolkit/data/maps/active.json
@@ -181,7 +182,7 @@ rsync -av --progress data/maps/ user@server:/srv/ets2-map-toolkit/data/maps/
 }
 ```
 
-如果数据已经生成但缺少清单，可在服务器执行 `npm run manifest`。然后运行完整校验和构建：
+完整构建会把当前版本数据复制到 `dist/` 根目录和 `dist/v1.62/`，使无版本与固定版本地址都能直接用于静态托管；因此 `dist/` 需要约两倍地图数据的磁盘空间。如果数据已经生成但缺少清单，可执行 `npm run manifest`。然后运行完整校验和构建：
 
 ```bash
 cd /srv/ets2-map-toolkit
@@ -366,11 +367,11 @@ v1.62/map-manifest.json
 ```text
 安装命令：npm install
 构建命令：npm run build
-输出目录：./ets2-map/dist
+输出目录：./ets2-map/dist-cloud
 Node 版本：22.11.0
 ```
 
-构建过程会将 `deploy/edgeone/cloud-functions/` 复制到平台识别的根目录 `cloud-functions/`，同时复制到 `dist/cloud-functions/` 供直接上传使用。
+构建过程会将 `deploy/edgeone/cloud-functions/` 复制到平台识别的根目录 `cloud-functions/`，同时复制到 `dist-cloud/cloud-functions/` 供直接上传使用。
 
 在 Makers 项目环境变量中设置：
 
@@ -381,7 +382,7 @@ EDGEONE_BLOB_STORE=ets2-map
 
 Makers Functions 运行时不需要 `EDGEONE_PROJECT_ID` 和 `EDGEONE_API_TOKEN`，SDK 会自动关联当前项目。上传 Token 只应保存在本机。
 
-也可以不使用 Git 集成，直接在 Makers 控制台上传构建后的 `ets2-map/dist/`。其中已包含静态页面、`edgeone.json` 和 Functions，但 Blob 数据仍需按上一步单独上传。
+也可以不使用 Git 集成，直接在 Makers 控制台上传构建后的 `ets2-map/dist-cloud/`。其中已包含静态页面、`edgeone.json` 和 Functions，但 Blob 数据仍需按上一步单独上传。
 
 ### 5. 绑定域名并验证
 
@@ -458,7 +459,7 @@ rclone check data/maps/v1.62 ets2-r2:ets2-map/v1.62
 根目录 `wrangler.toml` 已包含：
 
 ```text
-pages_build_output_dir = ./ets2-map/dist
+pages_build_output_dir = ./ets2-map/dist-cloud
 MAP_VERSION = v1.62
 MAP_DATA -> ets2-map R2 桶
 ```
@@ -467,12 +468,12 @@ MAP_DATA -> ets2-map R2 桶
 
 ```bash
 npm run build
-npx wrangler pages deploy ets2-map/dist --project-name ets2-map-toolkit --branch main
+npx wrangler pages deploy ets2-map/dist-cloud --project-name ets2-map-toolkit --branch main
 ```
 
-首次执行时按 Wrangler 提示创建或选择 Pages 项目。构建会把 `deploy/cloudflare/pages/[[path]].js` 复制为 `dist/functions/[[path]].js`，由它处理地图请求，其余请求交给静态页面。
+首次执行时按 Wrangler 提示创建或选择 Pages 项目。构建会把 `deploy/cloudflare/pages/[[path]].js` 复制为 `dist-cloud/functions/[[path]].js`，由它处理地图请求，其余请求交给静态页面。
 
-也可以使用 Cloudflare Git 集成，仓库根目录保持不变，构建命令填写 `npm run build`，输出目录填写 `ets2-map/dist`。使用根目录 Wrangler 配置后，应以该文件作为 Pages 配置的来源；修改绑定时同步修改并提交 `wrangler.toml`。
+也可以使用 Cloudflare Git 集成，仓库根目录保持不变，构建命令填写 `npm run build`，输出目录填写 `ets2-map/dist-cloud`。使用根目录 Wrangler 配置后，应以该文件作为 Pages 配置的来源；修改绑定时同步修改并提交 `wrangler.toml`。
 
 ### 3B. 或部署到 Cloudflare Worker
 
@@ -481,7 +482,7 @@ npm run build
 npx wrangler deploy --config wrangler.worker.toml
 ```
 
-根目录 `wrangler.worker.toml` 使用 `deploy/cloudflare/worker.js` 作为入口，并把 `ets2-map/dist` 绑定为 `ASSETS`。Worker 只把有效地图路径发送到 R2，其他路径由静态资源处理。
+根目录 `wrangler.worker.toml` 使用 `deploy/cloudflare/worker.js` 作为入口，并把 `ets2-map/dist-cloud` 绑定为 `ASSETS`。Worker 只把有效地图路径发送到 R2，其他路径由静态资源处理。
 
 ### 4. 绑定 Cloudflare 自定义域名
 
@@ -573,7 +574,7 @@ v1.62/tmp_s1/6/12/7.png
 
 ## 数据与版权
 
-`dist/` 只包含静态页面、共享路由代码和平台函数，避免平台的文件数量与大小限制。地图数据版权归 SCS Software 所有。公开部署前请确认拥有相关游戏内容的再分发权限，并根据访问量自行评估对象存储、函数调用和流量费用。
+`dist/` 是包含全部瓦片的完整服务器产物；`dist-cloud/` 只包含静态页面、共享路由代码和平台函数，避免云端平台的文件数量与大小限制。地图数据版权归 SCS Software 所有。公开部署前请确认拥有相关游戏内容的再分发权限，并根据访问量自行评估对象存储、函数调用和流量费用。
 
 ## 外部项目
 

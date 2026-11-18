@@ -29,10 +29,10 @@ npx wrangler r2 object put ets2-map/v1.62/tmp_s1/6/12/7.png --file data/maps/v1.
 
 ```bash
 npm run build
-npx wrangler pages deploy ets2-map/dist --project-name ets2-map-toolkit
+npx wrangler pages deploy ets2-map/dist-cloud --project-name ets2-map-toolkit
 ```
 
-构建会把 `pages/[[path]].js` 放到 `dist/functions/`。根配置声明了 `pages_build_output_dir`、`MAP_DATA` R2 绑定和默认 `MAP_VERSION`。
+构建会把 `pages/[[path]].js` 放到 `dist-cloud/functions/`。根配置声明了 `pages_build_output_dir`、`MAP_DATA` R2 绑定和默认 `MAP_VERSION`。
 
 ## Cloudflare Worker
 
@@ -41,7 +41,7 @@ npm run build
 npx wrangler deploy --config wrangler.worker.toml
 ```
 
-Worker 将数据请求发送到 R2，其余请求交给 `ASSETS`。`dist/.assetsignore` 会排除 Pages Functions、Makers Functions 和共享服务端代码，避免作为公开静态资源上传。
+Worker 将数据请求发送到 R2，其余请求交给 `ASSETS`。`dist-cloud/.assetsignore` 会排除 Pages Functions、Makers Functions 和共享服务端代码，避免作为公开静态资源上传。
 
 ## 版本与地址
 
