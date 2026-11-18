@@ -4,16 +4,14 @@
   "private": true,
   "description": "Euro Truck Simulator 2 all-DLC offline tile map",
   "scripts": {
-    "dev": "http-server public -p 8080 -c-1",
-    "start": "http-server public -p 8080",
+    "dev": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
     "build": "node scripts/build.mjs",
-    "preview": "http-server dist -p 8080",
-    "verify": "node scripts/verify.mjs"
+    "preview": "node scripts/serve.mjs --dist",
+    "verify": "node scripts/verify.mjs",
+    "manifest": "node scripts/manifest.mjs"
   },
   "dependencies": {
     "leaflet": "1.9.4"
-  },
-  "devDependencies": {
-    "http-server": "14.1.1"
   }
 }

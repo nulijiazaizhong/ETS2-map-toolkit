@@ -28,4 +28,5 @@ fi
 cd "$ROOT/ets2-map"
 npm ci
 npm run verify
+npm run manifest
 npm run build

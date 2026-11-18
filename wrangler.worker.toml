@@ -1,0 +1,15 @@
+name = "ets2-map-toolkit"
+main = "deploy/cloudflare/worker.js"
+compatibility_date = "2026-11-18"
+
+[assets]
+directory = "./ets2-map/dist"
+binding = "ASSETS"
+run_worker_first = true
+
+[vars]
+MAP_VERSION = "v1.62"
+
+[[r2_buckets]]
+binding = "MAP_DATA"
+bucket_name = "ets2-map"

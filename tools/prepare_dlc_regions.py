@@ -1,13 +1,16 @@
 from pathlib import Path
 from collections import defaultdict
 import json
+import sys
 
 import cv2
 import numpy as np
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
-PUBLIC = ROOT / "ets2-map/public"
+if len(sys.argv) != 2:
+    raise SystemExit("Usage: prepare_dlc_regions.py <version-data-dir>")
+PUBLIC = Path(sys.argv[1]).resolve()
 SECTOR_SIZE = 4000
 sectors = json.loads((PUBLIC / "DlcSectors.json").read_text(encoding="utf-8"))
 background = json.loads((PUBLIC / "Background.json").read_text(encoding="utf-8"))

@@ -1,0 +1,17 @@
+{
+  "name": "ets2-map-toolkit",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node ets2-map/scripts/build.mjs",
+    "dev": "node ets2-map/scripts/serve.mjs",
+    "preview": "node ets2-map/scripts/serve.mjs --dist",
+    "verify": "node ets2-map/scripts/verify.mjs",
+    "manifest": "node ets2-map/scripts/manifest.mjs",
+    "upload:edgeone": "node deploy/edgeone/upload.mjs"
+  },
+  "dependencies": {
+    "@edgeone/pages-blob": "0.0.19"
+  }
+}

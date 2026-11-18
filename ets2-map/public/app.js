@@ -359,13 +359,15 @@
 
   async function init() {
     try {
+      const requestedVersion = new URLSearchParams(window.location.search).get('version');
+      const dataPrefix = /^v\d+\.\d+$/.test(requestedVersion || '') ? `./${requestedVersion}` : '.';
       [info, cities, dlcRegions, backgroundInfo] = await Promise.all([
-        fetchJson('./TileMapInfo.json?v=2'),
-        fetchJson('./Cities.json?v=3'),
-        fetchJson('./DlcRegions.json?v=3'),
-        fetchJson('./Background.json?v=1')
+        fetchJson(`${dataPrefix}/TileMapInfo.json?v=2`),
+        fetchJson(`${dataPrefix}/Cities.json?v=3`),
+        fetchJson(`${dataPrefix}/DlcRegions.json?v=3`),
+        fetchJson(`${dataPrefix}/Background.json?v=1`)
       ]);
-      const countryList = await fetchJson('./Countries.json');
+      const countryList = await fetchJson(`${dataPrefix}/Countries.json`);
       countries = new Map(countryList.map((country) => [country.CountryId, country]));
       const bounds = L.latLngBounds([-512, 0], [0, 512]);
 
@@ -386,13 +388,13 @@
       map.createPane('gameBackground');
       map.getPane('gameBackground').style.zIndex = '150';
       map.getPane('gameBackground').style.pointerEvents = 'none';
-      backgroundLayer = L.imageOverlay('./Background.png?v=1', backgroundInfo.bounds, {
+      backgroundLayer = L.imageOverlay(`${dataPrefix}/Background.png?v=1`, backgroundInfo.bounds, {
         pane: 'gameBackground',
         opacity: 0.28,
         interactive: false
       }).addTo(map);
       const tileSource = new URLSearchParams(window.location.search).get('tiles') === 'tmp_s1' ? 'tmp_s1' : 'ets';
-      L.tileLayer(`./${tileSource}/{z}/{x}/{y}.png?v=3`, {
+      L.tileLayer(`${dataPrefix}/${tileSource}/{z}/{x}/{y}.png?v=3`, {
         tileSize: 512,
         bounds,
         minZoom: info.minZoom,

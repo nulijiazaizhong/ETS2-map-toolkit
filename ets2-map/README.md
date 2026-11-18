@@ -1,96 +1,84 @@
-# ETS2 全 DLC 瓦片地图
+# ETS2 全 DLC 瓦片地图页面
 
-基于本机 Euro Truck Simulator 2 游戏数据生成的离线互动地图。包含基础地图及 Going East!、Scandinavia、Vive la France!、Italia、Beyond the Baltic Sea、Road to the Black Sea、Iberia、West Balkans、Greece、Nordic Horizons、Iceland，共 12 个地图区域。
+基于本机 Euro Truck Simulator 2 游戏数据生成的互动地图。包含基础地图及 Going East!、Scandinavia、Vive la France!、Italia、Beyond the Baltic Sea、Road to the Black Sea、Iberia、West Balkans、Greece、Nordic Horizons、Iceland，共 12 个地图区域。
 
-- 0–8 级、512 × 512 PNG 瓦片，标准 `ets/{z}/{x}/{y}.png` 目录。
-- 道路、路口、地图覆盖物、渡轮、秘密道路及城市数据。
+- 0–8 级、512 × 512 PNG 瓦片，标准 `ets/{z}/{x}/{y}.png` 和 `tmp_s1/{z}/{x}/{y}.png` 路径。
 - 游戏提供的全部语言城市搜索与动态地图标签，语言切换会同步更新城市名和国家名。
-- 城市标签在 4 级及以上缩放显示，位置使用游戏的城市名称关联节点和各级官方偏移，瓦片本身不固定任何语言。
-- “显示城市”会绘制编辑器中的城市矩形区域，圆点位于区域中心；另支持区域跳转和缩放定位。
-- “DLC 区域边界”将各 SCS 地图包实际包含的扇区与配准后的官方陆地遮罩相交，生成精细海岸轮廓并保留分离岛屿，可点击框选和缩放。
-- “游戏底图”将官方 `map0–3.dds` 四象限拼接后放在道路下方，并通过道路/陆地配准对齐坐标。
-- Leaflet 已随项目提供，运行时不访问任何第三方地图或 CDN 服务。
+- 城市标签使用游戏的城市名称关联节点和各级官方偏移；“显示城市”绘制编辑器中的城市矩形区域。
+- DLC 边界由实际扇区与官方陆地遮罩相交生成，保留精细海岸和分离岛屿。
+- 官方 `map0–3.dds` 四象限拼接底图，经过道路/陆地配准。
+- Leaflet 随项目提供，页面运行时不访问第三方地图或 CDN。
+
+## 数据目录
+
+`public/` 只包含页面。提取数据统一存放在仓库根目录：
+
+```text
+data/maps/<游戏版本>/
+  ets/
+  tmp_s1/
+  Overlays/
+  Background.png
+  Background.json
+  Cities.json
+  Countries.json
+  DlcRegions.json
+  DlcSectors.json
+  Overlays.json
+  TileMapInfo.json
+  map-manifest.json
+```
+
+`data/maps/active.json` 选择本地默认版本。生成器从游戏程序读取版本，不会把瓦片写入 `public/` 或 `dist/`。
 
 ## 运行
 
-需要 Node.js 18 或更高版本。
+需要 Node.js 18 或更高版本。在仓库根目录执行：
 
 ```bash
 npm install
 npm run dev
 ```
 
-访问 <http://localhost:8080>。也可在 `ets2-map` 目录执行 `npm start`。不要直接双击 `index.html`，浏览器会限制通过 `file://` 读取 JSON 数据。
+访问 <http://localhost:8080>。不要直接双击 `index.html`，浏览器会限制通过 `file://` 读取 JSON 数据。也可在 `ets2-map` 目录执行 `npm run dev`，数据仍从仓库版本目录读取。
 
-## 部署
-
-`public/` 已经是完整静态站点，可直接部署到 Nginx、Apache、IIS、GitHub Pages、Cloudflare Pages 或其他静态网站服务。
-
-需要独立构建目录时：
+## 构建与校验
 
 ```bash
+npm run verify
+npm run manifest
 npm run build
 npm run preview
 ```
 
-将 `dist/` 全部内容上传到静态服务器即可。部署在子路径时无需修改配置，所有资源均使用相对路径。服务器应为 `.png`、`.json`、`.js` 和 `.css` 配置正确的 MIME 类型，并建议为瓦片开启长期缓存。重新生成瓦片或城市元数据后，应递增 `app.js` 中对应 URL 的 `v` 参数，避免浏览器继续显示旧版本。
+`dist/` 仅包含静态页面和平台函数。`preview` 会同时提供 `dist/` 与当前版本数据，不复制瓦片。校验覆盖瓦片数量与尺寸、城市和国家数据、多语言、前端资源、版本路由以及每个地图 DLC 的代表城市。
 
-## Astrbot TMP 插件瓦片源
+## 插件瓦片源
 
-将 `dist/` 内的全部内容上传到静态网站的域名根目录后，在 [astrbot-plugin-tmp-bot](https://github.com/BGYdook/astrbot-plugin-tmp-bot) 的 **自定义 ETS2 地图瓦片地址** 中填写：
-
-```text
-https://example.com/ets/{z}/{x}/{y}.png
-```
-
-把 `example.com` 替换为实际域名。插件要求地址包含 `{z}`、`{x}`、`{y}` 占位符；本项目提供 512×512 PNG 和 0–8 级原生瓦片。地图使用项目标准坐标系，不包含插件专用坐标修正。服务器必须允许插件服务器通过公网 HTTPS 访问这些图片。
-
-### TruckersMP / Simulation 1
-
-项目同时生成包含本地 TruckersMP MOD 的独立瓦片源：
+在 [astrbot-plugin-tmp-bot](https://github.com/BGYdook/astrbot-plugin-tmp-bot) 的 **自定义 ETS2 地图瓦片地址** 中填写：
 
 ```text
 https://example.com/tmp_s1/{z}/{x}/{y}.png
 ```
 
-默认读取 `C:/Users/bi/AppData/Roaming/TruckersMP/installation/data/ets2/mods` 下的 `.mp`、`.scs`、`.zip` MOD，不会覆盖 `/ets`。重新生成：
-
-```bash
-bash tools/rebuild-tmp-map.sh "F:/Game/steam/steamapps/common/Euro Truck Simulator 2" "C:/Users/bi/AppData/Roaming/TruckersMP/installation/data/ets2/mods"
-```
-
-## 坐标分享链接
-
-可以通过 URL 直接打开指定游戏坐标，无需生成静态图片：
+官方全 DLC 地图使用 `/ets/{z}/{x}/{y}.png`。需要固定版本时使用：
 
 ```text
-https://map.yean.team/?x=-28130&y=-4971&heading=1.94&zoom=6&tiles=tmp_s1&mp_id=5931334&name=HarsshhEditzz&server=Simulation%201
+https://example.com/v1.62/tmp_s1/{z}/{x}/{y}.png
 ```
 
-必需参数为 `x` 和 `y`。`heading` 显示朝向线，`zoom` 设置缩放级别，`tiles` 可设为 `tmp_s1` 或默认的 `ets`，`mp_id`、`name`、`server` 用于位置标签。名称和服务器包含空格或特殊字符时应进行 URL 编码。
+插件要求地址包含 `{z}`、`{x}`、`{y}` 占位符。地图使用项目标准坐标系，不包含插件专用坐标修正。服务器必须允许插件服务器通过公网 HTTPS 访问图片。
 
-## 校验
+## 坐标与版本链接
 
-```bash
-npm run verify
+```text
+https://example.com/?x=-28130&y=-4971&heading=1.94&zoom=6&tiles=tmp_s1&version=v1.62&mp_id=5931334&name=HarsshhEditzz&server=Simulation%201
 ```
 
-校验瓦片数量与尺寸、城市和国家数据、多语言覆盖、本地前端资源，以及每个地图 DLC 的代表城市。
+必需参数为 `x` 和 `y`。`version` 固定地图版本；省略时使用服务端 `MAP_VERSION`。`heading` 显示朝向线，`tiles` 可设为 `tmp_s1` 或默认的 `ets`，`mp_id`、`name`、`server` 用于位置标签。
 
-## 从游戏文件重新生成
+## 重新生成与部署
 
-此步骤只适用于 Windows + Git Bash，且需要本机已安装游戏、.NET Framework 4.7.2 开发组件，以及带有 Pillow、NumPy、SciPy、OpenCV 的 Python。部署和浏览地图不需要游戏或 Python。
+提取命令见仓库根目录 `README.md`。EdgeOne Makers Blob 和 Cloudflare R2 部署分别见 `deploy/edgeone/README.md`、`deploy/cloudflare/README.md`。
 
-在项目上级工作区运行：
-
-```bash
-bash tools/rebuild-map.sh "F:/Game/steam/steamapps/common/Euro Truck Simulator 2" 8
-```
-
-脚本使用 `tools/scs_extractor.exe` 解包基础地图和全部地图 DLC，再调用 TsMap 渲染器生成瓦片。原始 `.scs` 文件不会被修改。非地图类涂装、车辆、挂车 DLC 不增加地理区域，因此无需解包。
-
-## 数据与版权
-
-地图数据版权归 SCS Software 所有，仅供已拥有相应游戏及 DLC 的用户使用。公开部署前请确认你拥有相关内容的再分发权限。本项目与 SCS Software 无隶属关系。
-
-渲染器：[TsMap](https://github.com/dariowouters/ts-map)。地图库：[Leaflet](https://leafletjs.com/)（BSD-2-Clause）。
+地图数据版权归 SCS Software 所有，仅供已拥有相应游戏及 DLC 的用户使用。公开部署前请确认你拥有相关内容的再分发权限。本项目与 SCS Software、TruckersMP 无隶属关系。

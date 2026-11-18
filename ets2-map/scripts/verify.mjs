@@ -1,8 +1,10 @@
 import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
+import { projectRoot, resolveDataDir } from './data.mjs';
+import { mapDataKey } from '../../shared/map-data.js';
 
-const root = 'public';
+const root = await resolveDataDir();
 const info = JSON.parse(await readFile(path.join(root, 'TileMapInfo.json'), 'utf8'));
 const cities = JSON.parse(await readFile(path.join(root, 'Cities.json'), 'utf8'));
 const countries = JSON.parse(await readFile(path.join(root, 'Countries.json'), 'utf8'));
@@ -76,7 +78,12 @@ const tileCount = await verifyTiles('ets');
 const tmpTileCount = await verifyTiles('tmp_s1');
 assert.equal(tileCount, 87381);
 assert.equal(tmpTileCount, 87381);
+assert.equal(mapDataKey('/tmp_s1/6/12/7.png', 'v1.62'), 'v1.62/tmp_s1/6/12/7.png');
+assert.equal(mapDataKey('/v1.62/ets/6/12/7.png', 'v0.0'), 'v1.62/ets/6/12/7.png');
+assert.equal(mapDataKey('/v1.62/Cities.json', 'v0.0'), 'v1.62/Cities.json');
+assert.equal(mapDataKey('/ets/6/64/7.png', 'v1.62'), null);
+assert.equal(mapDataKey('/data/maps/active.json', 'v1.62'), null);
 for (const file of ['index.html', 'app.css', 'app.js', 'vendor/leaflet.js', 'vendor/leaflet.css']) {
-  assert.ok((await readFile(path.join(root, file))).length > 0, `Missing ${file}`);
+  assert.ok((await readFile(path.join(projectRoot, 'ets2-map/public', file))).length > 0, `Missing ${file}`);
 }
 console.log(`Verified ${tileCount} ETS2 tiles and ${tmpTileCount} TruckersMP tiles, ${cities.length} cities in ${locales.size} languages, ${dlcSectors.length} DLC sectors, and official background alignment ${(background.alignmentScore * 100).toFixed(1)}%.`);

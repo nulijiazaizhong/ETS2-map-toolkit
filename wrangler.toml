@@ -1,0 +1,10 @@
+name = "ets2-map-toolkit"
+pages_build_output_dir = "./ets2-map/dist"
+compatibility_date = "2026-11-18"
+
+[vars]
+MAP_VERSION = "v1.62"
+
+[[r2_buckets]]
+binding = "MAP_DATA"
+bucket_name = "ets2-map"

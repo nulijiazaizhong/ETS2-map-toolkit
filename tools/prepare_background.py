@@ -1,6 +1,7 @@
 from pathlib import Path
 import json
 import struct
+import sys
 
 import numpy as np
 from PIL import Image
@@ -12,8 +13,10 @@ SOURCE = ROOT / "work/base/material/ui/map"
 TILE_SIZE = 512
 GRID_SIZE = 4
 MOSAIC_SIZE = TILE_SIZE * GRID_SIZE
-TILES = ROOT / "ets2-map/public/ets/2"
-OUTPUT = ROOT / "ets2-map/public"
+if len(sys.argv) != 2:
+    raise SystemExit("Usage: prepare_background.py <version-data-dir>")
+OUTPUT = Path(sys.argv[1]).resolve()
+TILES = OUTPUT / "ets/2"
 WORK = ROOT / "work"
 
 
