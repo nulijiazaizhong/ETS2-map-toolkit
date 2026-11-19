@@ -60,16 +60,16 @@
   const defaultSources = { ETS2: 'Europe', ATS: 'American' };
   const sourceOptions = {
     ETS2: [
-      ['Europe', 'ETS2-原版'],
-      ['TMP', 'ETS2-TMP-S1'],
-      ['Europe_Promods', 'ETS2-Promods'],
-      ['TMP_Promods', 'ETS2-TMP-Promods']
+      ['Europe', 'ETS2 · 原版'],
+      ['TMP', 'ETS2 · TMP S1'],
+      ['Europe_Promods', 'ETS2 · ProMods'],
+      ['TMP_Promods', 'ETS2 · TMP ProMods']
     ],
     ATS: [
-      ['American', 'ATS-原版'],
-      ['TMP', 'ATS-TMP-S1'],
-      ['American_Promods', 'ATS-Promods'],
-      ['TMP_Promods', 'ATS-TMP-Promods']
+      ['American', 'ATS · 原版'],
+      ['TMP', 'ATS · TMP S1'],
+      ['American_Promods', 'ATS · ProMods'],
+      ['TMP_Promods', 'ATS · TMP ProMods']
     ]
   };
 
@@ -478,7 +478,7 @@
     }
     basemapSelect.value = source;
     basemapSelect.disabled = false;
-    tileLayer = L.tileLayer(`${dataPrefix}/${currentGame}/${source}/{z}/{x}/{y}.png?v=3`, {
+    tileLayer = L.tileLayer(`${dataPrefix}/${currentGame}/${source}/{z}/{x}/{y}.png?v=4`, {
       tileSize: 512,
       bounds,
       minZoom: info.minZoom,
@@ -521,6 +521,7 @@
   }
 
   async function loadGameData(game, source, showLocation = false) {
+    loading.querySelector('strong').textContent = game === 'ATS' ? '正在载入美国全图' : '正在载入欧洲全图';
     loading.hidden = false;
     errorPanel.hidden = true;
     try {

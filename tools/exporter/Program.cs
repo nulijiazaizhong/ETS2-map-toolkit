@@ -12,7 +12,7 @@ namespace TsMapExporter
     {
         public Palette()
         {
-            Background = new SolidBrush(Color.FromArgb(16, 24, 39));
+            Background = Brushes.Transparent;
             Road = new SolidBrush(Color.FromArgb(226, 232, 240));
             PrefabRoad = Road;
             PrefabLight = new SolidBrush(Color.FromArgb(251, 191, 36));
@@ -82,7 +82,7 @@ namespace TsMapExporter
                         var tilePath = Path.Combine(directory, y + ".png");
                         if (File.Exists(tilePath) && new FileInfo(tilePath).Length > 0) continue;
                         var position = new PointF(origin.X + x * TileSize / zoom, origin.Y + y * TileSize / zoom);
-                        using (var bitmap = new Bitmap(TileSize, TileSize))
+                        using (var bitmap = new Bitmap(TileSize, TileSize, PixelFormat.Format32bppArgb))
                         using (var graphics = Graphics.FromImage(bitmap))
                         {
                             renderer.Render(graphics, new Rectangle(0, 0, TileSize, TileSize), zoom, position,

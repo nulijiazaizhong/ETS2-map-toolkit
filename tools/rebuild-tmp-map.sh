@@ -21,6 +21,7 @@ mv "$STAGING/TMP" "$DATA_DIR/TMP"
 for file in Cities.json Countries.json DlcSectors.json Overlays.json TileMapInfo.json; do
   mv "$STAGING/$file" "$DATA_DIR/metadata/TMP/$file"
 done
+cp "$DATA_DIR/metadata/Europe/Background.png" "$DATA_DIR/metadata/Europe/Background.json" "$DATA_DIR/metadata/Europe/DlcRegions.json" "$DATA_DIR/metadata/TMP/"
 mv "$STAGING/Overlays" "$DATA_DIR/metadata/TMP/Overlays"
 rm -rf "$STAGING"
 printf '{\n  "version": "%s"\n}\n' "$MAP_VERSION" > "$ROOT/data/maps/active.json"

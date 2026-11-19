@@ -2,7 +2,7 @@
 
 基于本机 Euro Truck Simulator 2 和 American Truck Simulator 游戏数据生成的互动地图。
 
-- 0–8 级、512 × 512 PNG 瓦片，严格按照版本、游戏和地图类型组织。
+- 0–8 级、512 × 512 RGBA 透明 PNG 瓦片，严格按照版本、游戏和地图类型组织，可与页面背景及官方拼接底图叠加。
 - 使用从游戏 `material/ui/loading/logo.dds` 提取的官方图标进行 ETS2 / ATS 游戏选择，以及各自的原版、TruckersMP、ProMods 和 TMP ProMods 底图切换；切换时完整重新加载城市、国家、区域导航、底图和坐标信息。
 - ATS 官方 `map0–3.dds` 拼接底图与道路配准，以及按实际 DLC 扇区生成的海岸和区域边界。
 - 游戏提供的全部语言城市搜索与动态地图标签，语言切换会同步更新城市名和国家名。
@@ -40,7 +40,7 @@ data/maps/1.62/
     map-manifest.json
 ```
 
-`data/maps/active.json` 选择本地默认版本。生成器从游戏程序读取大版本，不会把瓦片写入 `public/`。构建会将完整数据复制到服务器产物 `dist/1.62/`，云端轻量产物为 `dist-cloud/`。
+`data/maps/active.json` 选择本地默认版本。生成器从游戏程序读取大版本，不会把瓦片写入 `public/`。构建只生成页面，不会复制地图数据；普通服务器需在构建后手动将 `data/maps/1.62/` 复制到 `dist/1.62/`，云端轻量产物为 `dist-cloud/`。
 
 ## 运行
 
@@ -59,10 +59,12 @@ npm run dev
 npm run verify
 npm run manifest
 npm run build
+mkdir -p dist/1.62
+cp -R ../data/maps/1.62/. dist/1.62/
 npm run preview
 ```
 
-`dist/` 只保留完整的版本化结构，不包含旧名称或重复元数据。页面通过 `map-config.js` 自动使用版本路径。`dist-cloud/` 只包含页面和平台函数，供 EdgeOne/Cloudflare 配合对象存储使用。`preview` 直接读取完整 `dist/`。校验覆盖瓦片数量与尺寸、城市和国家数据、多语言、前端资源、版本路由以及每个地图 DLC 的代表城市。
+`dist/` 由构建重新创建，只包含页面和 `map-config.js`。每次构建后都要重新手动复制版本化地图数据，再运行 `preview`。页面通过 `map-config.js` 自动使用版本路径。`dist-cloud/` 只包含页面和平台函数，供 EdgeOne/Cloudflare 配合对象存储使用。校验覆盖瓦片数量与尺寸、城市和国家数据、多语言、前端资源、版本路由以及每个地图 DLC 的代表城市。
 
 ## 插件瓦片源
 

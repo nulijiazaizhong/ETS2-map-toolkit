@@ -50,12 +50,12 @@
     "Y": -2
   },
   {
-    "Archive": "base_map.scs",
+    "Archive": "halloween2026.mp",
     "X": 0,
     "Y": -3
   },
   {
-    "Archive": "base_map.scs",
+    "Archive": "halloween2026.mp",
     "X": 0,
     "Y": -4
   },
@@ -120,12 +120,12 @@
     "Y": -2
   },
   {
-    "Archive": "base_map.scs",
+    "Archive": "halloween2026.mp",
     "X": 1,
     "Y": -3
   },
   {
-    "Archive": "base_map.scs",
+    "Archive": "halloween2026.mp",
     "X": 1,
     "Y": -4
   },
@@ -280,7 +280,7 @@
     "Y": -5
   },
   {
-    "Archive": "base_map.scs",
+    "Archive": "hq_final.mp",
     "X": 4,
     "Y": 0
   },
@@ -310,7 +310,7 @@
     "Y": 5
   },
   {
-    "Archive": "base_map.scs",
+    "Archive": "hq_final.mp",
     "X": 4,
     "Y": -1
   },
@@ -330,7 +330,7 @@
     "Y": -4
   },
   {
-    "Archive": "base_map.scs",
+    "Archive": "hq_final.mp",
     "X": 5,
     "Y": 0
   },
@@ -360,7 +360,7 @@
     "Y": 5
   },
   {
-    "Archive": "base_map.scs",
+    "Archive": "hq_final.mp",
     "X": 5,
     "Y": -1
   },
@@ -1080,17 +1080,17 @@
     "Y": -2
   },
   {
-    "Archive": "base_map.scs",
+    "Archive": "tfm11_anniversary.mp",
     "X": -9,
     "Y": -3
   },
   {
-    "Archive": "base_map.scs",
+    "Archive": "tfm11_anniversary.mp",
     "X": -9,
     "Y": -4
   },
   {
-    "Archive": "base_map.scs",
+    "Archive": "tfm11_anniversary.mp",
     "X": -9,
     "Y": -5
   },
@@ -1110,17 +1110,17 @@
     "Y": -2
   },
   {
-    "Archive": "base_map.scs",
+    "Archive": "tfm11_anniversary.mp",
     "X": -10,
     "Y": -3
   },
   {
-    "Archive": "base_map.scs",
+    "Archive": "tfm11_anniversary.mp",
     "X": -10,
     "Y": -4
   },
   {
-    "Archive": "base_map.scs",
+    "Archive": "tfm11_anniversary.mp",
     "X": -10,
     "Y": -5
   },
@@ -5738,5 +5738,75 @@
     "Archive": "dlc_polar.scs",
     "X": -4,
     "Y": -15
+  },
+  {
+    "Archive": "tfm11_anniversary.mp",
+    "X": -9,
+    "Y": -3
+  },
+  {
+    "Archive": "tfm11_anniversary.mp",
+    "X": -9,
+    "Y": -4
+  },
+  {
+    "Archive": "tfm11_anniversary.mp",
+    "X": -9,
+    "Y": -5
+  },
+  {
+    "Archive": "tfm11_anniversary.mp",
+    "X": -10,
+    "Y": -3
+  },
+  {
+    "Archive": "tfm11_anniversary.mp",
+    "X": -10,
+    "Y": -4
+  },
+  {
+    "Archive": "tfm11_anniversary.mp",
+    "X": -10,
+    "Y": -5
+  },
+  {
+    "Archive": "hq_final.mp",
+    "X": 4,
+    "Y": 0
+  },
+  {
+    "Archive": "hq_final.mp",
+    "X": 4,
+    "Y": -1
+  },
+  {
+    "Archive": "hq_final.mp",
+    "X": 5,
+    "Y": 0
+  },
+  {
+    "Archive": "hq_final.mp",
+    "X": 5,
+    "Y": -1
+  },
+  {
+    "Archive": "halloween2026.mp",
+    "X": 0,
+    "Y": -3
+  },
+  {
+    "Archive": "halloween2026.mp",
+    "X": 0,
+    "Y": -4
+  },
+  {
+    "Archive": "halloween2026.mp",
+    "X": 1,
+    "Y": -3
+  },
+  {
+    "Archive": "halloween2026.mp",
+    "X": 1,
+    "Y": -4
   }
 ]

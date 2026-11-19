@@ -23,7 +23,7 @@ data/maps/
 ets2-map/
   public/                 轻量静态页面，不含提取数据
   scripts/                本地服务、校验、清单和构建脚本
-  dist/                   完整服务器静态产物，仅包含版本化地图数据
+  dist/                   轻量服务器静态产物，瓦片需手动复制
   dist-cloud/             轻量云端产物，瓦片由 Blob/R2 提供
 shared/map-data.js        各运行时共用的路由、版本和响应规则
 deploy/
@@ -77,7 +77,7 @@ python -m pip install pillow numpy scipy opencv-python
 bash tools/rebuild-all.sh "F:/Game/steam/steamapps/common/Euro Truck Simulator 2" "C:/Users/bi/AppData/Roaming/TruckersMP/installation/data/ets2/mods"
 ```
 
-脚本会初始化 TsMap、解包基础资源和全部地图 DLC、生成 `ETS2/Europe` 瓦片，并在 MOD 目录存在时生成 `ETS2/TMP` 瓦片。随后拼接官方底图、生成精细 DLC 边界、校验数据、写入版本清单，并构建完整 `dist/` 与轻量 `dist-cloud/`。原始游戏及 MOD 文件不会被修改。
+脚本会初始化 TsMap、解包基础资源和全部地图 DLC、生成 `ETS2/Europe` 瓦片，并在 MOD 目录存在时生成 `ETS2/TMP` 瓦片。随后拼接官方底图、生成精细 DLC 边界、校验数据、写入版本清单，并构建不含地图数据的 `dist/` 与 `dist-cloud/`。原始游戏及 MOD 文件不会被修改。
 
 单独生成：
 
@@ -103,6 +103,8 @@ bash tools/rebuild-ats-maps.sh "F:/Game/steam/steamapps/common/American Truck Si
 
 数据按 ATS 大版本保存到 `data/maps/<版本>/ATS/`。四套数据均为 0–8 级、512×512 PNG，每套 87,381 张；城市、国家、覆盖物和地图边界分别保存在 `metadata/<瓦片源>/`。第四参数是最大缩放级别，默认为 8；可用 `ATS_VERSION=x.y.z` 覆盖版本检测。
 
+ETS2 与 ATS 导出器均直接生成 RGBA 透明瓦片，不再填充蓝色背景。道路抗锯齿和渡轮航线的半透明效果会保留，可与页面背景及官方拼接底图叠加。已有旧瓦片不会被自动修改，需要重新运行对应导出脚本才能替换为透明版本。
+
 脚本还会从官方 `map0–3.dds` 拼接 ATS 底图并执行道路配准（当前配准率 96.22%），再根据实际 DLC 扇区生成海岸与区域边界。前端提供带官方图标的 ETS2 / ATS 游戏切换，并分别支持原版、TruckersMP、ProMods 和 TMP ProMods 的城市搜索、多语言、区域导航和 DLC 边界框选。`tools/prepare_game_icons.py` 从两款游戏的 `material/ui/loading/logo.dds` 提取带透明通道的官方图标。
 
 脚本结束后自动执行 `ets2-map/scripts/verify-ats.mjs`，检查瓦片数量与尺寸、城市/国家/多语言数据和 ProMods 渲染差异。原始游戏、TruckersMP 和 ProMods 文件不会被修改。
@@ -114,12 +116,32 @@ npm install
 npm run dev
 ```
 
-访问 `http://localhost:8080`。开发服务同时提供 `ets2-map/public/` 和当前版本数据。`npm run build && npm run preview` 会直接预览完整 `dist/`，页面通过自动生成的 `map-config.js` 使用 `1.62/` 版本路径。
+访问 `http://localhost:8080`。开发服务同时提供 `ets2-map/public/` 和当前版本数据，不需要执行构建。
+
+`npm run build` 只生成页面和 `map-config.js`，不会复制任何瓦片或元数据。预览服务器产物前，必须在构建完成后手动将 `data/maps/1.62/` 复制到 `ets2-map/dist/1.62/`。每次构建都会重新创建 `dist/`，因此重新构建后也要再次复制地图数据。
+
+Git Bash：
+
+```bash
+npm run build
+mkdir -p ets2-map/dist/1.62
+cp -R data/maps/1.62/. ets2-map/dist/1.62/
+npm run preview
+```
+
+PowerShell：
+
+```powershell
+npm run build
+Copy-Item -Recurse -Force data\maps\1.62 ets2-map\dist\
+npm run preview
+```
+
+页面通过自动生成的 `map-config.js` 使用 `1.62/` 版本路径。数据校验和清单生成可单独执行：
 
 ```bash
 npm run verify
 npm run manifest
-npm run build
 ```
 
 ## 瓦片地址与版本
@@ -143,12 +165,12 @@ https://example.com/?x=-28130&y=-4971&heading=1.94&zoom=6&tiles=TMP&version=1.62
 
 | 方式 | 页面位置 | 地图数据位置 | 适用场景 |
 | --- | --- | --- | --- |
-| 普通服务器 | `ets2-map/dist/` | 已包含在 `dist/` 和 `data/maps/<版本>/` | 已有 VPS、Nginx 和域名 |
+| 普通服务器 | `ets2-map/dist/` | 构建后从 `data/maps/<版本>/` 手动复制到 `dist/<版本>/` | 已有 VPS、Nginx 和域名 |
 | EdgeOne Makers | `ets2-map/dist-cloud/` 与 Functions | Makers Blob | 希望使用 EdgeOne 加速和对象存储 |
 | Cloudflare Pages | `ets2-map/dist-cloud/` 与 Functions | Cloudflare R2 | 希望使用 Pages，少量服务端代码 |
 | Cloudflare Worker | `ets2-map/dist-cloud/` 与 Worker | Cloudflare R2 | 希望统一由 Worker 控制请求 |
 
-仓库包含当前版本的完整地图数据。普通服务器可直接部署完整的 `ets2-map/dist/`，无需再复制瓦片；EdgeOne 和 Cloudflare 使用轻量 `ets2-map/dist-cloud/`，仍需将数据分别上传到 Blob 或 R2。
+仓库包含当前版本的完整地图数据。普通服务器在构建后需将 `data/maps/<版本>/` 手动复制到 `ets2-map/dist/<版本>/`，再部署整个 `dist/`；EdgeOne 和 Cloudflare 使用轻量 `ets2-map/dist-cloud/`，仍需将数据分别上传到 Blob 或 R2。
 
 以下示例均使用：
 
@@ -186,6 +208,7 @@ git clone --recursive https://github.com/nulijiazaizhong/ETS2-map-toolkit.git /s
 cd /srv/ets2-map-toolkit
 npm ci
 npm run build
+rsync -av --progress data/maps/1.62/ ets2-map/dist/1.62/
 ```
 
 仓库已经包含 `1.62` 地图数据。如果使用的是本机新生成但尚未提交到仓库的版本，可额外同步整个目录：
@@ -211,13 +234,16 @@ rsync -av --progress data/maps/ user@server:/srv/ets2-map-toolkit/data/maps/
 }
 ```
 
-完整构建只把当前版本数据复制到 `dist/1.62/`，只保留版本、游戏和地图类型目录，不保留旧名称或重复数据。生成的 `map-config.js` 会让页面自动请求版本路径；普通静态托管和插件均应使用 `/1.62/...` 地址。如果数据已经生成但缺少清单，可执行 `npm run manifest`。然后运行完整校验和构建：
+构建只生成页面，不复制任何地图数据。构建完成后，手动将 `data/maps/1.62/` 中的内容复制到 `dist/1.62/`，保留版本、游戏和地图类型目录，不添加旧名称或重复数据。生成的 `map-config.js` 会让页面自动请求版本路径；普通静态托管和插件均应使用 `/1.62/...` 地址。如果数据已经生成但缺少清单，可执行 `npm run manifest`。然后运行校验、构建和手动复制：
 
 ```bash
 cd /srv/ets2-map-toolkit
 npm run verify
 npm run build
+rsync -av --progress data/maps/1.62/ ets2-map/dist/1.62/
 ```
+
+每次 `npm run build` 都会重新创建 `dist/`，包括清除此前手动复制的数据；更新页面后必须再次执行复制命令，再启动或重启服务。
 
 ### 3. 先验证 Node 服务
 
@@ -321,13 +347,16 @@ cd /srv/ets2-map-toolkit
 git pull --recurse-submodules
 npm ci
 npm run build
+rsync -av --progress data/maps/1.62/ ets2-map/dist/1.62/
 sudo systemctl restart ets2-map
 ```
 
-发布新大版本时，先上传新的 `data/maps/<大版本>/`，再修改 `active.json` 和 systemd 中的 `MAP_VERSION`，然后执行：
+发布新大版本时，先上传新的 `data/maps/<大版本>/`，再修改 `active.json` 和 systemd 中的 `MAP_VERSION`。以 `1.63` 为例，然后执行：
 
 ```bash
 npm run verify
+npm run build
+rsync -av --progress data/maps/1.63/ ets2-map/dist/1.63/
 sudo systemctl daemon-reload
 sudo systemctl restart ets2-map
 ```
@@ -463,7 +492,7 @@ Cloudflare 文档：
 npm ci
 npm run verify
 npm run manifest
-npm run build
+npm run build:cloud
 npx wrangler login
 npx wrangler r2 bucket create ets2-map
 ```
@@ -609,7 +638,7 @@ https://map.yean.team/1.62/ETS2/TMP/{z}/{x}/{y}.png
 
 ### 页面能打开，但城市列表为空或所有请求都是 404
 
-只部署了页面，没有部署数据。普通服务器检查 `data/maps/1.62/`；EdgeOne 检查 Blob；Cloudflare 检查 R2。城市元数据也必须上传，不能只上传瓦片目录。
+只部署了页面，没有部署数据。普通服务器检查 `ets2-map/dist/1.62/`，源数据应保留在 `data/maps/1.62/`；EdgeOne 检查 Blob；Cloudflare 检查 R2。城市元数据也必须复制或上传，不能只处理瓦片目录。
 
 ### 瓦片 404
 
@@ -639,7 +668,7 @@ https://map.yean.team/1.62/ETS2/TMP/{z}/{x}/{y}.png
 
 ## 数据与版权
 
-`dist/` 是包含全部瓦片的完整服务器产物；`dist-cloud/` 只包含静态页面、共享路由代码和平台函数，避免云端平台的文件数量与大小限制。地图数据版权归 SCS Software 所有。公开部署前请确认拥有相关游戏内容的再分发权限，并根据访问量自行评估对象存储、函数调用和流量费用。
+`dist/` 与 `dist-cloud/` 都是不含瓦片的轻量构建产物。普通服务器需在构建后手动复制版本化地图数据到 `dist/<版本>/`；云端产物只包含静态页面、共享路由代码和平台函数，避免云端平台的文件数量与大小限制。地图数据版权归 SCS Software 所有。公开部署前请确认拥有相关游戏内容的再分发权限，并根据访问量自行评估对象存储、函数调用和流量费用。
 
 ## 外部项目
 

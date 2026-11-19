@@ -14,16 +14,16 @@
     "NodeX": 1849.23828,
     "NodeY": 6498.67969,
     "MapXOffsets": [
+      95,
+      -10,
       -33,
-      -35,
-      -37,
-      -41
+      5
     ],
     "MapYOffsets": [
-      -98,
-      -64,
-      -27,
-      -27
+      120,
+      20,
+      -5,
+      -10
     ],
     "CountryId": 5,
     "LocalizedNames": {
@@ -87,16 +87,16 @@
     "NodeX": 3782.23438,
     "NodeY": 14627.1094,
     "MapXOffsets": [
-      -38,
-      -40,
-      -38,
-      -39
+      100,
+      -25,
+      -30,
+      -33
     ],
     "MapYOffsets": [
-      13,
-      6,
-      -9,
-      -29
+      -60,
+      -20,
+      -20,
+      -24
     ],
     "CountryId": 5,
     "LocalizedNames": {
@@ -160,16 +160,16 @@
     "NodeX": 2510.95313,
     "NodeY": 19582.5547,
     "MapXOffsets": [
-      -45,
-      -39,
-      -41,
-      -43
+      -30,
+      -40,
+      -42,
+      -38
     ],
     "MapYOffsets": [
-      -30,
+      -80,
       -26,
-      -22,
-      -27
+      -18,
+      -22
     ],
     "CountryId": 1,
     "LocalizedNames": {
@@ -233,16 +233,16 @@
     "NodeX": 39.109375,
     "NodeY": 29433.3242,
     "MapXOffsets": [
-      -33,
-      -34,
-      -31,
-      -36
+      -120,
+      -50,
+      -37,
+      -27
     ],
     "MapYOffsets": [
-      -2,
-      -15,
-      -3,
-      -28
+      -50,
+      10,
+      -7,
+      -22
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -306,16 +306,16 @@
     "NodeX": 2824.17578,
     "NodeY": -2032.94922,
     "MapXOffsets": [
-      -32,
-      -28,
+      -150,
+      -40,
       -30,
-      -27
+      -24
     ],
     "MapYOffsets": [
-      -42,
-      -35,
-      -21,
-      -27
+      -170,
+      -45,
+      -10,
+      -22
     ],
     "CountryId": 5,
     "LocalizedNames": {
@@ -375,7 +375,7 @@
     "CenterX": 1266.93359,
     "CenterY": -15051.0156,
     "DlcGuard": 0,
-    "SourceArchive": "base_map.scs",
+    "SourceArchive": "halloween2026.mp",
     "NodeX": 1267.05859,
     "NodeY": -15050.8906,
     "MapXOffsets": [
@@ -452,16 +452,16 @@
     "NodeX": 3057.457,
     "NodeY": -19172.8711,
     "MapXOffsets": [
-      0,
-      0,
-      -20,
-      -44
+      -40,
+      -50,
+      -40,
+      -30
     ],
     "MapYOffsets": [
+      -130,
       -30,
-      -30,
-      -18,
-      -30
+      -10,
+      -18
     ],
     "CountryId": 5,
     "LocalizedNames": {
@@ -525,16 +525,16 @@
     "NodeX": 1137.48047,
     "NodeY": -21609.1445,
     "MapXOffsets": [
-      -20,
-      -16,
-      -19,
-      -18
+      -250,
+      -50,
+      -30,
+      -15
     ],
     "MapYOffsets": [
-      -40,
+      -160,
       -44,
-      -24,
-      -26
+      -15,
+      -22
     ],
     "CountryId": 5,
     "LocalizedNames": {
@@ -598,16 +598,16 @@
     "NodeX": 5089.883,
     "NodeY": 30058.93,
     "MapXOffsets": [
-      -36,
-      -33,
-      -36,
+      -80,
+      -45,
+      -40,
       -27
     ],
     "MapYOffsets": [
-      -104,
-      -62,
-      -27,
-      -29
+      20,
+      -25,
+      -15,
+      2
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -671,16 +671,16 @@
     "NodeX": 7000.51953,
     "NodeY": -3592.10156,
     "MapXOffsets": [
-      -37,
-      -37,
+      40,
+      -10,
       -32,
       -33
     ],
     "MapYOffsets": [
-      -44,
+      -180,
       -37,
-      -23,
-      -29
+      -15,
+      3
     ],
     "CountryId": 5,
     "LocalizedNames": {
@@ -740,20 +740,20 @@
     "CenterX": 4303.39258,
     "CenterY": -8319.929,
     "DlcGuard": 0,
-    "SourceArchive": "base_map.scs",
+    "SourceArchive": "halloween2026.mp",
     "NodeX": 4449.23828,
     "NodeY": -8186.25,
     "MapXOffsets": [
-      -49,
+      -60,
       -50,
-      -47,
-      -49
+      -52,
+      -42
     ],
     "MapYOffsets": [
-      -58,
-      -52,
-      -26,
-      -28
+      -50,
+      -20,
+      -5,
+      -22
     ],
     "CountryId": 5,
     "LocalizedNames": {
@@ -803,6 +803,35 @@
     }
   },
   {
+    "Name": "Pumpkin Farm",
+    "Group": null,
+    "Country": "germany",
+    "X": 3836.647,
+    "Y": -12580.3184,
+    "Width": 1009.66705,
+    "Height": 593.331665,
+    "CenterX": 4341.48047,
+    "CenterY": -12283.6523,
+    "DlcGuard": 0,
+    "SourceArchive": "halloween2026.mp",
+    "NodeX": 4341.60547,
+    "NodeY": -12283.5273,
+    "MapXOffsets": [
+      -120,
+      -63,
+      -41,
+      -40
+    ],
+    "MapYOffsets": [
+      -34,
+      -30,
+      -21,
+      -26
+    ],
+    "CountryId": 5,
+    "LocalizedNames": {}
+  },
+  {
     "Name": "Rostock",
     "Group": null,
     "Country": "germany",
@@ -817,16 +846,16 @@
     "NodeX": 6554.91,
     "NodeY": -19032.8867,
     "MapXOffsets": [
-      -42,
+      -10,
       -37,
-      -34,
-      -38
+      -38,
+      -29
     ],
     "MapYOffsets": [
-      -34,
-      -28,
-      -22,
-      6
+      -35,
+      -20,
+      -18,
+      2
     ],
     "CountryId": 5,
     "LocalizedNames": {
@@ -1036,16 +1065,16 @@
     "NodeX": 9146.371,
     "NodeY": 16019.6055,
     "MapXOffsets": [
-      -41,
+      -45,
       -40,
       -37,
-      -39
+      -34
     ],
     "MapYOffsets": [
-      -38,
-      -19,
-      -20,
-      -28
+      -150,
+      -40,
+      -24,
+      -22
     ],
     "CountryId": 1,
     "LocalizedNames": {
@@ -1109,16 +1138,16 @@
     "NodeX": 10593.7852,
     "NodeY": 27546.7617,
     "MapXOffsets": [
-      -30,
-      -30,
-      -30,
-      -30
+      180,
+      35,
+      -10,
+      -28
     ],
     "MapYOffsets": [
-      -27,
-      -27,
-      -27,
-      -27
+      0,
+      -5,
+      -13,
+      -22
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -1255,15 +1284,15 @@
     "NodeX": 11634.9219,
     "NodeY": -1861.875,
     "MapXOffsets": [
-      -43,
-      -37,
-      -33,
+      -40,
+      -40,
+      -35,
       -36
     ],
     "MapYOffsets": [
-      -50,
-      -56,
-      -26,
+      -10,
+      -10,
+      -10,
       -26
     ],
     "CountryId": 5,
@@ -1328,16 +1357,16 @@
     "NodeX": 10070.25,
     "NodeY": -9794.414,
     "MapXOffsets": [
-      -31,
-      -29,
+      10,
+      -40,
       -30,
-      -30
+      -34
     ],
     "MapYOffsets": [
-      -50,
-      -48,
-      -26,
-      -26
+      -100,
+      -35,
+      -22,
+      -24
     ],
     "CountryId": 5,
     "LocalizedNames": {
@@ -1402,15 +1431,15 @@
     "NodeY": 3958.97266,
     "MapXOffsets": [
       -28,
-      -27,
-      -28,
-      -27
+      -30,
+      -32,
+      -30
     ],
     "MapYOffsets": [
-      -29,
+      -60,
       -13,
-      -26,
-      -26
+      -15,
+      2
     ],
     "CountryId": 3,
     "LocalizedNames": {
@@ -1474,16 +1503,16 @@
     "NodeX": 13636.3906,
     "NodeY": 13905.4883,
     "MapXOffsets": [
-      -19,
-      -22,
-      -20,
-      -19
+      250,
+      35,
+      -10,
+      -17
     ],
     "MapYOffsets": [
       -50,
-      -50,
-      -22,
-      -27
+      -20,
+      -12,
+      -22
     ],
     "CountryId": 1,
     "LocalizedNames": {
@@ -1547,16 +1576,16 @@
     "NodeX": 14047.1055,
     "NodeY": 23287.6719,
     "MapXOffsets": [
-      -159,
-      -159,
-      -159,
-      -159
+      200,
+      -42,
+      -90,
+      -92
     ],
     "MapYOffsets": [
-      -27,
-      -27,
-      -27,
-      -27
+      70,
+      5,
+      -15,
+      -22
     ],
     "CountryId": 1,
     "LocalizedNames": {
@@ -1766,16 +1795,16 @@
     "NodeX": 15052.66,
     "NodeY": -15069.7656,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      -38
+      -115,
+      -52,
+      -36,
+      -30
     ],
     "MapYOffsets": [
-      -82,
-      -65,
+      -128,
       -30,
-      -26
+      -12,
+      2
     ],
     "CountryId": 8,
     "LocalizedNames": {
@@ -1839,16 +1868,16 @@
     "NodeX": 18665.082,
     "NodeY": 20391.8242,
     "MapXOffsets": [
-      -24,
+      -70,
       -20,
-      -23,
-      -23
+      -25,
+      -19
     ],
     "MapYOffsets": [
-      -44,
-      -50,
-      -23,
-      -27
+      -100,
+      -40,
+      -15,
+      -22
     ],
     "CountryId": 1,
     "LocalizedNames": {
@@ -1985,16 +2014,16 @@
     "NodeX": 22273.84,
     "NodeY": 8944.949,
     "MapXOffsets": [
-      -24,
-      -24,
-      -22,
-      -20
+      -170,
+      -30,
+      -25,
+      -18
     ],
     "MapYOffsets": [
-      -105,
-      -41,
-      -25,
-      -26
+      200,
+      40,
+      5,
+      1
     ],
     "CountryId": 3,
     "LocalizedNames": {
@@ -2058,16 +2087,16 @@
     "NodeX": 20824.7578,
     "NodeY": 13966.0313,
     "MapXOffsets": [
-      -26,
+      20,
       -22,
-      -20,
-      -23
+      -25,
+      -30
     ],
     "MapYOffsets": [
-      -90,
-      -64,
-      -27,
-      -27
+      160,
+      40,
+      5,
+      -25
     ],
     "CountryId": 1,
     "LocalizedNames": {
@@ -2127,20 +2156,20 @@
     "CenterX": 23502.7734,
     "CenterY": -1971.10547,
     "DlcGuard": 0,
-    "SourceArchive": "base_map.scs",
+    "SourceArchive": "hq_final.mp",
     "NodeX": 23502.8984,
     "NodeY": -1970.98047,
     "MapXOffsets": [
-      -39,
-      -41,
-      -35,
-      -37
+      40,
+      -22,
+      -28,
+      -28
     ],
     "MapYOffsets": [
-      -19,
-      -20,
-      -28,
-      -27
+      235,
+      38,
+      5,
+      -20
     ],
     "CountryId": 8,
     "LocalizedNames": {
@@ -2190,6 +2219,35 @@
     }
   },
   {
+    "Name": "TruckersMP HQ",
+    "Group": null,
+    "Country": "poland",
+    "X": 20421.2773,
+    "Y": -1241.90625,
+    "Width": 1100.0,
+    "Height": 1600.0,
+    "CenterX": 20971.2773,
+    "CenterY": -441.90625,
+    "DlcGuard": 0,
+    "SourceArchive": "hq_final.mp",
+    "NodeX": 20971.4023,
+    "NodeY": -441.78125,
+    "MapXOffsets": [
+      -39,
+      -41,
+      -35,
+      -37
+    ],
+    "MapYOffsets": [
+      -19,
+      -20,
+      -28,
+      -27
+    ],
+    "CountryId": 8,
+    "LocalizedNames": {}
+  },
+  {
     "Name": "Poznań",
     "Group": null,
     "Country": "poland",
@@ -2204,16 +2262,16 @@
     "NodeX": 22863.4023,
     "NodeY": -9132.199,
     "MapXOffsets": [
-      -40,
-      -38,
-      -33,
-      -34
+      77,
+      -11,
+      -22,
+      -24
     ],
     "MapYOffsets": [
-      -83,
-      -50,
-      -28,
-      -29
+      -160,
+      -36,
+      -13,
+      2
     ],
     "CountryId": 8,
     "LocalizedNames": {
@@ -2277,16 +2335,16 @@
     "NodeX": 24823.2969,
     "NodeY": 14811.02,
     "MapXOffsets": [
-      -47,
-      -43,
-      -42,
-      -40
+      -100,
+      -60,
+      -50,
+      -38
     ],
     "MapYOffsets": [
-      39,
-      9,
-      -1,
-      5
+      60,
+      0,
+      -15,
+      1
     ],
     "CountryId": 11,
     "LocalizedNames": {
@@ -2423,16 +2481,16 @@
     "NodeX": 36880.72,
     "NodeY": 24545.7,
     "MapXOffsets": [
-      -35,
+      -20,
       -41,
       -38,
-      -31
+      -29
     ],
     "MapYOffsets": [
-      -33,
-      -50,
-      -26,
-      -29
+      20,
+      -20,
+      -18,
+      -22
     ],
     "CountryId": 13,
     "LocalizedNames": {
@@ -2496,16 +2554,16 @@
     "NodeX": 43990.36,
     "NodeY": 29134.582,
     "MapXOffsets": [
-      -40,
-      -25,
-      -33,
-      -26
+      -90,
+      -38,
+      -27,
+      -21
     ],
     "MapYOffsets": [
-      -82,
-      -26,
-      9,
-      5
+      200,
+      35,
+      5,
+      0
     ],
     "CountryId": 37,
     "LocalizedNames": {
@@ -2642,10 +2700,10 @@
     "NodeX": 45069.0742,
     "NodeY": 52764.6328,
     "MapXOffsets": [
-      -27,
-      -27,
-      -27,
-      -27
+      -34,
+      -34,
+      -34,
+      -34
     ],
     "MapYOffsets": [
       5,
@@ -2715,16 +2773,16 @@
     "NodeX": 48776.25,
     "NodeY": -60428.95,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      -32
+      -48,
+      -34,
+      -29,
+      -25
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      -29
+      30,
+      2,
+      -3,
+      -19
     ],
     "CountryId": 23,
     "LocalizedNames": {
@@ -2789,15 +2847,15 @@
     "NodeY": -60241.81,
     "MapXOffsets": [
       -40,
-      -43,
-      -40,
-      -34
+      -10,
+      -15,
+      -23
     ],
     "MapYOffsets": [
-      -82,
+      -180,
       -65,
-      -30,
-      -28
+      -25,
+      -19
     ],
     "CountryId": 38,
     "LocalizedNames": {
@@ -2935,15 +2993,15 @@
     "NodeY": -44022.3672,
     "MapXOffsets": [
       -40,
-      -43,
-      -40,
-      -26
+      -30,
+      -30,
+      -22
     ],
     "MapYOffsets": [
-      -82,
+      -250,
       -65,
-      -30,
-      -26
+      -25,
+      -20
     ],
     "CountryId": 38,
     "LocalizedNames": {
@@ -3007,16 +3065,16 @@
     "NodeX": 60046.4531,
     "NodeY": -50065.168,
     "MapXOffsets": [
-      -21,
-      -21,
-      -21,
-      -21
+      180,
+      25,
+      -2,
+      -17
     ],
     "MapYOffsets": [
-      14,
-      14,
-      5,
-      5
+      -80,
+      -25,
+      -10,
+      -19
     ],
     "CountryId": 38,
     "LocalizedNames": {
@@ -3082,14 +3140,14 @@
     "MapXOffsets": [
       -31,
       -31,
-      -32,
-      -30
+      -30,
+      -25
     ],
     "MapYOffsets": [
-      -5,
+      50,
       -2,
-      -5,
-      3
+      -15,
+      1
     ],
     "CountryId": 5,
     "LocalizedNames": {
@@ -3153,14 +3211,14 @@
     "NodeX": -2003.62109,
     "NodeY": -9085.238,
     "MapXOffsets": [
-      -40,
-      -36,
-      -43,
-      -40
+      250,
+      20,
+      -20,
+      -37
     ],
     "MapYOffsets": [
-      -54,
-      -30,
+      -90,
+      -20,
       -12,
       2
     ],
@@ -3226,16 +3284,16 @@
     "NodeX": -1689.9375,
     "NodeY": -16355.4961,
     "MapXOffsets": [
-      -40,
-      -39,
-      -39,
-      -38
+      50,
+      -30,
+      -35,
+      -42
     ],
     "MapYOffsets": [
-      -36,
-      -26,
-      -17,
-      -26
+      10,
+      0,
+      -5,
+      -25
     ],
     "CountryId": 5,
     "LocalizedNames": {
@@ -3300,15 +3358,15 @@
     "NodeY": 2497.17188,
     "MapXOffsets": [
       -75,
-      -72,
-      -75,
-      -75
+      -60,
+      -65,
+      5
     ],
     "MapYOffsets": [
-      -73,
+      -130,
       -38,
-      -24,
-      -26
+      -12,
+      -10
     ],
     "CountryId": 5,
     "LocalizedNames": {
@@ -3372,16 +3430,16 @@
     "NodeX": -7936.73828,
     "NodeY": 5981.176,
     "MapXOffsets": [
-      -39,
+      -50,
       -42,
-      -41,
-      -44
+      -45,
+      -38
     ],
     "MapYOffsets": [
-      -82,
-      -41,
-      -22,
-      -28
+      -40,
+      -20,
+      -12,
+      -21
     ],
     "CountryId": 5,
     "LocalizedNames": {
@@ -3447,14 +3505,14 @@
     "MapXOffsets": [
       -45,
       -44,
-      -41,
-      -40
+      -28,
+      6
     ],
     "MapYOffsets": [
-      -32,
-      -32,
-      -27,
-      -26
+      -100,
+      -20,
+      -5,
+      -10
     ],
     "CountryId": 5,
     "LocalizedNames": {
@@ -3519,15 +3577,15 @@
     "NodeY": 29418.6875,
     "MapXOffsets": [
       -31,
-      -31,
+      -20,
       -28,
       -30
     ],
     "MapYOffsets": [
       -6,
-      -1,
-      -21,
-      -29
+      -20,
+      -15,
+      -26
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -3591,16 +3649,16 @@
     "NodeX": -7015.80859,
     "NodeY": 55215.53,
     "MapXOffsets": [
-      -31,
-      -31,
-      -28,
-      -24
+      -10,
+      -10,
+      -17,
+      3
     ],
     "MapYOffsets": [
-      -6,
-      -1,
-      -21,
-      -26
+      5,
+      -8,
+      -7,
+      -8
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -3664,16 +3722,16 @@
     "NodeX": -7930.883,
     "NodeY": -9765.773,
     "MapXOffsets": [
-      -48,
-      -53,
+      -120,
+      -40,
       -47,
-      -44
+      -40
     ],
     "MapYOffsets": [
-      -85,
+      -130,
       -35,
-      -27,
-      -27
+      -22,
+      -22
     ],
     "CountryId": 5,
     "LocalizedNames": {
@@ -3737,16 +3795,16 @@
     "NodeX": -5184.582,
     "NodeY": -14038.4336,
     "MapXOffsets": [
-      -34,
-      -34,
-      -35,
-      -34
+      150,
+      10,
+      -18,
+      -33
     ],
     "MapYOffsets": [
-      -3,
+      -60,
+      -20,
       -15,
-      -18,
-      -26
+      2
     ],
     "CountryId": 5,
     "LocalizedNames": {
@@ -3810,16 +3868,16 @@
     "NodeX": -10786.9453,
     "NodeY": 11178.6719,
     "MapXOffsets": [
-      -61,
-      -54,
-      -49,
-      -50
+      -20,
+      -42,
+      -40,
+      -41
     ],
     "MapYOffsets": [
-      -30,
-      -26,
-      -24,
-      -26
+      -130,
+      -32,
+      -13,
+      2
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -3883,16 +3941,16 @@
     "NodeX": -8744.934,
     "NodeY": 17623.09,
     "MapXOffsets": [
-      -31,
+      -45,
+      -33,
       -30,
-      -30,
-      -29
+      -23
     ],
     "MapYOffsets": [
-      -32,
-      -23,
-      -18,
-      -27
+      -40,
+      -12,
+      -12,
+      -22
     ],
     "CountryId": 9,
     "LocalizedNames": {
@@ -3956,16 +4014,16 @@
     "NodeX": -8032.254,
     "NodeY": 35376.1,
     "MapXOffsets": [
-      -31,
-      -31,
-      -28,
-      -39
+      -160,
+      -105,
+      -55,
+      -35
     ],
     "MapYOffsets": [
-      -6,
-      -1,
-      -21,
-      -28
+      -160,
+      -30,
+      -18,
+      -26
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -4029,16 +4087,16 @@
     "NodeX": -11553.7891,
     "NodeY": 55189.49,
     "MapXOffsets": [
-      -31,
+      35,
       -31,
       -26,
-      -41
+      -30
     ],
     "MapYOffsets": [
-      -6,
-      -1,
-      9,
-      -27
+      100,
+      10,
+      -5,
+      2
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -4102,16 +4160,16 @@
     "NodeX": -8469.77,
     "NodeY": 52234.94,
     "MapXOffsets": [
-      -129,
-      -95,
-      -82,
-      -96
+      -110,
+      -47,
+      -31,
+      -36
     ],
     "MapYOffsets": [
-      12,
-      -13,
-      -13,
-      -14
+      70,
+      10,
+      0,
+      -13
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -4175,16 +4233,16 @@
     "NodeX": -10883.4492,
     "NodeY": -6398.832,
     "MapXOffsets": [
-      -43,
+      -40,
       -42,
-      -44,
-      9
+      -42,
+      0
     ],
     "MapYOffsets": [
-      -66,
-      -71,
-      -29,
-      -9
+      -200,
+      -40,
+      -14,
+      -18
     ],
     "CountryId": 5,
     "LocalizedNames": {
@@ -4248,16 +4306,16 @@
     "NodeX": -9247.227,
     "NodeY": -12720.3516,
     "MapXOffsets": [
-      -39,
-      -41,
-      -35,
-      -23
+      -50,
+      -30,
+      -27,
+      -19
     ],
     "MapYOffsets": [
-      -19,
-      -20,
-      -28,
-      -22
+      -50,
+      -50,
+      -25,
+      -16
     ],
     "CountryId": 5,
     "LocalizedNames": {
@@ -4322,15 +4380,15 @@
     "NodeY": 20468.1055,
     "MapXOffsets": [
       -24,
-      -21,
-      -21,
-      -22
+      -30,
+      -17,
+      -18
     ],
     "MapYOffsets": [
-      22,
-      12,
-      -11,
-      -26
+      -280,
+      -75,
+      -24,
+      1
     ],
     "CountryId": 9,
     "LocalizedNames": {
@@ -4394,16 +4452,16 @@
     "NodeX": -12697.25,
     "NodeY": 30912.0078,
     "MapXOffsets": [
-      -31,
-      -30,
-      -30,
+      -140,
+      -55,
+      -35,
       -30
     ],
     "MapYOffsets": [
-      -15,
-      -16,
-      -20,
-      -28
+      10,
+      25,
+      -5,
+      -26
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -4467,16 +4525,16 @@
     "NodeX": -12548.582,
     "NodeY": -2454.24219,
     "MapXOffsets": [
-      -33,
-      -33,
-      -33,
-      -33
+      0,
+      -12,
+      -32,
+      7
     ],
     "MapYOffsets": [
-      5,
-      5,
-      5,
-      5
+      150,
+      25,
+      -10,
+      -10
     ],
     "CountryId": 5,
     "LocalizedNames": {
@@ -4540,16 +4598,16 @@
     "NodeX": -13576.793,
     "NodeY": -4618.69141,
     "MapXOffsets": [
+      80,
+      -37,
       -45,
-      -45,
-      -45,
-      -45
+      -95
     ],
     "MapYOffsets": [
-      5,
-      5,
-      5,
-      5
+      -35,
+      -40,
+      -15,
+      -10
     ],
     "CountryId": 5,
     "LocalizedNames": {
@@ -4613,16 +4671,16 @@
     "NodeX": -13801.5352,
     "NodeY": -6486.64063,
     "MapXOffsets": [
-      -120,
-      -63,
-      -41,
-      -40
+      -40,
+      -45,
+      -42,
+      -35
     ],
     "MapYOffsets": [
-      -34,
-      -30,
-      -21,
-      -26
+      -20,
+      -10,
+      -10,
+      -20
     ],
     "CountryId": 5,
     "LocalizedNames": {
@@ -4686,16 +4744,16 @@
     "NodeX": -12662.0586,
     "NodeY": -15720.68,
     "MapXOffsets": [
-      -47,
-      -49,
-      -48,
-      -46
+      -200,
+      -80,
+      -55,
+      -38
     ],
     "MapYOffsets": [
-      -61,
-      -75,
-      -37,
-      -26
+      -30,
+      -20,
+      -20,
+      1
     ],
     "CountryId": 7,
     "LocalizedNames": {
@@ -4832,16 +4890,16 @@
     "NodeX": -16294.5,
     "NodeY": 7443.715,
     "MapXOffsets": [
-      -22,
+      -50,
       -28,
-      -23,
-      -24
+      -20,
+      -19
     ],
     "MapYOffsets": [
-      -41,
-      -31,
-      -22,
-      -27
+      170,
+      50,
+      9,
+      2
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -4905,16 +4963,16 @@
     "NodeX": -17433.7539,
     "NodeY": 23839.0977,
     "MapXOffsets": [
-      -33,
+      30,
       -26,
       -31,
-      -34
+      -28
     ],
     "MapYOffsets": [
-      -80,
-      -58,
-      -28,
-      -28
+      -200,
+      -55,
+      -15,
+      -22
     ],
     "CountryId": 9,
     "LocalizedNames": {
@@ -4978,16 +5036,16 @@
     "NodeX": -17144.4063,
     "NodeY": -864.0664,
     "MapXOffsets": [
-      -28,
-      -27,
-      -24,
-      -24
+      -70,
+      -10,
+      -30,
+      -21
     ],
     "MapYOffsets": [
-      11,
-      9,
-      3,
-      5
+      -60,
+      -15,
+      -10,
+      1
     ],
     "CountryId": 2,
     "LocalizedNames": {
@@ -5051,16 +5109,16 @@
     "NodeX": -17554.5156,
     "NodeY": -6888.133,
     "MapXOffsets": [
-      -38,
-      -38,
-      -38,
-      -38
+      150,
+      -15,
+      -28,
+      -36
     ],
     "MapYOffsets": [
-      5,
-      5,
-      5,
-      5
+      -20,
+      -15,
+      -8,
+      -3
     ],
     "CountryId": 7,
     "LocalizedNames": {
@@ -5124,16 +5182,16 @@
     "NodeX": -18991.98,
     "NodeY": -9475.926,
     "MapXOffsets": [
-      -45,
-      -47,
-      -46,
-      -45
+      -120,
+      -70,
+      -48,
+      -70
     ],
     "MapYOffsets": [
-      -35,
-      -27,
-      -20,
-      -25
+      50,
+      5,
+      -10,
+      -24
     ],
     "CountryId": 7,
     "LocalizedNames": {
@@ -5197,16 +5255,16 @@
     "NodeX": -19042.082,
     "NodeY": -11328.2969,
     "MapXOffsets": [
-      -31,
-      -26,
-      -43,
-      -45
+      -70,
+      -20,
+      -40,
+      -65
     ],
     "MapYOffsets": [
-      -47,
-      -46,
-      -25,
-      -25
+      60,
+      0,
+      -5,
+      -24
     ],
     "CountryId": 7,
     "LocalizedNames": {
@@ -5270,16 +5328,16 @@
     "NodeX": -22470.0273,
     "NodeY": 16635.5,
     "MapXOffsets": [
-      0,
+      10,
+      -15,
       -20,
-      -20,
-      -23
+      -22
     ],
     "MapYOffsets": [
-      0,
-      25,
-      -5,
-      -27
+      -20,
+      -15,
+      -13,
+      -22
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -5343,15 +5401,15 @@
     "NodeX": -23877.8281,
     "NodeY": 25558.0273,
     "MapXOffsets": [
-      -6,
-      -7,
-      -21,
-      -16
+      90,
+      0,
+      -15,
+      -22
     ],
     "MapYOffsets": [
-      -30,
-      -23,
-      -23,
+      -160,
+      -38,
+      -15,
       4
     ],
     "CountryId": 4,
@@ -5402,7 +5460,7 @@
     }
   },
   {
-    "Name": "Brussel",
+    "Name": "Bruxelles/Brussel",
     "Group": null,
     "Country": "belgium",
     "X": -23504.3965,
@@ -5416,16 +5474,16 @@
     "NodeX": -22100.25,
     "NodeY": -2435.14844,
     "MapXOffsets": [
+      160,
+      0,
       -33,
-      -34,
-      -33,
-      -33
+      -30
     ],
     "MapYOffsets": [
-      31,
-      11,
+      100,
+      10,
       2,
-      3
+      1
     ],
     "CountryId": 2,
     "LocalizedNames": {
@@ -5489,16 +5547,16 @@
     "NodeX": -21700.6758,
     "NodeY": -5700.76563,
     "MapXOffsets": [
-      -33,
-      -33,
-      -33,
-      -33
+      -140,
+      -50,
+      -42,
+      -70
     ],
     "MapYOffsets": [
-      5,
-      5,
-      5,
-      5
+      -90,
+      -30,
+      -25,
+      -20
     ],
     "CountryId": 2,
     "LocalizedNames": {
@@ -5562,16 +5620,16 @@
     "NodeX": -24054.7656,
     "NodeY": 5660.14063,
     "MapXOffsets": [
-      -25,
-      -26,
-      -24,
-      -26
+      70,
+      -5,
+      -17,
+      -25
     ],
     "MapYOffsets": [
-      -13,
-      -19,
-      -23,
-      -26
+      -20,
+      -10,
+      -7,
+      -22
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -5635,16 +5693,16 @@
     "NodeX": -26539.39,
     "NodeY": -2480.28125,
     "MapXOffsets": [
-      -22,
-      -21,
-      -21,
-      -19
+      30,
+      -8,
+      -14,
+      -18
     ],
     "MapYOffsets": [
-      -17,
-      -20,
-      -20,
-      -26
+      10,
+      -3,
+      -5,
+      -22
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -5708,16 +5766,16 @@
     "NodeX": -30427.3477,
     "NodeY": 6866.199,
     "MapXOffsets": [
-      -27,
-      -28,
-      -25,
-      -27
+      -250,
+      -140,
+      -58,
+      -28
     ],
     "MapYOffsets": [
-      -47,
-      -34,
-      -26,
-      -27
+      -250,
+      -130,
+      -42,
+      -30
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -5781,16 +5839,16 @@
     "NodeX": -30340.4023,
     "NodeY": -5005.64063,
     "MapXOffsets": [
-      -27,
-      -30,
-      -24,
-      -28
+      -100,
+      -40,
+      -26,
+      -22
     ],
     "MapYOffsets": [
-      -45,
-      -28,
-      -27,
-      -26
+      250,
+      45,
+      9,
+      -19
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -5854,16 +5912,16 @@
     "NodeX": -31664.5586,
     "NodeY": -13857.2188,
     "MapXOffsets": [
-      -49,
-      -39,
-      -42,
-      -13
+      -30,
+      -70,
+      -45,
+      2
     ],
     "MapYOffsets": [
-      -43,
-      -42,
-      -23,
-      -28
+      -5,
+      -5,
+      -5,
+      -9
     ],
     "CountryId": 10,
     "LocalizedNames": {
@@ -5927,16 +5985,15 @@
     "NodeX": -33321.95,
     "NodeY": -7904.35547,
     "MapXOffsets": [
+      30,
       -15,
-      -27,
-      -24,
-      -26
+      -20,
+      2
     ],
     "MapYOffsets": [
-      -11,
-      -25,
-      -21,
-      -26
+      100,
+      25,
+      2
     ],
     "CountryId": 10,
     "LocalizedNames": {
@@ -5986,6 +6043,67 @@
     }
   },
   {
+    "Name": "Off Road Quarry",
+    "Group": null,
+    "Country": "uk",
+    "X": -34931.8945,
+    "Y": -17597.4473,
+    "Width": 1800.0,
+    "Height": 900.0,
+    "CenterX": -34031.8945,
+    "CenterY": -17147.4473,
+    "DlcGuard": 0,
+    "SourceArchive": "tfm11_anniversary.mp",
+    "NodeX": -33954.6328,
+    "NodeY": -16959.7383,
+    "MapXOffsets": [
+      -44,
+      -40,
+      -40,
+      -41,
+      0,
+      0,
+      0,
+      -3,
+      -44,
+      -40,
+      -40,
+      -41,
+      0,
+      0,
+      0,
+      -3,
+      -44,
+      -40,
+      -40,
+      -41
+    ],
+    "MapYOffsets": [
+      -32,
+      -39,
+      -27,
+      -26,
+      0,
+      0,
+      35,
+      -8,
+      -32,
+      -39,
+      -27,
+      -26,
+      0,
+      0,
+      35,
+      -8,
+      -32,
+      -39,
+      -27,
+      -26
+    ],
+    "CountryId": 10,
+    "LocalizedNames": {}
+  },
+  {
     "Name": "London",
     "Group": null,
     "Country": "uk",
@@ -5996,20 +6114,20 @@
     "CenterX": -39546.9922,
     "CenterY": -11584.34,
     "DlcGuard": 0,
-    "SourceArchive": "base_map.scs",
+    "SourceArchive": "tfm11_anniversary.mp",
     "NodeX": -39546.8672,
     "NodeY": -11584.2148,
     "MapXOffsets": [
-      -42,
-      -34,
-      -33,
-      -50
+      -50,
+      -40,
+      -50,
+      -46
     ],
     "MapYOffsets": [
-      -113,
-      -46,
-      -20,
-      -24
+      50,
+      5,
+      -10,
+      -12
     ],
     "CountryId": 10,
     "LocalizedNames": {
@@ -6069,20 +6187,20 @@
     "CenterX": -36822.8125,
     "CenterY": -16139.5234,
     "DlcGuard": 0,
-    "SourceArchive": "base_map.scs",
+    "SourceArchive": "tfm11_anniversary.mp",
     "NodeX": -36822.6875,
     "NodeY": -16139.3984,
     "MapXOffsets": [
-      -43,
-      -37,
+      10,
+      -32,
       -42,
-      -42
+      -36
     ],
     "MapYOffsets": [
-      -151,
-      -46,
-      -24,
-      -27
+      -100,
+      -30,
+      -16,
+      -20
     ],
     "CountryId": 10,
     "LocalizedNames": {
@@ -6146,16 +6264,16 @@
     "NodeX": -36117.9,
     "NodeY": -26595.1836,
     "MapXOffsets": [
-      -36,
-      -37,
-      -36,
-      -36
+      -50,
+      -5,
+      -35,
+      3
     ],
     "MapYOffsets": [
-      -53,
-      -52,
-      -29,
-      -26
+      -40,
+      -10,
+      -10,
+      -8
     ],
     "CountryId": 10,
     "LocalizedNames": {
@@ -6205,7 +6323,7 @@
     }
   },
   {
-    "Name": "Newcastle-upon-Tyne",
+    "Name": "Newcastle upon Tyne",
     "Group": null,
     "Country": "uk",
     "X": -40128.168,
@@ -6221,14 +6339,14 @@
     "MapXOffsets": [
       -46,
       -51,
-      -39,
-      -40
+      -50,
+      4
     ],
     "MapYOffsets": [
       -50,
       -28,
-      -6,
-      -30
+      -15,
+      -8
     ],
     "CountryId": 10,
     "LocalizedNames": {
@@ -6292,16 +6410,16 @@
     "NodeX": -38846.668,
     "NodeY": -55290.3438,
     "MapXOffsets": [
-      -44,
-      -40,
-      -40,
-      -41
+      -200,
+      -70,
+      -45,
+      -32
     ],
     "MapYOffsets": [
-      -32,
-      -39,
-      -27,
-      -26
+      -100,
+      -30,
+      -20,
+      -20
     ],
     "CountryId": 10,
     "LocalizedNames": {
@@ -6365,16 +6483,16 @@
     "NodeX": -42688.7539,
     "NodeY": -26707.5664,
     "MapXOffsets": [
-      -40,
-      -42,
-      -42,
-      -43
+      -100,
+      -50,
+      -45,
+      -28
     ],
     "MapYOffsets": [
-      96,
-      19,
-      2,
-      4
+      150,
+      25,
+      -12,
+      3
     ],
     "CountryId": 10,
     "LocalizedNames": {
@@ -6441,13 +6559,13 @@
       -55,
       -55,
       -54,
-      -56
+      -45
     ],
     "MapYOffsets": [
-      51,
-      14,
-      5,
-      1
+      80,
+      0,
+      -10,
+      -20
     ],
     "CountryId": 10,
     "LocalizedNames": {
@@ -6511,16 +6629,16 @@
     "NodeX": -45951.125,
     "NodeY": -20443.0,
     "MapXOffsets": [
-      -49,
-      -46,
-      -44,
-      -45
+      -80,
+      -70,
+      -52,
+      -37
     ],
     "MapYOffsets": [
-      -62,
-      -49,
-      -11,
-      -26
+      -220,
+      -58,
+      -10,
+      -19
     ],
     "CountryId": 10,
     "LocalizedNames": {
@@ -6584,16 +6702,16 @@
     "NodeX": -45548.6523,
     "NodeY": -27835.02,
     "MapXOffsets": [
-      -34,
+      -45,
       -35,
       -46,
-      -11
+      -14
     ],
     "MapYOffsets": [
-      -85,
-      -40,
-      -22,
-      -27
+      -180,
+      -48,
+      -15,
+      -19
     ],
     "CountryId": 10,
     "LocalizedNames": {
@@ -6657,16 +6775,16 @@
     "NodeX": -45889.1758,
     "NodeY": -39593.4766,
     "MapXOffsets": [
-      -30,
-      -33,
-      -39,
-      -34
+      20,
+      -20,
+      -25,
+      -24
     ],
     "MapYOffsets": [
-      53,
-      8,
-      1,
-      4
+      80,
+      15,
+      -10,
+      1
     ],
     "CountryId": 10,
     "LocalizedNames": {
@@ -6730,16 +6848,16 @@
     "NodeX": -44900.7422,
     "NodeY": -47239.67,
     "MapXOffsets": [
-      -48,
-      -42,
-      -38,
-      -42
+      -80,
+      -55,
+      -45,
+      -33
     ],
     "MapYOffsets": [
-      -11,
-      -14,
+      0,
+      20,
       1,
-      4
+      3
     ],
     "CountryId": 10,
     "LocalizedNames": {
@@ -6803,16 +6921,16 @@
     "NodeX": -48871.7344,
     "NodeY": -29111.832,
     "MapXOffsets": [
-      -4,
-      -39,
-      -46,
-      -41
+      150,
+      0,
+      -40,
+      -38
     ],
     "MapYOffsets": [
-      -12,
-      -19,
-      -17,
-      -29
+      40,
+      -10,
+      0,
+      -19
     ],
     "CountryId": 10,
     "LocalizedNames": {
@@ -6876,16 +6994,16 @@
     "NodeX": -50384.7,
     "NodeY": -48491.62,
     "MapXOffsets": [
-      -45,
-      -41,
-      -36,
-      -36
+      150,
+      -10,
+      -30,
+      -28
     ],
     "MapYOffsets": [
-      -76,
-      -44,
-      -30,
-      -27
+      85,
+      10,
+      -15,
+      -20
     ],
     "CountryId": 10,
     "LocalizedNames": {
@@ -6935,7 +7053,7 @@
     }
   },
   {
-    "Name": "Cardiff",
+    "Name": "Caerdydd",
     "Group": null,
     "Country": "uk",
     "X": -54555.4023,
@@ -6949,16 +7067,16 @@
     "NodeX": -54005.2773,
     "NodeY": -14718.4453,
     "MapXOffsets": [
-      -33,
+      -10,
+      -28,
       -30,
-      -32,
-      -33
+      -32
     ],
     "MapYOffsets": [
-      -79,
-      -27,
-      -10,
-      2
+      -120,
+      -35,
+      -7,
+      1
     ],
     "CountryId": 10,
     "LocalizedNames": {
@@ -7008,7 +7126,7 @@
     }
   },
   {
-    "Name": "Swansea",
+    "Name": "Abertawe",
     "Group": null,
     "Country": "uk",
     "X": -57646.13,
@@ -7022,16 +7140,16 @@
     "NodeX": -56896.0039,
     "NodeY": -16901.9453,
     "MapXOffsets": [
-      -44,
-      -38,
-      -36,
-      -37
+      60,
+      -20,
+      -35,
+      -30
     ],
     "MapYOffsets": [
-      -74,
-      -38,
-      -20,
-      -26
+      120,
+      20,
+      -10,
+      -19
     ],
     "CountryId": 10,
     "LocalizedNames": {
@@ -7095,16 +7213,16 @@
     "NodeX": -60041.375,
     "NodeY": -7902.32031,
     "MapXOffsets": [
-      -39,
-      -37,
       -40,
-      -42
+      -40,
+      -48,
+      -31
     ],
     "MapYOffsets": [
-      -83,
-      -70,
-      -35,
-      -26
+      -80,
+      -20,
+      -10,
+      1
     ],
     "CountryId": 10,
     "LocalizedNames": {
@@ -7168,16 +7286,16 @@
     "NodeX": 41402.34,
     "NodeY": 27270.1367,
     "MapXOffsets": [
-      -40,
-      -34,
-      -44,
-      -45
+      -280,
+      -120,
+      -58,
+      -36
     ],
     "MapYOffsets": [
-      -27,
-      -27,
-      -27,
-      -27
+      210,
+      35,
+      4,
+      -22
     ],
     "CountryId": 37,
     "LocalizedNames": {
@@ -7241,16 +7359,16 @@
     "NodeX": 50303.332,
     "NodeY": 18257.1758,
     "MapXOffsets": [
-      158,
-      28,
-      -40,
-      -51
+      60,
+      -30,
+      -41,
+      -42
     ],
     "MapYOffsets": [
-      -35,
-      -36,
-      -30,
-      -28
+      240,
+      43,
+      7,
+      -22
     ],
     "CountryId": 37,
     "LocalizedNames": {
@@ -7314,16 +7432,16 @@
     "NodeX": 49016.86,
     "NodeY": 26094.832,
     "MapXOffsets": [
-      -40,
-      -33,
-      -40,
-      -36
+      -300,
+      -110,
+      -55,
+      -34
     ],
     "MapYOffsets": [
-      -82,
-      -64,
-      -28,
-      -23
+      -170,
+      -40,
+      -15,
+      -19
     ],
     "CountryId": 37,
     "LocalizedNames": {
@@ -7387,16 +7505,16 @@
     "NodeX": 51918.543,
     "NodeY": 33208.5156,
     "MapXOffsets": [
-      94,
-      22,
-      -40,
-      -37
+      -250,
+      -77,
+      -41,
+      -29
     ],
     "MapYOffsets": [
-      -29,
-      -40,
-      -30,
-      -30
+      -50,
+      -18,
+      -10,
+      -22
     ],
     "CountryId": 37,
     "LocalizedNames": {
@@ -7446,7 +7564,7 @@
     }
   },
   {
-    "Name": "София",
+    "Name": "Со́фия",
     "Group": null,
     "Country": "bulgaria",
     "X": 50404.66,
@@ -7460,16 +7578,16 @@
     "NodeX": 51154.7852,
     "NodeY": 42470.6445,
     "MapXOffsets": [
-      -106,
-      -52,
-      -40,
-      -33
+      -25,
+      -23,
+      -25,
+      -25
     ],
     "MapYOffsets": [
-      -188,
-      -55,
-      -30,
-      -31
+      100,
+      15,
+      -5,
+      -26
     ],
     "CountryId": 18,
     "LocalizedNames": {
@@ -7533,16 +7651,16 @@
     "NodeX": 48398.2461,
     "NodeY": 45212.9531,
     "MapXOffsets": [
-      -39,
-      -26,
-      -25,
-      -30
+      -270,
+      -80,
+      -40,
+      -21
     ],
     "MapYOffsets": [
-      183,
-      41,
-      16,
-      5
+      110,
+      15,
+      -2,
+      0
     ],
     "CountryId": 18,
     "LocalizedNames": {
@@ -7606,16 +7724,16 @@
     "NodeX": 53959.68,
     "NodeY": 20137.2,
     "MapXOffsets": [
-      91,
-      -62,
-      -55,
-      -49
+      60,
+      -30,
+      -43,
+      -45
     ],
     "MapYOffsets": [
-      123,
-      50,
-      10,
-      6
+      -170,
+      -55,
+      -20,
+      1
     ],
     "CountryId": 37,
     "LocalizedNames": {
@@ -7679,16 +7797,16 @@
     "NodeX": 52658.1523,
     "NodeY": 36227.293,
     "MapXOffsets": [
-      -40,
-      -42,
-      -40,
-      -44
+      -45,
+      -38,
+      -30,
+      -24
     ],
     "MapYOffsets": [
-      -82,
-      -46,
-      -30,
-      6
+      -65,
+      -25,
+      -10,
+      -16
     ],
     "CountryId": 18,
     "LocalizedNames": {
@@ -7752,16 +7870,16 @@
     "NodeX": 55937.8633,
     "NodeY": 42141.1,
     "MapXOffsets": [
-      -132,
-      -54,
-      -27,
-      -35
+      -190,
+      -58,
+      -30,
+      -18
     ],
     "MapYOffsets": [
-      61,
-      30,
-      8,
-      5
+      -220,
+      -52,
+      -20,
+      -1
     ],
     "CountryId": 18,
     "LocalizedNames": {
@@ -7825,16 +7943,16 @@
     "NodeX": 58252.36,
     "NodeY": 23532.8477,
     "MapXOffsets": [
-      -90,
-      -38,
-      -32,
-      -32
+      10,
+      0,
+      -19,
+      -26
     ],
     "MapYOffsets": [
-      263,
-      54,
-      10,
-      5
+      250,
+      90,
+      18,
+      1
     ],
     "CountryId": 37,
     "LocalizedNames": {
@@ -7898,16 +8016,16 @@
     "NodeX": 56247.54,
     "NodeY": 29892.4961,
     "MapXOffsets": [
-      -40,
-      -50,
-      -61,
-      -32
+      -200,
+      -70,
+      -38,
+      -26
     ],
     "MapYOffsets": [
-      -82,
-      -41,
-      -18,
-      -27
+      -300,
+      -90,
+      -28,
+      -22
     ],
     "CountryId": 37,
     "LocalizedNames": {
@@ -7971,16 +8089,16 @@
     "NodeX": 57594.582,
     "NodeY": 37437.55,
     "MapXOffsets": [
-      -40,
-      -43,
-      -35,
-      -41
+      -90,
+      -38,
+      -27,
+      -22
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -31,
-      -31
+      80,
+      15,
+      0,
+      -19
     ],
     "CountryId": 18,
     "LocalizedNames": {
@@ -8044,16 +8162,16 @@
     "NodeX": 58056.3867,
     "NodeY": 42037.73,
     "MapXOffsets": [
-      -79,
-      -59,
-      -29,
-      -15
+      0,
+      -20,
+      -20,
+      -20
     ],
     "MapYOffsets": [
-      63,
-      37,
-      10,
-      7
+      -100,
+      -30,
+      -15,
+      -16
     ],
     "CountryId": 18,
     "LocalizedNames": {
@@ -8117,16 +8235,16 @@
     "NodeX": 58234.793,
     "NodeY": 46149.418,
     "MapXOffsets": [
-      -37,
-      -45,
-      -53,
-      -31
+      -240,
+      -75,
+      -43,
+      -29
     ],
     "MapYOffsets": [
-      28,
-      29,
-      8,
-      3
+      240,
+      40,
+      5,
+      -22
     ],
     "CountryId": 18,
     "LocalizedNames": {
@@ -8190,16 +8308,16 @@
     "NodeX": 62137.418,
     "NodeY": 18473.9648,
     "MapXOffsets": [
-      -68,
-      -53,
-      -29,
-      -24
+      180,
+      15,
+      -13,
+      -23
     ],
     "MapYOffsets": [
-      -106,
-      -42,
-      5,
-      5
+      -100,
+      -25,
+      -12,
+      1
     ],
     "CountryId": 37,
     "LocalizedNames": {
@@ -8263,16 +8381,16 @@
     "NodeX": 61120.9766,
     "NodeY": 31683.625,
     "MapXOffsets": [
-      -27,
-      -45,
-      -38,
-      -40
+      30,
+      -30,
+      -40,
+      -47
     ],
     "MapYOffsets": [
-      -256,
+      -300,
       -72,
-      -9,
-      7
+      -25,
+      3
     ],
     "CountryId": 37,
     "LocalizedNames": {
@@ -8336,16 +8454,16 @@
     "NodeX": 61199.82,
     "NodeY": 34965.13,
     "MapXOffsets": [
-      -62,
-      -29,
+      0,
       -20,
-      -14
+      -20,
+      -19
     ],
     "MapYOffsets": [
-      24,
-      14,
-      9,
-      8
+      100,
+      10,
+      -5,
+      1
     ],
     "CountryId": 18,
     "LocalizedNames": {
@@ -8409,16 +8527,16 @@
     "NodeX": 60763.3828,
     "NodeY": 38839.4531,
     "MapXOffsets": [
-      68,
-      -83,
-      -43,
-      -48
+      -270,
+      -95,
+      -60,
+      -42
     ],
     "MapYOffsets": [
-      207,
-      40,
-      11,
-      8
+      30,
+      -5,
+      -8,
+      1
     ],
     "CountryId": 18,
     "LocalizedNames": {
@@ -8482,16 +8600,16 @@
     "NodeX": 64746.418,
     "NodeY": 14943.8672,
     "MapXOffsets": [
-      -53,
-      -30,
-      -26,
-      -18
+      0,
+      -12,
+      -14,
+      -14
     ],
     "MapYOffsets": [
-      -72,
-      -48,
-      -30,
-      -30
+      -240,
+      -55,
+      -20,
+      1
     ],
     "CountryId": 37,
     "LocalizedNames": {
@@ -8555,16 +8673,16 @@
     "NodeX": 67046.16,
     "NodeY": 24453.0,
     "MapXOffsets": [
-      -40,
-      -43,
-      -47,
-      -27
+      270,
+      35,
+      -7,
+      -24
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -32,
-      -27
+      -270,
+      -60,
+      -21,
+      1
     ],
     "CountryId": 37,
     "LocalizedNames": {
@@ -8628,16 +8746,16 @@
     "NodeX": 66074.625,
     "NodeY": 31237.8438,
     "MapXOffsets": [
-      -123,
-      -43,
-      -40,
-      -33
+      115,
+      -5,
+      -22,
+      -28
     ],
     "MapYOffsets": [
-      -200,
-      -65,
-      -30,
-      -24
+      130,
+      20,
+      0,
+      -19
     ],
     "CountryId": 37,
     "LocalizedNames": {
@@ -8701,16 +8819,16 @@
     "NodeX": 65096.043,
     "NodeY": 46809.168,
     "MapXOffsets": [
-      -97,
-      -43,
-      -31,
-      -29
+      -350,
+      -100,
+      -45,
+      -26
     ],
     "MapYOffsets": [
-      -168,
-      -65,
-      -33,
-      -28
+      -30,
+      -12,
+      -8,
+      -22
     ],
     "CountryId": 44,
     "LocalizedNames": {
@@ -8774,16 +8892,16 @@
     "NodeX": 69579.4844,
     "NodeY": 29995.3711,
     "MapXOffsets": [
-      -117,
-      -44,
+      -220,
+      -70,
       -40,
-      -40
+      -27
     ],
     "MapYOffsets": [
-      -40,
-      -31,
-      -30,
-      -25
+      20,
+      -2,
+      -5,
+      -16
     ],
     "CountryId": 37,
     "LocalizedNames": {
@@ -8847,16 +8965,16 @@
     "NodeX": 71731.6641,
     "NodeY": 30850.86,
     "MapXOffsets": [
-      50,
-      17,
-      7,
-      13
+      130,
+      -10,
+      -30,
+      4
     ],
     "MapYOffsets": [
-      -40,
-      -10,
-      -2,
-      -11
+      -250,
+      -55,
+      -21,
+      -9
     ],
     "CountryId": 37,
     "LocalizedNames": {
@@ -8920,16 +9038,16 @@
     "NodeX": 71577.72,
     "NodeY": 33310.85,
     "MapXOffsets": [
-      22,
-      14,
-      10,
-      10
+      38,
+      -15,
+      -25,
+      1
     ],
     "MapYOffsets": [
-      -14,
-      -14,
-      -7,
-      -9
+      -140,
+      -33,
+      -13,
+      -8
     ],
     "CountryId": 37,
     "LocalizedNames": {
@@ -8993,16 +9111,16 @@
     "NodeX": 70093.42,
     "NodeY": 36442.23,
     "MapXOffsets": [
-      -7,
-      -5,
-      4,
-      6
+      -40,
+      -25,
+      -21,
+      5
     ],
     "MapYOffsets": [
-      -23,
+      -110,
+      -30,
       -14,
-      -5,
-      -8
+      -9
     ],
     "CountryId": 18,
     "LocalizedNames": {
@@ -9066,15 +9184,15 @@
     "NodeX": 68297.17,
     "NodeY": 40860.668,
     "MapXOffsets": [
-      18,
-      43,
-      21,
-      11
+      320,
+      40,
+      -8,
+      5
     ],
     "MapYOffsets": [
-      -57,
-      -28,
-      -9,
+      60,
+      5,
+      -5,
       -9
     ],
     "CountryId": 18,
@@ -9139,16 +9257,16 @@
     "NodeX": 68590.55,
     "NodeY": 49742.793,
     "MapXOffsets": [
-      -82,
-      -5,
-      -34,
-      -40
+      -110,
+      -52,
+      -37,
+      -32
     ],
     "MapYOffsets": [
-      -57,
-      8,
-      -1,
-      5
+      -70,
+      -20,
+      -10,
+      2
     ],
     "CountryId": 44,
     "LocalizedNames": {
@@ -9212,16 +9330,16 @@
     "NodeX": 75753.5,
     "NodeY": 47623.9531,
     "MapXOffsets": [
-      -150,
-      -67,
-      -38,
-      -35
+      -30,
+      -50,
+      -50,
+      -41
     ],
     "MapYOffsets": [
-      -107,
-      -37,
-      -46,
-      -27
+      -10,
+      -15,
+      -15,
+      -28
     ],
     "CountryId": 44,
     "LocalizedNames": {
@@ -10964,16 +11082,16 @@
     "NodeX": 34365.1758,
     "NodeY": -23201.3789,
     "MapXOffsets": [
-      -40,
+      30,
       -43,
-      -40,
-      -38
+      -45,
+      -36
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      -26
+      -50,
+      -20,
+      -10,
+      0
     ],
     "CountryId": 38,
     "LocalizedNames": {
@@ -11037,16 +11155,16 @@
     "NodeX": 35329.4922,
     "NodeY": -33319.9375,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      -38
+      232,
+      25,
+      -9,
+      -23
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      -26
+      238,
+      43,
+      8,
+      0
     ],
     "CountryId": 28,
     "LocalizedNames": {
@@ -11110,16 +11228,16 @@
     "NodeX": 35110.1953,
     "NodeY": -56382.4,
     "MapXOffsets": [
-      -40,
+      -102,
       -43,
-      -40,
-      -82
+      -30,
+      -27
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      -12
+      -250,
+      -54,
+      -18,
+      -19
     ],
     "CountryId": 23,
     "LocalizedNames": {
@@ -11183,16 +11301,16 @@
     "NodeX": 34255.26,
     "NodeY": -60028.1523,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      -92
+      -50,
+      -34,
+      -24,
+      -20
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      -14
+      -150,
+      -34,
+      -12,
+      -2
     ],
     "CountryId": 23,
     "LocalizedNames": {
@@ -11256,16 +11374,16 @@
     "NodeX": 34862.3359,
     "NodeY": -61727.6328,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      -23
+      132,
+      13,
+      -8,
+      -15
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      -26
+      90,
+      13,
+      0,
+      -19
     ],
     "CountryId": 23,
     "LocalizedNames": {
@@ -11329,16 +11447,16 @@
     "NodeX": 36342.8125,
     "NodeY": -28739.5625,
     "MapXOffsets": [
+      -130,
+      -64,
       -40,
-      -43,
-      -40,
-      -36
+      -30
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      -29
+      -300,
+      -85,
+      -27,
+      -20
     ],
     "CountryId": 30,
     "LocalizedNames": {
@@ -11402,16 +11520,16 @@
     "NodeX": 39434.42,
     "NodeY": -32829.63,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      -17
+      -20,
+      -45,
+      -33,
+      -28
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      -26
+      0,
+      -5,
+      -6,
+      -19
     ],
     "CountryId": 30,
     "LocalizedNames": {
@@ -11475,16 +11593,16 @@
     "NodeX": 36679.7461,
     "NodeY": -38582.0078,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      -39
+      -290,
+      -85,
+      -42,
+      -29
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      -23
+      -160,
+      -38,
+      -14,
+      0
     ],
     "CountryId": 28,
     "LocalizedNames": {
@@ -11548,16 +11666,16 @@
     "NodeX": 36717.8438,
     "NodeY": -56026.0234,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      -26
+      180,
+      17,
+      -11,
+      -19
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      6
+      -160,
+      -37,
+      -14,
+      1
     ],
     "CountryId": 23,
     "LocalizedNames": {
@@ -11621,16 +11739,16 @@
     "NodeX": 43188.7578,
     "NodeY": -30523.8164,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      -38
+      -295,
+      -85,
+      -41,
+      -24
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      -26
+      -165,
+      -37,
+      -13,
+      -19
     ],
     "CountryId": 30,
     "LocalizedNames": {
@@ -11694,16 +11812,16 @@
     "NodeX": 42570.0,
     "NodeY": -50031.95,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      -82
+      50,
+      -15,
+      -20,
+      -25
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      -14
+      -70,
+      -20,
+      -10,
+      -1
     ],
     "CountryId": 22,
     "LocalizedNames": {
@@ -11767,16 +11885,16 @@
     "NodeX": 40238.8477,
     "NodeY": -62510.7422,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      -35
+      77,
+      -15,
+      -28,
+      -28
     ],
     "MapYOffsets": [
-      -82,
-      -65,
+      -120,
       -30,
-      -30
+      -12,
+      -20
     ],
     "CountryId": 23,
     "LocalizedNames": {
@@ -11840,16 +11958,16 @@
     "NodeX": 45564.0078,
     "NodeY": -25367.73,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      -38
+      -122,
+      -49,
+      -32,
+      -25
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      -26
+      -100,
+      -25,
+      -10,
+      1
     ],
     "CountryId": 30,
     "LocalizedNames": {
@@ -11913,16 +12031,16 @@
     "NodeX": 46202.33,
     "NodeY": -29982.8125,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      -45
+      -98,
+      -51,
+      -36,
+      -31
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      4
+      -250,
+      -54,
+      -18,
+      0
     ],
     "CountryId": 30,
     "LocalizedNames": {
@@ -11986,16 +12104,16 @@
     "NodeX": 44678.0,
     "NodeY": -37109.6836,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      -20
+      -280,
+      -68,
+      -28,
+      -16
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      -26
+      -145,
+      -33,
+      -13,
+      -20
     ],
     "CountryId": 28,
     "LocalizedNames": {
@@ -12059,16 +12177,16 @@
     "NodeX": 47973.0547,
     "NodeY": -40803.7461,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      -41
+      -45,
+      -35,
+      -29,
+      -29
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      -31
+      -185,
+      -33,
+      -12,
+      0
     ],
     "CountryId": 28,
     "LocalizedNames": {
@@ -12132,16 +12250,16 @@
     "NodeX": 44626.77,
     "NodeY": -45257.7031,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      -29
+      -60,
+      -30,
+      -20,
+      -20
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      -26
+      220,
+      40,
+      7,
+      0
     ],
     "CountryId": 22,
     "LocalizedNames": {
@@ -12205,16 +12323,16 @@
     "NodeX": 44388.49,
     "NodeY": -50888.63,
     "MapXOffsets": [
+      -100,
       -40,
-      -43,
-      -40,
-      -38
+      -26,
+      -23
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      -26
+      -50,
+      -15,
+      -9,
+      -20
     ],
     "CountryId": 22,
     "LocalizedNames": {
@@ -12278,16 +12396,16 @@
     "NodeX": 44945.35,
     "NodeY": -55711.5078,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      -40
+      -290,
+      -76,
+      -46,
+      -27
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      5
+      -240,
+      -76,
+      -26,
+      3
     ],
     "CountryId": 23,
     "LocalizedNames": {
@@ -12351,16 +12469,16 @@
     "NodeX": 47717.41,
     "NodeY": -57207.8,
     "MapXOffsets": [
-      -40,
+      -250,
+      -101,
       -43,
-      -40,
-      -21
+      -23
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      3
+      -250,
+      -74,
+      -23,
+      0
     ],
     "CountryId": 23,
     "LocalizedNames": {
@@ -12424,16 +12542,15 @@
     "NodeX": 45453.43,
     "NodeY": -60577.02,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      -25
+      -180,
+      -79,
+      -36,
+      -37
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      3
+      -150,
+      -83,
+      -28
     ],
     "CountryId": 23,
     "LocalizedNames": {
@@ -12497,16 +12614,15 @@
     "NodeX": 50562.5625,
     "NodeY": -24991.5938,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      11
+      -300,
+      -90,
+      -39,
+      4
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      -9
+      -300,
+      -105,
+      -31
     ],
     "CountryId": 30,
     "LocalizedNames": {
@@ -12570,16 +12686,15 @@
     "NodeX": 50778.1758,
     "NodeY": -29560.4219,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      8
+      -95,
+      -36,
+      -22,
+      2
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      -8
+      -128,
+      -32,
+      -12
     ],
     "CountryId": 30,
     "LocalizedNames": {
@@ -12643,16 +12758,16 @@
     "NodeX": 50947.125,
     "NodeY": -46427.87,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      -28
+      250,
+      34,
+      -3,
+      -17
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      -26
+      270,
+      48,
+      9,
+      -19
     ],
     "CountryId": 22,
     "LocalizedNames": {
@@ -12716,16 +12831,16 @@
     "NodeX": 49785.29,
     "NodeY": -52324.6836,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      -22
+      -150,
+      -50,
+      -27,
+      -20
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      -23
+      -100,
+      -25,
+      -9,
+      -19
     ],
     "CountryId": 22,
     "LocalizedNames": {
@@ -12789,16 +12904,14 @@
     "NodeX": 50245.0547,
     "NodeY": -58065.6641,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      8
+      -35,
+      -25,
+      -21
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      -11
+      205,
+      36,
+      6
     ],
     "CountryId": 23,
     "LocalizedNames": {
@@ -12862,16 +12975,16 @@
     "NodeX": 53075.4023,
     "NodeY": -31925.6563,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      -39
+      -285,
+      -90,
+      -48,
+      -32
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      -29
+      65,
+      7,
+      -1,
+      -19
     ],
     "CountryId": 28,
     "LocalizedNames": {
@@ -12935,16 +13048,16 @@
     "NodeX": 54953.4336,
     "NodeY": -36095.6172,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      -38
+      100,
+      -4,
+      -19,
+      -26
     ],
     "MapYOffsets": [
-      -82,
-      -65,
-      -30,
-      -26
+      -40,
+      -13,
+      -7,
+      -19
     ],
     "CountryId": 28,
     "LocalizedNames": {
@@ -13008,16 +13121,16 @@
     "NodeX": 54382.16,
     "NodeY": -52482.3164,
     "MapXOffsets": [
-      -40,
+      -190,
       -43,
-      -40,
-      -29
+      -25,
+      -19
     ],
     "MapYOffsets": [
-      -82,
-      -65,
       -30,
-      5
+      -17,
+      -9,
+      0
     ],
     "CountryId": 22,
     "LocalizedNames": {
@@ -13081,16 +13194,16 @@
     "NodeX": 54949.1445,
     "NodeY": -54534.4922,
     "MapXOffsets": [
-      -40,
-      -43,
-      -40,
-      -64
+      60,
+      -25,
+      -30,
+      -38
     ],
     "MapYOffsets": [
-      -82,
+      -230,
       -65,
-      -30,
-      -24
+      -20,
+      -19
     ],
     "CountryId": 38,
     "LocalizedNames": {
@@ -13154,16 +13267,16 @@
     "NodeX": 59773.82,
     "NodeY": -57060.65,
     "MapXOffsets": [
-      -42,
-      -42,
-      -42,
-      -55
+      200,
+      -60,
+      -60,
+      -40
     ],
     "MapYOffsets": [
-      -27,
-      -27,
-      -27,
-      -27
+      -82,
+      -35,
+      -15,
+      -18
     ],
     "CountryId": 38,
     "LocalizedNames": {
@@ -13227,16 +13340,16 @@
     "NodeX": 30728.7852,
     "NodeY": 2438.82813,
     "MapXOffsets": [
-      -38,
-      -37,
-      -35,
-      -40
+      -12,
+      -32,
+      -30,
+      -30
     ],
     "MapYOffsets": [
-      -48,
-      -55,
-      -26,
-      -27
+      22,
+      0,
+      -5,
+      -20
     ],
     "CountryId": 8,
     "LocalizedNames": {
@@ -13302,14 +13415,14 @@
     "MapXOffsets": [
       -35,
       -35,
-      -38,
-      -38
+      -35,
+      -31
     ],
     "MapYOffsets": [
-      -89,
+      -100,
       -37,
-      -27,
-      -26
+      -16,
+      -22
     ],
     "CountryId": 3,
     "LocalizedNames": {
@@ -13361,7 +13474,7 @@
   {
     "Name": "Pécs",
     "Group": null,
-    "Country": "Hungary",
+    "Country": "hungary",
     "X": 28439.8047,
     "Y": 25941.5234,
     "Width": 1200.0,
@@ -13373,16 +13486,16 @@
     "NodeX": 29039.93,
     "NodeY": 26291.6484,
     "MapXOffsets": [
-      -21,
-      -22,
-      -21,
-      -22
+      -70,
+      -28,
+      -24,
+      -19
     ],
     "MapYOffsets": [
-      -40,
+      -150,
       -49,
-      -26,
-      -27
+      -10,
+      -22
     ],
     "CountryId": 13,
     "LocalizedNames": {
@@ -13446,16 +13559,16 @@
     "NodeX": 28343.0977,
     "NodeY": -20639.54,
     "MapXOffsets": [
-      -36,
-      -32,
-      -31,
-      -33
+      -266,
+      -76,
+      -39,
+      -32
     ],
     "MapYOffsets": [
-      -121,
-      -66,
-      -28,
-      -26
+      108,
+      15,
+      0,
+      1
     ],
     "CountryId": 8,
     "LocalizedNames": {
@@ -13519,16 +13632,15 @@
     "NodeX": 34470.25,
     "NodeY": 3207.67578,
     "MapXOffsets": [
-      -30,
+      -195,
+      -59,
       -31,
-      -32,
-      -30
+      4
     ],
     "MapYOffsets": [
-      6,
-      4,
-      -20,
-      5
+      -245,
+      -52,
+      -18
     ],
     "CountryId": 8,
     "LocalizedNames": {
@@ -13593,15 +13705,15 @@
     "NodeY": 10660.4766,
     "MapXOffsets": [
       -69,
-      -68,
-      -67,
-      -69
+      -60,
+      -62,
+      -51
     ],
     "MapYOffsets": [
-      -40,
+      -150,
       -39,
-      -26,
-      -26
+      -20,
+      -19
     ],
     "CountryId": 11,
     "LocalizedNames": {
@@ -13665,16 +13777,16 @@
     "NodeX": 32367.82,
     "NodeY": 17862.7227,
     "MapXOffsets": [
+      -50,
+      -15,
       -36,
-      -38,
-      -36,
-      -41
+      -43
     ],
     "MapYOffsets": [
-      67,
-      38,
-      5,
-      3
+      90,
+      -15,
+      -15,
+      -25
     ],
     "CountryId": 13,
     "LocalizedNames": {
@@ -13738,16 +13850,16 @@
     "NodeX": 32014.4531,
     "NodeY": -6163.918,
     "MapXOffsets": [
-      -23,
-      -23,
-      -24,
-      -25
+      -153,
+      -45,
+      -25,
+      -17
     ],
     "MapYOffsets": [
-      -52,
-      -40,
-      -23,
-      -27
+      -70,
+      -19,
+      -9,
+      -20
     ],
     "CountryId": 8,
     "LocalizedNames": {
@@ -13811,16 +13923,16 @@
     "NodeX": 34758.5977,
     "NodeY": -17905.9414,
     "MapXOffsets": [
-      -38,
+      -188,
+      -62,
       -36,
-      -36,
-      -35
+      -2
     ],
     "MapYOffsets": [
-      -46,
-      -30,
-      -25,
-      -28
+      134,
+      20,
+      1,
+      -3
     ],
     "CountryId": 8,
     "LocalizedNames": {
@@ -13885,15 +13997,15 @@
     "NodeY": 10474.3828,
     "MapXOffsets": [
       -26,
-      -27,
-      -30,
-      -29
+      -45,
+      -32,
+      -26
     ],
     "MapYOffsets": [
-      30,
-      13,
-      -1,
-      7
+      40,
+      10,
+      -3,
+      3
     ],
     "CountryId": 11,
     "LocalizedNames": {
@@ -13957,16 +14069,16 @@
     "NodeX": 37444.9141,
     "NodeY": -9455.836,
     "MapXOffsets": [
-      -43,
-      -45,
-      -45,
-      -44
+      45,
+      -38,
+      -35,
+      -31
     ],
     "MapYOffsets": [
-      -53,
-      -39,
-      -27,
-      -26
+      27,
+      -2,
+      -5,
+      -19
     ],
     "CountryId": 8,
     "LocalizedNames": {
@@ -14030,16 +14142,16 @@
     "NodeX": 41641.58,
     "NodeY": 17463.707,
     "MapXOffsets": [
-      -43,
-      -44,
-      -44,
-      -45
+      -210,
+      -55,
+      -40,
+      -35
     ],
     "MapYOffsets": [
-      -43,
-      -45,
-      -30,
-      -27
+      -100,
+      -55,
+      -20,
+      -22
     ],
     "CountryId": 13,
     "LocalizedNames": {
@@ -14103,16 +14215,16 @@
     "NodeX": 43244.1953,
     "NodeY": -4124.961,
     "MapXOffsets": [
-      -30,
-      -33,
-      -29,
-      -29
+      -51,
+      -31,
+      -24,
+      -23
     ],
     "MapYOffsets": [
-      -72,
-      -58,
-      -28,
-      -27
+      32,
+      0,
+      -4,
+      -20
     ],
     "CountryId": 8,
     "LocalizedNames": {
@@ -14176,16 +14288,16 @@
     "NodeX": 44098.3945,
     "NodeY": -15103.3945,
     "MapXOffsets": [
-      -44,
-      -40,
-      -40,
-      -39
+      -100,
+      -50,
+      -37,
+      -29
     ],
     "MapYOffsets": [
-      -50,
-      -46,
-      -28,
-      -29
+      130,
+      19,
+      1,
+      -20
     ],
     "CountryId": 8,
     "LocalizedNames": {
@@ -14249,16 +14361,16 @@
     "NodeX": -7139.547,
     "NodeY": 44166.3438,
     "MapXOffsets": [
-      15,
-      33,
-      9,
-      6
+      140,
+      10,
+      -12,
+      1
     ],
     "MapYOffsets": [
-      -53,
-      -27,
-      -8,
-      -11
+      -70,
+      -19,
+      -9,
+      -8
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -14322,16 +14434,16 @@
     "NodeX": -7626.543,
     "NodeY": 50990.17,
     "MapXOffsets": [
-      65,
-      -3,
-      12,
-      5
+      -205,
+      -76,
+      -51,
+      1
     ],
     "MapYOffsets": [
-      -67,
-      -30,
-      -13,
-      -11
+      -110,
+      -25,
+      -10,
+      -8
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -14395,16 +14507,16 @@
     "NodeX": -10035.8438,
     "NodeY": 45997.5234,
     "MapXOffsets": [
-      -178,
-      -82,
-      -57,
-      -53
+      -100,
+      -34,
+      -21,
+      -15
     ],
     "MapYOffsets": [
-      -38,
-      -23,
-      -15,
-      -11
+      -220,
+      -48,
+      -16,
+      0
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -14468,16 +14580,16 @@
     "NodeX": -8914.711,
     "NodeY": 44656.3242,
     "MapXOffsets": [
-      54,
-      10,
-      -67,
-      -92
+      -110,
+      -47,
+      -37,
+      -45
     ],
     "MapYOffsets": [
-      -32,
-      -1,
-      -33,
-      -26
+      170,
+      30,
+      5,
+      -13
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -14541,16 +14653,16 @@
     "NodeX": -10031.4727,
     "NodeY": 48600.89,
     "MapXOffsets": [
-      -178,
-      -120,
-      -76,
-      -71
+      -230,
+      -85,
+      -42,
+      -24
     ],
     "MapYOffsets": [
-      7,
-      -11,
-      -13,
-      -10
+      250,
+      50,
+      10,
+      1
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -14614,16 +14726,16 @@
     "NodeX": -15520.3672,
     "NodeY": 38186.1641,
     "MapXOffsets": [
-      -27,
-      -28,
-      -25,
-      -27
+      50,
+      -5,
+      -13,
+      -19
     ],
     "MapYOffsets": [
-      -47,
-      -34,
-      -26,
-      -27
+      -250,
+      -55,
+      -19,
+      -22
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -14687,16 +14799,16 @@
     "NodeX": -23472.4063,
     "NodeY": 39190.793,
     "MapXOffsets": [
-      -27,
-      -28,
-      -25,
-      -27
+      250,
+      70,
+      -12,
+      -43
     ],
     "MapYOffsets": [
-      -47,
-      -34,
-      -26,
-      -27
+      180,
+      165,
+      39,
+      4
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -14760,16 +14872,16 @@
     "NodeX": -25953.5859,
     "NodeY": 28966.3438,
     "MapXOffsets": [
-      -27,
-      -28,
-      -25,
-      -60
+      120,
+      -50,
+      -49,
+      -42
     ],
     "MapYOffsets": [
-      -47,
-      -34,
-      -26,
-      4
+      -250,
+      -95,
+      -30,
+      -1
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -14833,16 +14945,16 @@
     "NodeX": -31951.7969,
     "NodeY": 16255.5,
     "MapXOffsets": [
-      -27,
-      -28,
-      -25,
-      -27
+      50,
+      -13,
+      -23,
+      -25
     ],
     "MapYOffsets": [
-      -47,
-      -34,
-      -26,
-      -27
+      100,
+      15,
+      0,
+      1
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -14906,16 +15018,16 @@
     "NodeX": -30447.45,
     "NodeY": 24678.4375,
     "MapXOffsets": [
-      -27,
-      -28,
-      -25,
-      -46
+      -420,
+      -145,
+      -87,
+      -60
     ],
     "MapYOffsets": [
-      -47,
-      -34,
-      -26,
-      -27
+      225,
+      40,
+      6,
+      -18
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -14979,16 +15091,16 @@
     "NodeX": -30052.3633,
     "NodeY": 36107.6172,
     "MapXOffsets": [
-      -27,
-      -28,
-      -25,
-      -27
+      160,
+      -10,
+      -35,
+      -45
     ],
     "MapYOffsets": [
-      -47,
-      -34,
-      -26,
-      -27
+      -250,
+      -55,
+      -19,
+      -22
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -15052,16 +15164,16 @@
     "NodeX": -33608.1172,
     "NodeY": 204.902344,
     "MapXOffsets": [
-      -27,
-      -28,
+      -200,
+      -57,
       -25,
-      -27
+      -16
     ],
     "MapYOffsets": [
-      -47,
-      -34,
-      -26,
-      -27
+      120,
+      20,
+      3,
+      -14
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -15125,16 +15237,16 @@
     "NodeX": -35649.625,
     "NodeY": 13684.2188,
     "MapXOffsets": [
-      -27,
-      -28,
-      -25,
-      -27
+      150,
+      -22,
+      -31,
+      -30
     ],
     "MapYOffsets": [
-      -47,
-      -34,
-      -26,
-      -27
+      150,
+      25,
+      5,
+      -1
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -15198,16 +15310,16 @@
     "NodeX": -37894.168,
     "NodeY": 1495.48438,
     "MapXOffsets": [
-      -27,
-      -28,
-      -25,
-      -43
+      -130,
+      -58,
+      -40,
+      -32
     ],
     "MapYOffsets": [
-      -47,
-      -34,
-      -26,
-      -28
+      -250,
+      -55,
+      -20,
+      2
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -15271,16 +15383,16 @@
     "NodeX": -39749.74,
     "NodeY": 9698.434,
     "MapXOffsets": [
-      -27,
-      -28,
+      120,
+      -5,
       -25,
-      -27
+      -31
     ],
     "MapYOffsets": [
-      -47,
-      -34,
-      -26,
-      -27
+      250,
+      45,
+      8,
+      -22
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -15344,16 +15456,16 @@
     "NodeX": -39029.7227,
     "NodeY": 18271.9648,
     "MapXOffsets": [
-      -27,
-      -28,
-      -25,
-      -27
+      65,
+      -5,
+      -14,
+      -17
     ],
     "MapYOffsets": [
-      -47,
-      -34,
-      -26,
-      -27
+      250,
+      50,
+      10,
+      -16
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -15417,16 +15529,16 @@
     "NodeX": -37417.2773,
     "NodeY": 23611.98,
     "MapXOffsets": [
-      -27,
-      -28,
-      -25,
-      -42
+      -75,
+      -43,
+      -33,
+      -32
     ],
     "MapYOffsets": [
-      -47,
-      -34,
-      -26,
-      -29
+      -200,
+      -45,
+      -17,
+      -22
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -15490,16 +15602,16 @@
     "NodeX": -39213.8047,
     "NodeY": 35645.5859,
     "MapXOffsets": [
-      -27,
-      -28,
-      -25,
-      -27
+      155,
+      0,
+      -24,
+      -33
     ],
     "MapYOffsets": [
-      -47,
-      -34,
-      -26,
-      -27
+      230,
+      40,
+      7,
+      -22
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -15563,16 +15675,16 @@
     "NodeX": -40395.39,
     "NodeY": 31452.5547,
     "MapXOffsets": [
-      -27,
-      -28,
-      -25,
-      -27
+      -70,
+      -35,
+      -24,
+      -20
     ],
     "MapYOffsets": [
-      -47,
-      -34,
-      -26,
-      -27
+      -250,
+      -55,
+      -18,
+      -16
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -15636,16 +15748,16 @@
     "NodeX": -46539.8242,
     "NodeY": 8044.60938,
     "MapXOffsets": [
-      -27,
-      -28,
-      -25,
-      -27
+      -250,
+      -95,
+      -46,
+      -28
     ],
     "MapYOffsets": [
-      -47,
-      -34,
-      -26,
-      -27
+      100,
+      15,
+      -1,
+      -22
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -15709,16 +15821,16 @@
     "NodeX": -47170.95,
     "NodeY": 13142.0469,
     "MapXOffsets": [
-      -27,
-      -28,
+      0,
       -25,
+      -26,
       -27
     ],
     "MapYOffsets": [
-      -47,
-      -34,
-      -26,
-      -27
+      -150,
+      -35,
+      -13,
+      -22
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -15782,16 +15894,16 @@
     "NodeX": -46575.7461,
     "NodeY": 19512.5469,
     "MapXOffsets": [
-      -27,
-      -28,
-      -25,
-      -27
+      190,
+      0,
+      -30,
+      -38
     ],
     "MapYOffsets": [
-      -47,
-      -34,
-      -26,
-      -27
+      70,
+      10,
+      -1,
+      -19
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -15855,16 +15967,16 @@
     "NodeX": -46138.5625,
     "NodeY": 27254.3945,
     "MapXOffsets": [
-      -27,
-      -28,
-      -25,
-      -27
+      -250,
+      -230,
+      -88,
+      -36
     ],
     "MapYOffsets": [
-      -47,
-      -34,
-      -26,
-      -27
+      250,
+      110,
+      25,
+      -22
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -15928,16 +16040,16 @@
     "NodeX": -51734.832,
     "NodeY": 33817.3828,
     "MapXOffsets": [
-      49,
-      6,
-      -52,
+      -220,
+      -69,
+      -39,
       -31
     ],
     "MapYOffsets": [
-      -38,
-      -35,
-      -31,
-      -26
+      -120,
+      -28,
+      -11,
+      -19
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -16001,16 +16113,16 @@
     "NodeX": -48853.4961,
     "NodeY": 35956.5859,
     "MapXOffsets": [
-      -72,
-      -33,
-      -31,
-      -19
+      -300,
+      -73,
+      -28,
+      0
     ],
     "MapYOffsets": [
-      -109,
-      -37,
+      -100,
       -24,
-      -25
+      -9,
+      -8
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -16074,16 +16186,16 @@
     "NodeX": -53697.8633,
     "NodeY": 3100.414,
     "MapXOffsets": [
-      -27,
-      -28,
-      -25,
-      -19
+      -280,
+      -75,
+      -36,
+      -20
     ],
     "MapYOffsets": [
-      -47,
-      -34,
-      -26,
-      -28
+      -50,
+      -15,
+      -8,
+      -16
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -16147,16 +16259,16 @@
     "NodeX": -56771.4141,
     "NodeY": 3849.30469,
     "MapXOffsets": [
-      -27,
+      -170,
+      -50,
       -28,
-      -25,
-      -29
+      -21
     ],
     "MapYOffsets": [
-      -47,
-      -34,
-      -26,
-      -28
+      250,
+      90,
+      18,
+      2
     ],
     "CountryId": 4,
     "LocalizedNames": {
@@ -17315,16 +17427,16 @@
     "NodeX": -38266.3828,
     "NodeY": 48073.4844,
     "MapXOffsets": [
-      -45,
-      -45,
-      -45,
-      -45
+      120,
+      -40,
+      -35,
+      7
     ],
     "MapYOffsets": [
-      -26,
-      -26,
-      -26,
-      -26
+      -40,
+      -10,
+      -10,
+      -10
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -17388,16 +17500,16 @@
     "NodeX": -42818.6,
     "NodeY": 49122.1523,
     "MapXOffsets": [
-      -40,
-      -40,
-      -40,
-      -40
+      -150,
+      -70,
+      -50,
+      -37
     ],
     "MapYOffsets": [
-      -25,
-      -25,
-      -25,
-      -25
+      -50,
+      -15,
+      -12,
+      -22
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -17461,16 +17573,16 @@
     "NodeX": -45505.81,
     "NodeY": 45103.79,
     "MapXOffsets": [
-      -20,
-      -20,
-      -20,
-      -27
+      -25,
+      -30,
+      -27,
+      -25
     ],
     "MapYOffsets": [
-      -25,
-      -25,
-      -25,
-      -25
+      10,
+      -15,
+      -10,
+      -22
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -17534,16 +17646,16 @@
     "NodeX": -45657.61,
     "NodeY": 50422.7539,
     "MapXOffsets": [
-      -40,
-      -40,
-      -40,
-      -40
+      -30,
+      -35,
+      -28,
+      -22
     ],
     "MapYOffsets": [
       -25,
-      -25,
-      -25,
-      5
+      -10,
+      -8,
+      -1
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -17608,15 +17720,15 @@
     "NodeY": 44024.02,
     "MapXOffsets": [
       -45,
-      -45,
-      -45,
-      -41
+      -55,
+      -48,
+      -40
     ],
     "MapYOffsets": [
       -26,
-      -26,
-      -26,
-      -26
+      -20,
+      -20,
+      3
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -17753,16 +17865,16 @@
     "NodeX": -49729.48,
     "NodeY": 53663.9336,
     "MapXOffsets": [
+      60,
+      -40,
       -35,
-      -35,
-      -35,
-      7
+      -30
     ],
     "MapYOffsets": [
-      -45,
-      -45,
+      -80,
       -25,
-      -11
+      -15,
+      -19
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -17826,16 +17938,16 @@
     "NodeX": -51533.1367,
     "NodeY": 57437.2578,
     "MapXOffsets": [
-      -35,
-      -35,
-      -35,
-      -35
+      60,
+      -20,
+      -27,
+      7
     ],
     "MapYOffsets": [
-      10,
-      10,
-      10,
-      10
+      140,
+      20,
+      0,
+      -10
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -17899,16 +18011,16 @@
     "NodeX": -53292.168,
     "NodeY": 37431.58,
     "MapXOffsets": [
-      -30,
-      -30,
-      -30,
-      -41
+      120,
+      -25,
+      -42,
+      -37
     ],
     "MapYOffsets": [
-      -25,
-      -25,
-      -25,
-      -25
+      110,
+      5,
+      -10,
+      -22
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -17972,16 +18084,16 @@
     "NodeX": -53707.043,
     "NodeY": 51355.89,
     "MapXOffsets": [
+      -80,
+      -35,
       -25,
-      -25,
-      -25,
-      -25
+      -18
     ],
     "MapYOffsets": [
+      -40,
       -25,
-      -25,
-      -25,
-      -25
+      -15,
+      -16
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -18045,16 +18157,16 @@
     "NodeX": -58108.19,
     "NodeY": 32929.64,
     "MapXOffsets": [
+      -50,
       -25,
-      -25,
-      -25,
-      -25
+      -28,
+      -24
     ],
     "MapYOffsets": [
-      -26,
-      -26,
-      -26,
-      -26
+      220,
+      80,
+      15,
+      2
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -18118,16 +18230,16 @@
     "NodeX": -58874.1836,
     "NodeY": 42028.22,
     "MapXOffsets": [
+      130,
       -20,
-      -20,
-      -20,
-      -20
+      -22,
+      -17
     ],
     "MapYOffsets": [
-      5,
-      5,
-      5,
-      5
+      90,
+      10,
+      -3,
+      -16
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -18191,16 +18303,16 @@
     "NodeX": -58305.3555,
     "NodeY": 58445.0742,
     "MapXOffsets": [
+      -180,
+      -75,
       -45,
-      -45,
-      -45,
-      -45
+      -33
     ],
     "MapYOffsets": [
-      -26,
-      -26,
-      -26,
-      -26
+      -50,
+      -25,
+      -15,
+      2
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -18264,16 +18376,16 @@
     "NodeX": -56251.72,
     "NodeY": 65082.7734,
     "MapXOffsets": [
-      -30,
-      -30,
-      -30,
-      -30
+      130,
+      0,
+      -27,
+      -27
     ],
     "MapYOffsets": [
+      -180,
+      -50,
       -26,
-      -26,
-      -26,
-      -26
+      -22
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -18337,16 +18449,16 @@
     "NodeX": -61881.0859,
     "NodeY": 31906.8086,
     "MapXOffsets": [
-      -45,
-      -45,
-      -45,
-      -45
+      50,
+      -10,
+      -38,
+      -37
     ],
     "MapYOffsets": [
-      -25,
-      -25,
-      -25,
-      -25
+      150,
+      30,
+      0,
+      -22
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -18410,16 +18522,16 @@
     "NodeX": -61833.9844,
     "NodeY": 37707.0547,
     "MapXOffsets": [
+      60,
       -10,
-      -10,
-      -35,
-      -35
+      -20,
+      -28
     ],
     "MapYOffsets": [
-      -26,
-      -26,
-      -26,
-      -26
+      50,
+      0,
+      -10,
+      -22
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -18483,16 +18595,16 @@
     "NodeX": -63592.02,
     "NodeY": 69241.125,
     "MapXOffsets": [
+      100,
+      -15,
       -35,
-      -35,
-      -35,
-      -35
+      -27
     ],
     "MapYOffsets": [
+      220,
+      35,
       5,
-      5,
-      5,
-      5
+      2
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -18556,16 +18668,16 @@
     "NodeX": -67923.12,
     "NodeY": 40787.6875,
     "MapXOffsets": [
-      -45,
-      -45,
-      -45,
-      -45
+      250,
+      20,
+      -32,
+      -39
     ],
     "MapYOffsets": [
-      -26,
-      -26,
-      -26,
-      -26
+      -200,
+      -50,
+      -18,
+      -22
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -18629,16 +18741,16 @@
     "NodeX": -65397.66,
     "NodeY": 48701.1445,
     "MapXOffsets": [
-      -35,
-      -35,
-      -35,
-      -30
+      -80,
+      -55,
+      -45,
+      -39
     ],
     "MapYOffsets": [
-      -26,
-      -26,
-      -26,
-      -26
+      150,
+      20,
+      -5,
+      -29
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -18702,16 +18814,16 @@
     "NodeX": -67814.875,
     "NodeY": 63119.78,
     "MapXOffsets": [
-      5,
-      5,
-      5,
-      5
+      40,
+      -30,
+      -28,
+      1
     ],
     "MapYOffsets": [
-      -25,
-      -25,
+      -50,
+      -15,
       -10,
-      -10
+      -8
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -18775,16 +18887,16 @@
     "NodeX": -67667.28,
     "NodeY": 69066.47,
     "MapXOffsets": [
+      -150,
+      -45,
       -30,
-      -30,
-      -30,
-      -30
+      -26
     ],
     "MapYOffsets": [
-      -25,
-      -25,
-      -25,
-      -25
+      150,
+      25,
+      -2,
+      -19
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -18848,16 +18960,16 @@
     "NodeX": -70227.9844,
     "NodeY": 29244.04,
     "MapXOffsets": [
+      0,
       -20,
       -20,
-      -20,
-      -20
+      -22
     ],
     "MapYOffsets": [
-      -25,
-      -25,
-      -25,
-      -25
+      20,
+      5,
+      -3,
+      -22
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -18921,16 +19033,16 @@
     "NodeX": -70426.16,
     "NodeY": 34796.4727,
     "MapXOffsets": [
-      -10,
-      -10,
-      -20,
-      -20
+      -50,
+      -30,
+      -22,
+      -19
     ],
     "MapYOffsets": [
+      -150,
       -15,
-      -15,
-      -25,
-      -25
+      -12,
+      -22
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -18994,16 +19106,16 @@
     "NodeX": -68445.92,
     "NodeY": 56454.8828,
     "MapXOffsets": [
-      -40,
-      -40,
-      -40,
-      -40
+      150,
+      0,
+      -32,
+      -38
     ],
     "MapYOffsets": [
-      -25,
-      -25,
-      -25,
-      -25
+      100,
+      10,
+      -5,
+      -19
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -19067,16 +19179,16 @@
     "NodeX": -69812.92,
     "NodeY": 59054.19,
     "MapXOffsets": [
+      -80,
       -40,
-      -40,
-      -40,
-      -40
+      -35,
+      -29
     ],
     "MapYOffsets": [
       -25,
       -25,
-      -25,
-      -25
+      -15,
+      -16
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -19143,13 +19255,13 @@
       -20,
       -20,
       -20,
-      -20
+      -17
     ],
     "MapYOffsets": [
+      80,
       -25,
-      -25,
-      -25,
-      -25
+      -15,
+      -16
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -19213,16 +19325,16 @@
     "NodeX": -70181.96,
     "NodeY": 66082.0,
     "MapXOffsets": [
+      0,
+      -25,
       -30,
-      -30,
-      -30,
-      -30
+      -31
     ],
     "MapYOffsets": [
-      -25,
-      -25,
-      -25,
-      -25
+      -150,
+      -30,
+      -20,
+      -22
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -19286,16 +19398,16 @@
     "NodeX": -74861.95,
     "NodeY": 27975.6289,
     "MapXOffsets": [
-      -20,
-      -20,
-      -20,
-      -20
+      10,
+      -10,
+      -18,
+      -16
     ],
     "MapYOffsets": [
-      -25,
-      -25,
-      -25,
-      -25
+      70,
+      7,
+      -10,
+      -16
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -19359,16 +19471,16 @@
     "NodeX": -73475.87,
     "NodeY": 43467.83,
     "MapXOffsets": [
-      -45,
-      -45,
-      -45,
-      -45
+      50,
+      -25,
+      -38,
+      -40
     ],
     "MapYOffsets": [
-      -26,
-      -26,
-      -26,
-      -26
+      250,
+      60,
+      8,
+      2
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -19432,16 +19544,16 @@
     "NodeX": -74583.61,
     "NodeY": 49516.44,
     "MapXOffsets": [
-      -30,
-      -30,
-      -30,
-      -30
+      -10,
+      -20,
+      -25,
+      -20
     ],
     "MapYOffsets": [
+      -100,
       -30,
-      -30,
-      -25,
-      -25
+      -10,
+      -16
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -19505,16 +19617,16 @@
     "NodeX": -74352.03,
     "NodeY": 61463.0234,
     "MapXOffsets": [
-      -40,
-      -40,
-      -40,
-      -40
+      180,
+      10,
+      -15,
+      -32
     ],
     "MapYOffsets": [
-      -26,
-      -26,
-      -26,
-      -26
+      -50,
+      -20,
+      -15,
+      -22
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -19578,16 +19690,16 @@
     "NodeX": -73044.19,
     "NodeY": 68810.0,
     "MapXOffsets": [
-      -35,
-      -35,
-      -35,
-      -35
+      -170,
+      -80,
+      -40,
+      -31
     ],
     "MapYOffsets": [
-      -26,
-      -26,
-      -26,
-      -26
+      -180,
+      -55,
+      -20,
+      4
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -19651,16 +19763,16 @@
     "NodeX": -77271.7656,
     "NodeY": 34179.875,
     "MapXOffsets": [
+      10,
       -30,
       -30,
-      -30,
-      -30
+      -22
     ],
     "MapYOffsets": [
+      -80,
       -25,
-      -25,
-      -25,
-      -25
+      -15,
+      -16
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -19724,16 +19836,16 @@
     "NodeX": -79725.97,
     "NodeY": 62836.0352,
     "MapXOffsets": [
-      -30,
-      -30,
-      -30,
-      -30
+      70,
+      -10,
+      -25,
+      -31
     ],
     "MapYOffsets": [
-      -26,
-      -26,
-      -26,
-      -26
+      150,
+      15,
+      -3,
+      5
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -19797,16 +19909,16 @@
     "NodeX": -79942.5156,
     "NodeY": 70261.55,
     "MapXOffsets": [
-      -40,
-      -40,
-      -40,
-      -40
+      200,
+      0,
+      -30,
+      -37
     ],
     "MapYOffsets": [
-      -26,
-      -26,
-      -26,
-      -26
+      -170,
+      -35,
+      -20,
+      -22
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -19870,16 +19982,16 @@
     "NodeX": -82022.16,
     "NodeY": 26694.2813,
     "MapXOffsets": [
-      -45,
-      -45,
-      -45,
-      -45
+      -250,
+      -120,
+      -65,
+      -35
     ],
     "MapYOffsets": [
-      -26,
-      -26,
-      -26,
-      -26
+      70,
+      10,
+      -5,
+      -22
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -19946,13 +20058,13 @@
       -25,
       -25,
       -25,
-      -25
+      -21
     ],
     "MapYOffsets": [
-      -25,
-      -25,
-      -25,
-      -25
+      80,
+      10,
+      -7,
+      -16
     ],
     "CountryId": 36,
     "LocalizedNames": {
@@ -20016,16 +20128,16 @@
     "NodeX": -82524.26,
     "NodeY": 53476.07,
     "MapXOffsets": [
-      -25,
-      -25,
-      -25,
-      -25
+      20,
+      -20,
+      -30,
+      5
     ],
     "MapYOffsets": [
-      5,
-      5,
-      5,
-      5
+      -30,
+      -15,
+      -13,
+      -9
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -20089,16 +20201,16 @@
     "NodeX": -84721.38,
     "NodeY": 32580.6836,
     "MapXOffsets": [
+      50,
       -20,
       -20,
-      -20,
-      -20
+      -18
     ],
     "MapYOffsets": [
-      -26,
-      -26,
-      -26,
-      -26
+      -40,
+      -20,
+      -12,
+      -22
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -20162,16 +20274,16 @@
     "NodeX": -85324.73,
     "NodeY": 39530.95,
     "MapXOffsets": [
-      -27,
-      -27,
-      -27,
-      -27
+      -150,
+      -55,
+      -35,
+      -23
     ],
     "MapYOffsets": [
-      -26,
-      -26,
-      -26,
-      -26
+      -250,
+      -70,
+      -30,
+      -22
     ],
     "CountryId": 36,
     "LocalizedNames": {
@@ -20235,16 +20347,16 @@
     "NodeX": -86584.9844,
     "NodeY": 44726.957,
     "MapXOffsets": [
+      -60,
       -40,
       -40,
-      -40,
-      -40
+      -31
     ],
     "MapYOffsets": [
-      -26,
-      -26,
-      -26,
-      -26
+      -100,
+      -30,
+      -17,
+      2
     ],
     "CountryId": 36,
     "LocalizedNames": {
@@ -20308,16 +20420,16 @@
     "NodeX": -87009.8047,
     "NodeY": 50102.2344,
     "MapXOffsets": [
-      -45,
-      -45,
-      -45,
-      -45
+      -35,
+      -32,
+      -42,
+      -32
     ],
     "MapYOffsets": [
-      -26,
-      -26,
-      -26,
-      -26
+      20,
+      0,
+      -5,
+      -16
     ],
     "CountryId": 36,
     "LocalizedNames": {
@@ -20381,16 +20493,16 @@
     "NodeX": -86917.1953,
     "NodeY": 54569.4141,
     "MapXOffsets": [
-      -20,
-      -20,
-      -20,
-      -25
+      -40,
+      -40,
+      -28,
+      3
     ],
     "MapYOffsets": [
-      15,
-      15,
+      60,
       5,
-      5
+      -8,
+      -9
     ],
     "CountryId": 36,
     "LocalizedNames": {
@@ -20454,16 +20566,16 @@
     "NodeX": -87970.375,
     "NodeY": 56990.8242,
     "MapXOffsets": [
-      -19,
-      -19,
-      -19,
-      -19
+      -10,
+      -15,
+      -12,
+      -13
     ],
     "MapYOffsets": [
-      15,
-      15,
-      5,
-      5
+      130,
+      20,
+      2,
+      0
     ],
     "CountryId": 36,
     "LocalizedNames": {
@@ -20527,16 +20639,16 @@
     "NodeX": -84687.45,
     "NodeY": 62564.293,
     "MapXOffsets": [
-      -20,
-      -20,
-      -20,
-      -29
+      200,
+      40,
+      0,
+      -25
     ],
     "MapYOffsets": [
-      -26,
-      -26,
-      -26,
-      5
+      250,
+      50,
+      5,
+      -22
     ],
     "CountryId": 42,
     "LocalizedNames": {
@@ -20600,16 +20712,16 @@
     "NodeX": -91466.83,
     "NodeY": 54457.4922,
     "MapXOffsets": [
-      -60,
-      -60,
-      -60,
-      -78
+      -90,
+      -35,
+      -30,
+      -62
     ],
     "MapYOffsets": [
-      -10,
-      -10,
-      -10,
-      -10
+      -100,
+      -25,
+      -20,
+      -9
     ],
     "CountryId": 36,
     "LocalizedNames": {
@@ -20673,16 +20785,16 @@
     "NodeX": -88518.8,
     "NodeY": 52658.5625,
     "MapXOffsets": [
-      -45,
-      -45,
-      -45,
-      -45
+      -110,
+      -75,
+      -63,
+      -20
     ],
     "MapYOffsets": [
-      -26,
-      -26,
-      -26,
-      -26
+      -100,
+      -20,
+      -8,
+      -13
     ],
     "CountryId": 36,
     "LocalizedNames": {
@@ -20746,16 +20858,16 @@
     "NodeX": -91831.36,
     "NodeY": 56448.6172,
     "MapXOffsets": [
-      -25,
-      -25,
-      -25,
-      -25
+      100,
+      0,
+      -17,
+      -16
     ],
     "MapYOffsets": [
+      190,
+      40,
       5,
-      5,
-      5,
-      5
+      0
     ],
     "CountryId": 36,
     "LocalizedNames": {
@@ -20819,16 +20931,16 @@
     "NodeX": -88641.28,
     "NodeY": 62440.8672,
     "MapXOffsets": [
+      -120,
+      -40,
       -20,
-      -20,
-      -20,
-      -20
+      -3
     ],
     "MapYOffsets": [
-      -29,
-      -27,
-      -26,
-      -26
+      50,
+      5,
+      -7,
+      -4
     ],
     "CountryId": 36,
     "LocalizedNames": {
@@ -20892,16 +21004,16 @@
     "NodeX": -90480.21,
     "NodeY": 62465.71,
     "MapXOffsets": [
-      -36,
-      -36,
-      -36,
-      -49
+      250,
+      40,
+      -5,
+      -17
     ],
     "MapYOffsets": [
+      80,
+      10,
       -10,
-      -10,
-      -10,
-      -10
+      -19
     ],
     "CountryId": 36,
     "LocalizedNames": {
@@ -20965,14 +21077,14 @@
     "NodeX": -92710.39,
     "NodeY": 50653.47,
     "MapXOffsets": [
-      -70,
-      -70,
-      -70,
-      -70
+      200,
+      20,
+      -10,
+      -68
     ],
     "MapYOffsets": [
-      -10,
-      -10,
+      20,
+      0,
       -10,
       -10
     ],
@@ -21038,16 +21150,16 @@
     "NodeX": -54785.67,
     "NodeY": -97804.95,
     "MapXOffsets": [
-      -20,
-      -22,
-      -30,
-      -20
+      0,
+      0,
+      0,
+      0
     ],
     "MapYOffsets": [
-      -26,
-      -28,
-      -30,
-      -26
+      0,
+      0,
+      0,
+      0
     ],
     "CountryId": 26,
     "LocalizedNames": {
@@ -21184,16 +21296,16 @@
     "NodeX": -58623.0469,
     "NodeY": -93265.1641,
     "MapXOffsets": [
-      -28,
       -20,
-      -24,
-      -20
+      -60,
+      -50,
+      1
     ],
     "MapYOffsets": [
-      -32,
-      -44,
-      -34,
-      -28
+      -40,
+      5,
+      6,
+      -10
     ],
     "CountryId": 26,
     "LocalizedNames": {
@@ -21330,16 +21442,16 @@
     "NodeX": -61543.3164,
     "NodeY": -103979.336,
     "MapXOffsets": [
+      -100,
+      -60,
       -30,
-      -35,
-      -35,
-      -40
+      -26
     ],
     "MapYOffsets": [
-      -5,
-      -5,
-      -8,
-      -28
+      -30,
+      -10,
+      -15,
+      0
     ],
     "CountryId": 26,
     "LocalizedNames": {
@@ -21403,16 +21515,16 @@
     "NodeX": -65428.66,
     "NodeY": -105902.344,
     "MapXOffsets": [
-      -40,
-      -40,
-      -40,
-      -40
+      80,
+      -20,
+      -25,
+      0
     ],
     "MapYOffsets": [
-      -10,
-      -20,
-      -34,
-      -28
+      -60,
+      -15,
+      -5,
+      -10
     ],
     "CountryId": 26,
     "LocalizedNames": {
@@ -21476,16 +21588,15 @@
     "NodeX": -70767.0,
     "NodeY": -96442.56,
     "MapXOffsets": [
-      -20,
-      -20,
-      -30,
-      -35
+      -100,
+      -38,
+      -22,
+      2
     ],
     "MapYOffsets": [
-      -16,
-      -16,
-      -26,
-      -28
+      -180,
+      -30,
+      -10
     ],
     "CountryId": 26,
     "LocalizedNames": {
@@ -21549,16 +21660,15 @@
     "NodeX": -71850.55,
     "NodeY": -101991.5,
     "MapXOffsets": [
-      -40,
-      -40,
-      -40,
-      -40
+      80,
+      20,
+      -25,
+      0
     ],
     "MapYOffsets": [
-      -20,
-      -22,
-      -23,
-      -30
+      150,
+      30,
+      3
     ],
     "CountryId": 26,
     "LocalizedNames": {
@@ -21623,15 +21733,15 @@
     "NodeY": -107730.547,
     "MapXOffsets": [
       -40,
-      -40,
-      -40,
-      -40
+      -30,
+      -30,
+      0
     ],
     "MapYOffsets": [
-      -40,
-      -36,
-      -28,
-      -30
+      -100,
+      -20,
+      -10,
+      -10
     ],
     "CountryId": 26,
     "LocalizedNames": {
@@ -21695,16 +21805,16 @@
     "NodeX": -71044.28,
     "NodeY": -112499.063,
     "MapXOffsets": [
-      -40,
-      -40,
-      -40,
-      -40
+      -60,
+      -35,
+      -32,
+      1
     ],
     "MapYOffsets": [
-      -26,
-      -48,
-      -35,
-      -30
+      5,
+      -10,
+      -5,
+      -9
     ],
     "CountryId": 26,
     "LocalizedNames": {
@@ -21768,16 +21878,15 @@
     "NodeX": -73021.5,
     "NodeY": -98952.62,
     "MapXOffsets": [
-      -40,
-      -40,
-      -40,
-      -40
+      0,
+      0,
+      -20,
+      4
     ],
     "MapYOffsets": [
-      0,
-      -6,
-      -34,
-      -26
+      30,
+      20,
+      0
     ],
     "CountryId": 26,
     "LocalizedNames": {
@@ -21841,16 +21950,16 @@
     "NodeX": -75841.27,
     "NodeY": -105601.438,
     "MapXOffsets": [
-      10,
-      0,
+      30,
+      -30,
       -25,
-      -35
+      -23
     ],
     "MapYOffsets": [
-      -34,
-      -32,
-      -28,
-      -26
+      -75,
+      -20,
+      -7,
+      -1
     ],
     "CountryId": 26,
     "LocalizedNames": {
@@ -21987,15 +22096,15 @@
     "NodeX": -76116.43,
     "NodeY": -99255.52,
     "MapXOffsets": [
-      -20,
-      -20,
-      -40,
-      -40
+      270,
+      25,
+      -15,
+      -25
     ],
     "MapYOffsets": [
-      -20,
-      -38,
-      -28,
+      120,
+      20,
+      0,
       0
     ],
     "CountryId": 26,
@@ -22060,16 +22169,16 @@
     "NodeX": 1120.11328,
     "NodeY": 33782.9453,
     "MapXOffsets": [
-      -31,
-      -31,
+      250,
+      30,
       -20,
-      -29
+      5
     ],
     "MapYOffsets": [
-      -6,
-      -1,
-      10,
-      5
+      150,
+      70,
+      20,
+      -9
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -22133,16 +22242,16 @@
     "NodeX": 1081.75,
     "NodeY": 38842.9,
     "MapXOffsets": [
-      -31,
-      -31,
-      -28,
-      -34
+      -50,
+      -25,
+      -32,
+      -28
     ],
     "MapYOffsets": [
-      -6,
-      -1,
-      -21,
-      -29
+      140,
+      0,
+      -10,
+      -22
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -22206,16 +22315,16 @@
     "NodeX": 6716.617,
     "NodeY": 46191.7852,
     "MapXOffsets": [
-      -31,
-      -31,
+      -60,
       -28,
-      -24
+      -25,
+      -21
     ],
     "MapYOffsets": [
-      -6,
-      -1,
-      -21,
-      -26
+      70,
+      5,
+      -8,
+      -22
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -22279,16 +22388,16 @@
     "NodeX": 6261.25,
     "NodeY": 49479.3359,
     "MapXOffsets": [
+      130,
       -31,
-      -31,
-      -28,
-      -29
+      -35,
+      -31
     ],
     "MapYOffsets": [
-      -6,
+      80,
       -1,
       -21,
-      -26
+      -29
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -22352,16 +22461,16 @@
     "NodeX": 10324.4063,
     "NodeY": 39738.2852,
     "MapXOffsets": [
-      -31,
-      -31,
-      -28,
-      -30
+      -20,
+      -34,
+      -30,
+      -29
     ],
     "MapYOffsets": [
-      -6,
-      -1,
-      -21,
-      -29
+      60,
+      -25,
+      -15,
+      -22
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -22425,16 +22534,16 @@
     "NodeX": 8976.016,
     "NodeY": 71112.31,
     "MapXOffsets": [
+      -200,
       -31,
-      -31,
-      -28,
-      -30
+      -37,
+      -37
     ],
     "MapYOffsets": [
-      -6,
-      -1,
-      -21,
-      -29
+      20,
+      -10,
+      -10,
+      -26
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -22498,16 +22607,16 @@
     "NodeX": 12898.1211,
     "NodeY": 46828.0938,
     "MapXOffsets": [
-      -31,
-      -31,
-      -28,
-      -30
+      -110,
+      -45,
+      -45,
+      5
     ],
     "MapYOffsets": [
-      -6,
-      -1,
-      -21,
-      -29
+      35,
+      10,
+      -7,
+      -9
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -22571,16 +22680,16 @@
     "NodeX": 12294.0156,
     "NodeY": 52215.02,
     "MapXOffsets": [
-      -31,
-      -31,
+      -60,
+      -40,
       -28,
-      -30
+      -21
     ],
     "MapYOffsets": [
-      -6,
-      -1,
-      -21,
-      -29
+      100,
+      10,
+      -5,
+      -16
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -22644,16 +22753,16 @@
     "NodeX": 13318.2266,
     "NodeY": 56077.0547,
     "MapXOffsets": [
-      -31,
-      -31,
-      -28,
-      -30
+      0,
+      -30,
+      -25,
+      -33
     ],
     "MapYOffsets": [
-      -6,
-      -1,
-      -21,
-      -29
+      -50,
+      -20,
+      -15,
+      -26
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -22717,16 +22826,16 @@
     "NodeX": 18375.8672,
     "NodeY": 70964.28,
     "MapXOffsets": [
-      -31,
+      80,
       -34,
-      -51,
-      -37
+      -45,
+      -55
     ],
     "MapYOffsets": [
-      -6,
+      60,
       12,
-      23,
-      6
+      0,
+      -4
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -22790,16 +22899,16 @@
     "NodeX": 19265.8281,
     "NodeY": 70669.1641,
     "MapXOffsets": [
+      -10,
       -31,
-      -31,
-      -28,
-      -47
+      -50,
+      -3
     ],
     "MapYOffsets": [
-      -6,
-      -1,
-      -21,
-      -27
+      -15,
+      10,
+      -20,
+      -12
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -22863,16 +22972,16 @@
     "NodeX": 16470.84,
     "NodeY": 75032.55,
     "MapXOffsets": [
-      -31,
-      -31,
-      -28,
-      -32
+      -50,
+      -40,
+      -40,
+      5
     ],
     "MapYOffsets": [
-      -6,
-      -1,
-      -21,
-      7
+      200,
+      30,
+      0,
+      -9
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -22937,15 +23046,15 @@
     "NodeY": 54331.4,
     "MapXOffsets": [
       -31,
-      -31,
-      -28,
-      -23
+      -40,
+      -22,
+      -17
     ],
     "MapYOffsets": [
       -6,
       -1,
-      -21,
-      -29
+      -10,
+      -22
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -23010,15 +23119,15 @@
     "NodeY": 66925.88,
     "MapXOffsets": [
       33,
-      -57,
-      -49,
-      -46
+      -45,
+      -40,
+      -31
     ],
     "MapYOffsets": [
       -80,
-      -71,
-      -36,
-      -30
+      -20,
+      -5,
+      -19
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -23082,16 +23191,16 @@
     "NodeX": 25990.55,
     "NodeY": 58071.4063,
     "MapXOffsets": [
-      -31,
-      -31,
+      80,
+      -35,
       -28,
-      -36
+      -28
     ],
     "MapYOffsets": [
-      -6,
-      -1,
-      -21,
-      -28
+      -250,
+      -70,
+      -28,
+      -22
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -23155,16 +23264,16 @@
     "NodeX": -780.8242,
     "NodeY": 32276.793,
     "MapXOffsets": [
-      -31,
-      -31,
-      -26,
-      -28
+      100,
+      -10,
+      -22,
+      -22
     ],
     "MapYOffsets": [
-      -6,
-      -1,
-      9,
-      -24
+      30,
+      -13,
+      -8,
+      -17
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -23228,16 +23337,16 @@
     "NodeX": -2906.44141,
     "NodeY": 33934.293,
     "MapXOffsets": [
-      -31,
-      -31,
-      -28,
-      -28
+      -140,
+      -55,
+      -35,
+      -24
     ],
     "MapYOffsets": [
-      -6,
-      -1,
-      -21,
-      -24
+      -50,
+      -35,
+      -15,
+      2
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -23301,16 +23410,16 @@
     "NodeX": -2468.29688,
     "NodeY": 40181.81,
     "MapXOffsets": [
+      -20,
       -31,
-      -31,
-      -28,
-      -36
+      -30,
+      -29
     ],
     "MapYOffsets": [
-      -6,
+      20,
       -1,
-      -21,
-      5
+      -10,
+      2
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -23374,16 +23483,16 @@
     "NodeX": -9760.73,
     "NodeY": 64451.94,
     "MapXOffsets": [
-      -31,
-      -31,
-      -28,
+      -200,
+      -60,
+      -40,
       -30
     ],
     "MapYOffsets": [
-      -6,
-      -1,
-      -21,
-      -29
+      -300,
+      -70,
+      -30,
+      2
     ],
     "CountryId": 6,
     "LocalizedNames": {
@@ -27024,16 +27133,16 @@
     "NodeX": 32105.2656,
     "NodeY": -102668.047,
     "MapXOffsets": [
-      -60,
-      -60,
-      -60,
-      -60
+      -130,
+      -56,
+      -34,
+      -35
     ],
     "MapYOffsets": [
-      -26,
-      -26,
-      -26,
-      -26
+      -70,
+      -18,
+      -8,
+      -2
     ],
     "CountryId": 43,
     "LocalizedNames": {
@@ -28322,5 +28431,489 @@
       "zh_cn": "奥勒松",
       "zh_tw": "奧勒松市鎮"
     }
+  },
+  {
+    "Name": "Off Road Quarry",
+    "Group": null,
+    "Country": "uk",
+    "X": -34931.8945,
+    "Y": -17597.4473,
+    "Width": 1800.0,
+    "Height": 900.0,
+    "CenterX": -34031.8945,
+    "CenterY": -17147.4473,
+    "DlcGuard": 0,
+    "SourceArchive": "tfm11_anniversary.mp",
+    "NodeX": -33954.6328,
+    "NodeY": -16959.7383,
+    "MapXOffsets": [
+      -44,
+      -40,
+      -40,
+      -41,
+      0,
+      0,
+      0,
+      -3,
+      -44,
+      -40,
+      -40,
+      -41,
+      0,
+      0,
+      0,
+      -3,
+      -44,
+      -40,
+      -40,
+      -41
+    ],
+    "MapYOffsets": [
+      -32,
+      -39,
+      -27,
+      -26,
+      0,
+      0,
+      35,
+      -8,
+      -32,
+      -39,
+      -27,
+      -26,
+      0,
+      0,
+      35,
+      -8,
+      -32,
+      -39,
+      -27,
+      -26
+    ],
+    "CountryId": 10,
+    "LocalizedNames": {}
+  },
+  {
+    "Name": "London",
+    "Group": null,
+    "Country": "uk",
+    "X": -40196.9922,
+    "Y": -12259.34,
+    "Width": 1300.0,
+    "Height": 1350.0,
+    "CenterX": -39546.9922,
+    "CenterY": -11584.34,
+    "DlcGuard": 0,
+    "SourceArchive": "tfm11_anniversary.mp",
+    "NodeX": -39546.8672,
+    "NodeY": -11584.2148,
+    "MapXOffsets": [
+      -50,
+      -40,
+      -50,
+      -46
+    ],
+    "MapYOffsets": [
+      50,
+      5,
+      -10,
+      -12
+    ],
+    "CountryId": 10,
+    "LocalizedNames": {
+      "bg_bg": "Лондон",
+      "ca_es": "Londres",
+      "cs_cz": "Londýn",
+      "da_dk": "London",
+      "de_de": "London",
+      "el_gr": "Λονδίνο",
+      "en_gb": "London",
+      "en_us": "London",
+      "es_es": "Londres",
+      "es_la": "Londres",
+      "et_ee": "London",
+      "eu_es": "Londres",
+      "fi_fi": "Lontoo",
+      "fr_ca": "Londres",
+      "fr_fr": "Londres",
+      "gl_es": "Londres",
+      "hr_hr": "London",
+      "hu_hu": "London",
+      "it_it": "Londra",
+      "ja_jp": "ロンドン",
+      "ka_ge": "ლონდონი",
+      "ko_kr": "런던",
+      "lt_lt": "Londonas",
+      "lv_lv": "Londona",
+      "mk_mk": "Лондон",
+      "nl_nl": "Londen",
+      "no_no": "London",
+      "pl_pl": "Londyn",
+      "pl_si": "Londyn",
+      "pt_br": "Londres",
+      "pt_pt": "Londres",
+      "ro_ro": "Londra",
+      "ru_ru": "Лондон",
+      "sk_sk": "Londýn",
+      "sl_sl": "London",
+      "sr_sp": "London",
+      "sr_sr": "Лондон",
+      "sv_se": "London",
+      "tr_tr": "Londra",
+      "uk_uk": "Лондон",
+      "vi_vn": "London",
+      "zh_cn": "伦敦",
+      "zh_tw": "倫敦市"
+    }
+  },
+  {
+    "Name": "Cambridge",
+    "Group": null,
+    "Country": "uk",
+    "X": -37322.8125,
+    "Y": -16539.5234,
+    "Width": 1000.0,
+    "Height": 800.0,
+    "CenterX": -36822.8125,
+    "CenterY": -16139.5234,
+    "DlcGuard": 0,
+    "SourceArchive": "tfm11_anniversary.mp",
+    "NodeX": -36822.6875,
+    "NodeY": -16139.3984,
+    "MapXOffsets": [
+      10,
+      -32,
+      -42,
+      -36
+    ],
+    "MapYOffsets": [
+      -100,
+      -30,
+      -16,
+      -20
+    ],
+    "CountryId": 10,
+    "LocalizedNames": {
+      "bg_bg": "Кембридж",
+      "ca_es": "Cambridge",
+      "cs_cz": "Cambridge",
+      "da_dk": "Cambridge",
+      "de_de": "Cambridge",
+      "el_gr": "Κέιμπριτζ",
+      "en_gb": "Cambridge",
+      "en_us": "Cambridge",
+      "es_es": "Cambridge",
+      "es_la": "Cambridge",
+      "et_ee": "Cambridge",
+      "eu_es": "Cambridge",
+      "fi_fi": "Cambridge",
+      "fr_ca": "Cambridge",
+      "fr_fr": "Cambridge",
+      "gl_es": "Cambridge",
+      "hr_hr": "Cambridge",
+      "hu_hu": "Cambridge",
+      "it_it": "Cambridge",
+      "ja_jp": "ケンブリッジ",
+      "ka_ge": "კემბრიჯი",
+      "ko_kr": "케임브리지",
+      "lt_lt": "Kembridžas",
+      "lv_lv": "Kembridža",
+      "mk_mk": "Кембриџ",
+      "nl_nl": "Cambridge",
+      "no_no": "Cambridge",
+      "pl_pl": "Cambridge",
+      "pl_si": "Cambridge",
+      "pt_br": "Cambridge",
+      "pt_pt": "Cambridge",
+      "ro_ro": "Cambridge",
+      "ru_ru": "Кембридж",
+      "sk_sk": "Cambridge",
+      "sl_sl": "Cambridge",
+      "sr_sp": "Kembridž",
+      "sr_sr": "Кембриџ",
+      "sv_se": "Cambridge",
+      "tr_tr": "Cambridge",
+      "uk_uk": "Кембридж",
+      "vi_vn": "Cambridge",
+      "zh_cn": "剑桥",
+      "zh_tw": "劍橋市"
+    }
+  },
+  {
+    "Name": "Wrocław",
+    "Group": null,
+    "Country": "poland",
+    "X": 22802.7734,
+    "Y": -3021.10547,
+    "Width": 1400.0,
+    "Height": 2100.0,
+    "CenterX": 23502.7734,
+    "CenterY": -1971.10547,
+    "DlcGuard": 0,
+    "SourceArchive": "hq_final.mp",
+    "NodeX": 23502.8984,
+    "NodeY": -1970.98047,
+    "MapXOffsets": [
+      40,
+      -22,
+      -28,
+      -28
+    ],
+    "MapYOffsets": [
+      235,
+      38,
+      5,
+      -20
+    ],
+    "CountryId": 8,
+    "LocalizedNames": {
+      "bg_bg": "Вроцлав",
+      "ca_es": "Breslau",
+      "cs_cz": "Vratislav",
+      "da_dk": "Wrocław",
+      "de_de": "Breslau",
+      "el_gr": "Βρότσλαβ",
+      "en_gb": "Wrocław",
+      "en_us": "Wrocław",
+      "es_es": "Breslavia",
+      "es_la": "Breslavia",
+      "et_ee": "Wrocław",
+      "eu_es": "Wrocław",
+      "fi_fi": "Wrocław",
+      "fr_ca": "Wrocław",
+      "fr_fr": "Wrocław",
+      "gl_es": "Wrocław",
+      "hr_hr": "Wrocław",
+      "hu_hu": "Boroszló",
+      "it_it": "Breslavia",
+      "ja_jp": "ヴロツワフ",
+      "ka_ge": "ვროცლავი",
+      "ko_kr": "브로츠와프",
+      "lt_lt": "Vroclavas",
+      "lv_lv": "Vroclava",
+      "mk_mk": "Вроцлав",
+      "nl_nl": "Wrocław",
+      "no_no": "Wrocław",
+      "pl_pl": "Wrocław",
+      "pl_si": "Wrocław",
+      "pt_br": "Breslávia",
+      "pt_pt": "Wrocław",
+      "ro_ro": "Wrocław",
+      "ru_ru": "Вроцлав",
+      "sk_sk": "Vroclav",
+      "sl_sl": "Vroclav",
+      "sr_sp": "Vrocłav",
+      "sr_sr": "Вроцлав",
+      "sv_se": "Wrocław",
+      "tr_tr": "Wrocław",
+      "uk_uk": "Вроцлав",
+      "vi_vn": "Wrocław",
+      "zh_cn": "弗罗茨瓦夫",
+      "zh_tw": "弗次瓦夫市"
+    }
+  },
+  {
+    "Name": "TruckersMP HQ",
+    "Group": null,
+    "Country": "poland",
+    "X": 20421.2773,
+    "Y": -1241.90625,
+    "Width": 1100.0,
+    "Height": 1600.0,
+    "CenterX": 20971.2773,
+    "CenterY": -441.90625,
+    "DlcGuard": 0,
+    "SourceArchive": "hq_final.mp",
+    "NodeX": 20971.4023,
+    "NodeY": -441.78125,
+    "MapXOffsets": [
+      -39,
+      -41,
+      -35,
+      -37
+    ],
+    "MapYOffsets": [
+      -19,
+      -20,
+      -28,
+      -27
+    ],
+    "CountryId": 8,
+    "LocalizedNames": {}
+  },
+  {
+    "Name": "Winsen",
+    "Group": null,
+    "Country": "germany",
+    "X": 863.636963,
+    "Y": -15443.0088,
+    "Width": 806.593262,
+    "Height": 783.98584,
+    "CenterX": 1266.93359,
+    "CenterY": -15051.0156,
+    "DlcGuard": 0,
+    "SourceArchive": "halloween2026.mp",
+    "NodeX": 1267.05859,
+    "NodeY": -15050.8906,
+    "MapXOffsets": [
+      -39,
+      -41,
+      -35,
+      -24
+    ],
+    "MapYOffsets": [
+      -19,
+      -20,
+      -28,
+      5
+    ],
+    "CountryId": 5,
+    "LocalizedNames": {
+      "bg_bg": "Винзен",
+      "ca_es": "Winsen",
+      "cs_cz": "Winsen",
+      "da_dk": "Winsen",
+      "de_de": "Winsen",
+      "el_gr": "Βίνσεν",
+      "en_gb": "Winsen",
+      "en_us": "Winsen",
+      "es_es": "Winsen",
+      "es_la": "Winsen",
+      "et_ee": "Winsen",
+      "eu_es": "Winsen",
+      "fi_fi": "Winsen",
+      "fr_ca": "Winsen",
+      "fr_fr": "Winsen",
+      "gl_es": "Winsen",
+      "hr_hr": "Winsen",
+      "hu_hu": "Winsen",
+      "it_it": "Winsen",
+      "ja_jp": "ヴィンゼン",
+      "ka_ge": "ვინზენი",
+      "ko_kr": "빈젠",
+      "lt_lt": "Vinsenas",
+      "lv_lv": "Winsen",
+      "mk_mk": "Винзен",
+      "nl_nl": "Winsen",
+      "no_no": "Winsen",
+      "pl_pl": "Winsen",
+      "pl_si": "Winsen",
+      "pt_br": "Winsen",
+      "pt_pt": "Winsen",
+      "ro_ro": "Winsen",
+      "ru_ru": "Винзен",
+      "sk_sk": "Winsen",
+      "sl_sl": "Winsen",
+      "sr_sp": "Winsen",
+      "sr_sr": "Винзен",
+      "sv_se": "Winsen",
+      "tr_tr": "Winsen",
+      "uk_uk": "Вінзен",
+      "vi_vn": "Winsen",
+      "zh_cn": "温森",
+      "zh_tw": "溫森市"
+    }
+  },
+  {
+    "Name": "Magdeburg",
+    "Group": null,
+    "Country": "germany",
+    "X": 3740.21973,
+    "Y": -8890.395,
+    "Width": 1126.34619,
+    "Height": 1140.93237,
+    "CenterX": 4303.39258,
+    "CenterY": -8319.929,
+    "DlcGuard": 0,
+    "SourceArchive": "halloween2026.mp",
+    "NodeX": 4449.23828,
+    "NodeY": -8186.25,
+    "MapXOffsets": [
+      -60,
+      -50,
+      -52,
+      -42
+    ],
+    "MapYOffsets": [
+      -50,
+      -20,
+      -5,
+      -22
+    ],
+    "CountryId": 5,
+    "LocalizedNames": {
+      "bg_bg": "Магдебург",
+      "ca_es": "Magdeburg",
+      "cs_cz": "Magdeburg",
+      "da_dk": "Magdeburg",
+      "de_de": "Magdeburg",
+      "el_gr": "Μαγδεβούργο",
+      "en_gb": "Magdeburg",
+      "en_us": "Magdeburg",
+      "es_es": "Magdeburgo",
+      "es_la": "Magdeburgo",
+      "et_ee": "Magdeburg",
+      "eu_es": "Magdeburg",
+      "fi_fi": "Magdeburg",
+      "fr_ca": "Magdebourg",
+      "fr_fr": "Magdebourg",
+      "gl_es": "Magdeburgo",
+      "hr_hr": "Magdeburg",
+      "hu_hu": "Magdeburg",
+      "it_it": "Magdeburgo",
+      "ja_jp": "マクデブルク",
+      "ka_ge": "მაგდებურგი",
+      "ko_kr": "마그데부르크",
+      "lt_lt": "Magdeburgas",
+      "lv_lv": "Magdeburga",
+      "mk_mk": "Магдебург",
+      "nl_nl": "Maagdenburg",
+      "no_no": "Magdeburg",
+      "pl_pl": "Magdeburg",
+      "pl_si": "Magdeburg",
+      "pt_br": "Magdeburgo",
+      "pt_pt": "Magdeburgo",
+      "ro_ro": "Magdeburg",
+      "ru_ru": "Магдебург",
+      "sk_sk": "Magdeburg",
+      "sl_sl": "Magdeburg",
+      "sr_sp": "Magdeburg",
+      "sr_sr": "Магдебург",
+      "sv_se": "Magdeburg",
+      "tr_tr": "Magdeburg",
+      "uk_uk": "Магдебург",
+      "vi_vn": "Magdeburg",
+      "zh_cn": "马格德堡",
+      "zh_tw": "馬德堡市"
+    }
+  },
+  {
+    "Name": "Pumpkin Farm",
+    "Group": null,
+    "Country": "germany",
+    "X": 3836.647,
+    "Y": -12580.3184,
+    "Width": 1009.66705,
+    "Height": 593.331665,
+    "CenterX": 4341.48047,
+    "CenterY": -12283.6523,
+    "DlcGuard": 0,
+    "SourceArchive": "halloween2026.mp",
+    "NodeX": 4341.60547,
+    "NodeY": -12283.5273,
+    "MapXOffsets": [
+      -120,
+      -63,
+      -41,
+      -40
+    ],
+    "MapYOffsets": [
+      -34,
+      -30,
+      -21,
+      -26
+    ],
+    "CountryId": 5,
+    "LocalizedNames": {}
   }
 ]

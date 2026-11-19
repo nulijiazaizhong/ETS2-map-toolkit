@@ -1,5 +1,2319 @@
 [
   {
+    "X": 4182.711,
+    "Y": -12260.5273,
+    "Name": "tmphw25",
+    "Type": "Company",
+    "Width": 256,
+    "Height": 64,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 7750.67529,
+    "Y": -12457.5488,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 7755.67627,
+    "Y": -12456.3545,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 7960.106,
+    "Y": -12368.0957,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 7955.105,
+    "Y": -12369.29,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 6414.039,
+    "Y": -14180.6914,
+    "Name": "d_e26",
+    "Type": "Overlay",
+    "Width": 64,
+    "Height": 64,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 7654.09766,
+    "Y": -14920.6719,
+    "Name": "d_e55",
+    "Type": "Overlay",
+    "Width": 64,
+    "Height": 64,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 5279.33,
+    "Y": -12136.2314,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 5295.71973,
+    "Y": -12067.8193,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 5289.077,
+    "Y": -12067.8193,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 5157.7417,
+    "Y": -14888.5654,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 5158.89844,
+    "Y": -14893.7168,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 4986.045,
+    "Y": -14774.6,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 4844.14258,
+    "Y": -14784.7578,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 4843.43848,
+    "Y": -14779.5254,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 5015.38135,
+    "Y": -14906.6084,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 7657.94141,
+    "Y": -15038.3672,
+    "Name": "d_a19",
+    "Type": "Overlay",
+    "Width": 64,
+    "Height": 64,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 6312.52344,
+    "Y": -14291.5313,
+    "Name": "d_a24",
+    "Type": "Overlay",
+    "Width": 64,
+    "Height": 64,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 4365.27832,
+    "Y": -8380.08,
+    "Name": "lkwlog",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 4754.043,
+    "Y": -8477.463,
+    "Name": "vitas_pwr",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 4737.61035,
+    "Y": -8218.11,
+    "Name": "granoro",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 4432.50635,
+    "Y": -9151.693,
+    "Name": "steinbr_str",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 4484.91846,
+    "Y": -8496.35449,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 4489.91455,
+    "Y": -8496.558,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 4264.27637,
+    "Y": -8496.897,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 4280.554,
+    "Y": -8460.238,
+    "Name": "garage_large_ico",
+    "Type": "Garage",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 4260.498,
+    "Y": -8456.786,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 4395.89844,
+    "Y": -8487.009,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 4376.09,
+    "Y": -8493.755,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 4475.927,
+    "Y": -8495.989,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 4480.923,
+    "Y": -8496.192,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 6568.64063,
+    "Y": -8754.281,
+    "Name": "d_e30",
+    "Type": "Overlay",
+    "Width": 64,
+    "Height": 64,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 7015.67432,
+    "Y": -8841.331,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 6880.05225,
+    "Y": -8678.899,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 6880.26758,
+    "Y": -8673.624,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 7155.35645,
+    "Y": -8868.255,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 7154.682,
+    "Y": -8873.49,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 7022.23535,
+    "Y": -8698.331,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 6340.051,
+    "Y": -8777.469,
+    "Name": "d_a2",
+    "Type": "Overlay",
+    "Width": 64,
+    "Height": 64,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 1560.117,
+    "Y": -15173.57,
+    "Name": "feldbinder_t",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 19,
+    "IsSecret": false
+  },
+  {
+    "X": 1089.23547,
+    "Y": -15015.8066,
+    "Name": "feldbinder",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 19,
+    "IsSecret": false
+  },
+  {
+    "X": 2525.168,
+    "Y": -15964.16,
+    "Name": "d_e26",
+    "Type": "Overlay",
+    "Width": 64,
+    "Height": 64,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 1616.02454,
+    "Y": -9057.914,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 1611.03369,
+    "Y": -9056.193,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 1893.59167,
+    "Y": -9144.039,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 2027.99622,
+    "Y": -9093.714,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 2030.30762,
+    "Y": -9098.46,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 1709.72058,
+    "Y": -9060.164,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 1661.57141,
+    "Y": -8953.936,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 1721.18933,
+    "Y": -9018.348,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 23556.6445,
+    "Y": -1714.90234,
+    "Name": "bus_stop",
+    "Type": "Bus Stop",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21053.8516,
+    "Y": -972.1719,
+    "Name": "train_ico",
+    "Type": "Train",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 20972.418,
+    "Y": -660.042969,
+    "Name": "bus_stop",
+    "Type": "Bus Stop",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21111.1152,
+    "Y": -838.099854,
+    "Name": "cargotras",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 23472.9531,
+    "Y": -1725.211,
+    "Name": "eurogoodies",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 20976.1113,
+    "Y": -1065.12439,
+    "Name": "acc",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 23605.5078,
+    "Y": -1805.53223,
+    "Name": "trameri",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 20732.0527,
+    "Y": -941.7432,
+    "Name": "subse",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 22438.78,
+    "Y": -627.1992,
+    "Name": "euroacres",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 20968.9375,
+    "Y": -693.7617,
+    "Name": "viewpoint",
+    "Type": "Viewpoint",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21059.668,
+    "Y": -214.738281,
+    "Name": "viewpoint",
+    "Type": "Viewpoint",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21424.05,
+    "Y": -332.390625,
+    "Name": "parking_ico",
+    "Type": "Overlay",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false,
+    "ZoomLevelVisibility": 1
+  },
+  {
+    "X": 21464.5273,
+    "Y": -494.5664,
+    "Name": "parking_ico",
+    "Type": "Overlay",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false,
+    "ZoomLevelVisibility": 1
+  },
+  {
+    "X": 20659.19,
+    "Y": -139.7008,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 20680.3418,
+    "Y": -50.5704727,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 20687.82,
+    "Y": -88.45979,
+    "Name": "garage_large_ico",
+    "Type": "Garage",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21759.91,
+    "Y": 18.7042961,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21766.4922,
+    "Y": 20.6169147,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21772.8555,
+    "Y": 22.4652348,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21778.4023,
+    "Y": 24.0770645,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21783.4,
+    "Y": 25.5292377,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 20990.76,
+    "Y": -861.0786,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 20967.55,
+    "Y": -865.9336,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21119.62,
+    "Y": -199.911987,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21053.05,
+    "Y": -226.297012,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21079.4238,
+    "Y": -199.258774,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 20663.2559,
+    "Y": -792.3454,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 20746.248,
+    "Y": -680.240845,
+    "Name": "recruitment_ico",
+    "Type": "Recruitment",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 22752.21,
+    "Y": -661.2344,
+    "Name": "pl_a4",
+    "Type": "Overlay",
+    "Width": 64,
+    "Height": 64,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 23677.002,
+    "Y": -1704.53748,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 23662.5859,
+    "Y": -1671.576,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 23681.7773,
+    "Y": -1678.35083,
+    "Name": "garage_large_ico",
+    "Type": "Garage",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 23733.7813,
+    "Y": -1578.58984,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 23489.0879,
+    "Y": -1892.39612,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 23471.2988,
+    "Y": -1876.72131,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21350.8164,
+    "Y": -1823.0,
+    "Name": "pl_a4",
+    "Type": "Overlay",
+    "Width": 64,
+    "Height": 64,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 23393.4023,
+    "Y": -3945.3186,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 23462.082,
+    "Y": -3923.79565,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 23458.6484,
+    "Y": -3918.07983,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 23190.377,
+    "Y": -1415.228,
+    "Name": "dealer_ico",
+    "Type": "TruckDealer",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 20999.4043,
+    "Y": -2039.55774,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 20985.0957,
+    "Y": -1865.99512,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21021.8477,
+    "Y": -1881.05994,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21046.127,
+    "Y": -1998.49133,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 20689.7715,
+    "Y": 11.1096916,
+    "Name": "stokes",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21965.3633,
+    "Y": 1208.26392,
+    "Name": "quarry",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 20777.9141,
+    "Y": 149.918488,
+    "Name": "trameri",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21063.9277,
+    "Y": 116.451942,
+    "Name": "kaarfor",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21980.9375,
+    "Y": 1249.86328,
+    "Name": "quarry",
+    "Type": "Overlay",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 22765.4668,
+    "Y": 251.041016,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 22748.543,
+    "Y": 181.085938,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 22755.21,
+    "Y": 181.085938,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 20627.3867,
+    "Y": 1922.52344,
+    "Name": "parking_ico",
+    "Type": "Overlay",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false,
+    "ZoomLevelVisibility": 1
+  },
+  {
+    "X": 22104.8711,
+    "Y": 1223.48022,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21939.3359,
+    "Y": 1407.01367,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 16614.1484,
+    "Y": -2462.83984,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 16553.4238,
+    "Y": -2476.134,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 16588.998,
+    "Y": -2536.06641,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 16557.3926,
+    "Y": -2531.43848,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 19877.7949,
+    "Y": -2953.364,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 19848.98,
+    "Y": -3019.31763,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 19855.5469,
+    "Y": -3020.47559,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 18191.11,
+    "Y": -2489.23438,
+    "Name": "pl_a4",
+    "Type": "Overlay",
+    "Width": 64,
+    "Height": 64,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 18031.123,
+    "Y": -407.650848,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 17437.8574,
+    "Y": 3728.17578,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 17406.9043,
+    "Y": 3744.082,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 17368.543,
+    "Y": 3731.168,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 17368.543,
+    "Y": 3738.42969,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 17127.2949,
+    "Y": 3530.93,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 17161.8223,
+    "Y": 3526.57,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 17193.4531,
+    "Y": 3551.8252,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 17195.9375,
+    "Y": 3545.00146,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 16667.41,
+    "Y": 3566.96484,
+    "Name": "cz_11",
+    "Type": "Overlay",
+    "Width": 64,
+    "Height": 64,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 19765.0313,
+    "Y": 1528.49158,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 19725.2012,
+    "Y": 1468.54358,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 19731.4688,
+    "Y": 1466.263,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36852.8945,
+    "Y": -16427.207,
+    "Name": "bus_stop",
+    "Type": "Bus Stop",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36959.1836,
+    "Y": -16317.7383,
+    "Name": "kaarfor",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36914.375,
+    "Y": -16235.4268,
+    "Name": "transinet",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36726.4648,
+    "Y": -16250.73,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36755.71,
+    "Y": -16271.6826,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36753.0742,
+    "Y": -16251.5029,
+    "Name": "garage_large_ico",
+    "Type": "Garage",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36825.3359,
+    "Y": -16345.6758,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36823.5234,
+    "Y": -16322.0352,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -38641.2578,
+    "Y": -19161.52,
+    "Name": "uk_a1",
+    "Type": "Overlay",
+    "Width": 64,
+    "Height": 64,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36956.11,
+    "Y": -16450.8477,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36552.625,
+    "Y": -15855.0508,
+    "Name": "euroacres",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36183.5234,
+    "Y": -14039.8359,
+    "Name": "bus_stop",
+    "Type": "Bus Stop",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36396.39,
+    "Y": -13571.4834,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": true
+  },
+  {
+    "X": -36791.8125,
+    "Y": -12878.3652,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36789.87,
+    "Y": -12873.3115,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -37108.6328,
+    "Y": -14196.5869,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -37088.668,
+    "Y": -14232.8984,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -37095.6328,
+    "Y": -14234.127,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39161.9375,
+    "Y": -12770.0625,
+    "Name": "uk_m25",
+    "Type": "Overlay",
+    "Width": 64,
+    "Height": 64,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36342.7969,
+    "Y": -11987.3193,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36371.457,
+    "Y": -12051.8164,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36313.0078,
+    "Y": -11996.3,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36365.3672,
+    "Y": -12046.5127,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36318.01,
+    "Y": -12000.498,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36360.0469,
+    "Y": -12042.0479,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39739.7773,
+    "Y": -11453.91,
+    "Name": "bus_stop",
+    "Type": "Bus Stop",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39053.06,
+    "Y": -11849.7793,
+    "Name": "posped",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39283.5977,
+    "Y": -11743.4678,
+    "Name": "sellplan",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39435.0664,
+    "Y": -11737.4375,
+    "Name": "volvo_dlr",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39476.22,
+    "Y": -11461.8262,
+    "Name": "sanbuilders",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39250.0625,
+    "Y": -11555.625,
+    "Name": "nbfc",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39660.5039,
+    "Y": -9676.724,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39728.7852,
+    "Y": -9754.129,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39741.1,
+    "Y": -9680.01,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39690.97,
+    "Y": -9609.253,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39702.3555,
+    "Y": -9552.646,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39718.81,
+    "Y": -9568.643,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39721.3164,
+    "Y": -9594.462,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39667.4063,
+    "Y": -9554.788,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39728.3438,
+    "Y": -9724.04,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39599.78,
+    "Y": -11619.3467,
+    "Name": "recruitment_ico",
+    "Type": "Recruitment",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39404.75,
+    "Y": -11747.3789,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39463.2969,
+    "Y": -11723.7656,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39423.8555,
+    "Y": -11727.8789,
+    "Name": "dealer_ico",
+    "Type": "TruckDealer",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39047.36,
+    "Y": -11693.7344,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39076.6055,
+    "Y": -11714.6865,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39073.97,
+    "Y": -11694.5068,
+    "Name": "garage_large_ico",
+    "Type": "Garage",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -37576.39,
+    "Y": -10742.1172,
+    "Name": "uk_m25",
+    "Type": "Overlay",
+    "Width": 64,
+    "Height": 64,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39484.0469,
+    "Y": -11595.9961,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36068.75,
+    "Y": -9104.524,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35999.3828,
+    "Y": -9172.369,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36079.56,
+    "Y": -9167.515,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36062.1875,
+    "Y": -9231.763,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36032.8047,
+    "Y": -9250.157,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36062.5938,
+    "Y": -9282.313,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36042.8555,
+    "Y": -9269.022,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36096.957,
+    "Y": -9279.886,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -36004.8438,
+    "Y": -9134.523,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -37222.78,
+    "Y": -9142.539,
+    "Name": "uk_m2",
+    "Type": "Overlay",
+    "Width": 64,
+    "Height": 64,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -34677.9336,
+    "Y": -16569.09,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -34692.5039,
+    "Y": -16585.4883,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -34687.7969,
+    "Y": -16587.1973,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -34786.66,
+    "Y": -16795.0176,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -34807.5469,
+    "Y": -16796.3457,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35954.9531,
+    "Y": -15334.9971,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35984.0664,
+    "Y": -15325.6211,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35913.92,
+    "Y": -15363.5713,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35943.0352,
+    "Y": -15354.1953,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35872.89,
+    "Y": -15392.1455,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35902.0039,
+    "Y": -15382.77,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35831.86,
+    "Y": -15420.72,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35860.9727,
+    "Y": -15411.3438,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35790.83,
+    "Y": -15449.2939,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35819.94,
+    "Y": -15439.918,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35749.7969,
+    "Y": -15477.8682,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35778.91,
+    "Y": -15468.4922,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35708.7656,
+    "Y": -15506.4424,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35737.88,
+    "Y": -15497.0664,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35667.7344,
+    "Y": -15535.0166,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35696.8477,
+    "Y": -15525.6406,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35943.7148,
+    "Y": -13159.7754,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35952.36,
+    "Y": -13137.6816,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35947.2734,
+    "Y": -13133.1611,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -34138.1641,
+    "Y": -14077.8789,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -34100.55,
+    "Y": -14108.9424,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -34123.91,
+    "Y": -14111.0889,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -34128.5352,
+    "Y": -14116.64,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -33734.82,
+    "Y": -14504.2344,
+    "Name": "parking_ico",
+    "Type": "Overlay",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false,
+    "ZoomLevelVisibility": 1
+  },
+  {
+    "X": -35981.27,
+    "Y": -14165.3809,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35998.16,
+    "Y": -14182.0166,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -34737.86,
+    "Y": -12996.0742,
+    "Name": "uk_a12",
+    "Type": "Overlay",
+    "Width": 64,
+    "Height": 64,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -32917.72,
+    "Y": -13201.2617,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -32941.1836,
+    "Y": -13217.7031,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -33230.94,
+    "Y": -15183.3008,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -33237.29,
+    "Y": -15142.35,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -33230.32,
+    "Y": -15143.5781,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -33006.77,
+    "Y": -13165.2813,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -32885.0039,
+    "Y": -13168.8438,
+    "Name": "port_overlay",
+    "Type": "Ferry",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -33688.04,
+    "Y": -12767.0742,
+    "Name": "uk_a120",
+    "Type": "Overlay",
+    "Width": 64,
+    "Height": 64,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -32917.77,
+    "Y": -13165.2656,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -33383.39,
+    "Y": -13633.7188,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -33342.74,
+    "Y": -13641.7637,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -33346.2734,
+    "Y": -13647.89,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -33093.9961,
+    "Y": -8393.435,
+    "Name": "euroacres",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -34823.1445,
+    "Y": -8717.863,
+    "Name": "uk_a2",
+    "Type": "Overlay",
+    "Width": 64,
+    "Height": 64,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
     "X": -8618.024,
     "Y": -67160.95,
     "Name": "polar_fish",
@@ -90604,7 +92918,7 @@
   },
   {
     "X": -36852.8945,
-    "Y": -16427.21,
+    "Y": -16427.207,
     "Name": "bus_stop",
     "Type": "Bus Stop",
     "Width": 32,
@@ -90633,8 +92947,8 @@
     "IsSecret": false
   },
   {
-    "X": -36720.5156,
-    "Y": -16254.959,
+    "X": -36726.4648,
+    "Y": -16250.73,
     "Name": "parking_ico",
     "Type": "Parking",
     "Width": 32,
@@ -90643,8 +92957,8 @@
     "IsSecret": false
   },
   {
-    "X": -36732.85,
-    "Y": -16218.5508,
+    "X": -36755.71,
+    "Y": -16271.6826,
     "Name": "gas_ico",
     "Type": "Fuel",
     "Width": 32,
@@ -90653,153 +92967,12 @@
     "IsSecret": false
   },
   {
-    "X": -36750.2852,
-    "Y": -16249.4629,
+    "X": -36753.0742,
+    "Y": -16251.5029,
     "Name": "garage_large_ico",
     "Type": "Garage",
     "Width": 32,
     "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": -36859.2578,
-    "Y": -16616.07,
-    "Name": "photo_sight_captured",
-    "Type": "Overlay",
-    "Width": 32,
-    "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false,
-    "ZoomLevelVisibility": 4
-  },
-  {
-    "X": -37913.9336,
-    "Y": -16092.624,
-    "Name": "parking_ico",
-    "Type": "Parking",
-    "Width": 32,
-    "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": -37927.293,
-    "Y": -16053.3965,
-    "Name": "gas_ico",
-    "Type": "Fuel",
-    "Width": 32,
-    "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": -37920.22,
-    "Y": -16053.3965,
-    "Name": "gas_ico",
-    "Type": "Fuel",
-    "Width": 32,
-    "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": -36611.34,
-    "Y": -17314.2227,
-    "Name": "parking_ico",
-    "Type": "Parking",
-    "Width": 32,
-    "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": -36680.707,
-    "Y": -17246.377,
-    "Name": "parking_ico",
-    "Type": "Parking",
-    "Width": 32,
-    "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": -36600.53,
-    "Y": -17251.2324,
-    "Name": "parking_ico",
-    "Type": "Parking",
-    "Width": 32,
-    "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": -36617.9023,
-    "Y": -17186.9844,
-    "Name": "parking_ico",
-    "Type": "Parking",
-    "Width": 32,
-    "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": -36647.2852,
-    "Y": -17168.5879,
-    "Name": "parking_ico",
-    "Type": "Parking",
-    "Width": 32,
-    "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": -36617.4961,
-    "Y": -17136.4336,
-    "Name": "parking_ico",
-    "Type": "Parking",
-    "Width": 32,
-    "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": -36637.2344,
-    "Y": -17149.7246,
-    "Name": "parking_ico",
-    "Type": "Parking",
-    "Width": 32,
-    "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": -36583.1328,
-    "Y": -17138.86,
-    "Name": "gas_ico",
-    "Type": "Fuel",
-    "Width": 32,
-    "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": -36675.2461,
-    "Y": -17284.2227,
-    "Name": "gas_ico",
-    "Type": "Fuel",
-    "Width": 32,
-    "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": -38103.332,
-    "Y": -17479.1484,
-    "Name": "uk_a14",
-    "Type": "Overlay",
-    "Width": 64,
-    "Height": 64,
     "DlcGuard": 0,
     "IsSecret": false
   },
@@ -90844,36 +93017,6 @@
     "IsSecret": false
   },
   {
-    "X": -37752.11,
-    "Y": -16065.958,
-    "Name": "parking_ico",
-    "Type": "Parking",
-    "Width": 32,
-    "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": -37738.75,
-    "Y": -16105.1855,
-    "Name": "gas_ico",
-    "Type": "Fuel",
-    "Width": 32,
-    "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": -37745.8242,
-    "Y": -16105.1855,
-    "Name": "gas_ico",
-    "Type": "Fuel",
-    "Width": 32,
-    "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
     "X": -36552.625,
     "Y": -15855.0508,
     "Name": "euroacres",
@@ -90884,28 +93027,28 @@
     "IsSecret": false
   },
   {
-    "X": -37484.35,
-    "Y": -14939.6016,
-    "Name": "uk_m11",
-    "Type": "Overlay",
-    "Width": 64,
-    "Height": 64,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": -37121.34,
-    "Y": -14211.876,
-    "Name": "parking_ico",
-    "Type": "Parking",
+    "X": -36183.5234,
+    "Y": -14039.8359,
+    "Name": "bus_stop",
+    "Type": "Bus Stop",
     "Width": 32,
     "Height": 32,
     "DlcGuard": 0,
     "IsSecret": false
   },
   {
-    "X": -37101.375,
-    "Y": -14248.1875,
+    "X": -36396.39,
+    "Y": -13571.4834,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": true
+  },
+  {
+    "X": -36791.8125,
+    "Y": -12878.3652,
     "Name": "gas_ico",
     "Type": "Fuel",
     "Width": 32,
@@ -90914,8 +93057,38 @@
     "IsSecret": false
   },
   {
-    "X": -37108.34,
-    "Y": -14249.416,
+    "X": -36789.87,
+    "Y": -12873.3115,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -37108.6328,
+    "Y": -14196.5869,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -37088.668,
+    "Y": -14232.8984,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -37095.6328,
+    "Y": -14234.127,
     "Name": "gas_ico",
     "Type": "Fuel",
     "Width": 32,
@@ -90994,6 +93167,16 @@
     "IsSecret": false
   },
   {
+    "X": -39739.7773,
+    "Y": -11453.91,
+    "Name": "bus_stop",
+    "Type": "Bus Stop",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
     "X": -39053.06,
     "Y": -11849.7793,
     "Name": "posped",
@@ -91004,19 +93187,9 @@
     "IsSecret": false
   },
   {
-    "X": -39739.6875,
-    "Y": -11453.8047,
-    "Name": "bus_stop",
-    "Type": "Bus Stop",
-    "Width": 32,
-    "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": -39250.0625,
-    "Y": -11555.625,
-    "Name": "nbfc",
+    "X": -39283.5977,
+    "Y": -11743.4678,
+    "Name": "sellplan",
     "Type": "Company",
     "Width": 128,
     "Height": 32,
@@ -91044,55 +93217,14 @@
     "IsSecret": false
   },
   {
-    "X": -39283.5977,
-    "Y": -11743.4678,
-    "Name": "sellplan",
+    "X": -39250.0625,
+    "Y": -11555.625,
+    "Name": "nbfc",
     "Type": "Company",
     "Width": 128,
     "Height": 32,
     "DlcGuard": 0,
     "IsSecret": false
-  },
-  {
-    "X": -39041.36,
-    "Y": -11696.3262,
-    "Name": "parking_ico",
-    "Type": "Parking",
-    "Width": 32,
-    "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": -39053.6953,
-    "Y": -11659.918,
-    "Name": "gas_ico",
-    "Type": "Fuel",
-    "Width": 32,
-    "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": -39071.13,
-    "Y": -11690.83,
-    "Name": "garage_large_ico",
-    "Type": "Garage",
-    "Width": 32,
-    "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": -39061.67,
-    "Y": -11074.4883,
-    "Name": "photo_sight_captured",
-    "Type": "Overlay",
-    "Width": 32,
-    "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false,
-    "ZoomLevelVisibility": 4
   },
   {
     "X": -39660.5039,
@@ -91219,6 +93351,36 @@
     "Y": -11727.8789,
     "Name": "dealer_ico",
     "Type": "TruckDealer",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39047.36,
+    "Y": -11693.7344,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39076.6055,
+    "Y": -11714.6865,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -39073.97,
+    "Y": -11694.5068,
+    "Name": "garage_large_ico",
+    "Type": "Garage",
     "Width": 32,
     "Height": 32,
     "DlcGuard": 0,
@@ -91425,12 +93587,313 @@
     "IsSecret": false
   },
   {
-    "X": -34936.6172,
-    "Y": -16319.16,
-    "Name": "uk_a14",
+    "X": -34677.9336,
+    "Y": -16569.09,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -34692.5039,
+    "Y": -16585.4883,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -34687.7969,
+    "Y": -16587.1973,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -34786.66,
+    "Y": -16795.0176,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -34807.5469,
+    "Y": -16796.3457,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35954.9531,
+    "Y": -15334.9971,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35984.0664,
+    "Y": -15325.6211,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35913.92,
+    "Y": -15363.5713,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35943.0352,
+    "Y": -15354.1953,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35872.89,
+    "Y": -15392.1455,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35902.0039,
+    "Y": -15382.77,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35831.86,
+    "Y": -15420.72,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35860.9727,
+    "Y": -15411.3438,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35790.83,
+    "Y": -15449.2939,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35819.94,
+    "Y": -15439.918,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35749.7969,
+    "Y": -15477.8682,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35778.91,
+    "Y": -15468.4922,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35708.7656,
+    "Y": -15506.4424,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35737.88,
+    "Y": -15497.0664,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35667.7344,
+    "Y": -15535.0166,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35696.8477,
+    "Y": -15525.6406,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35943.7148,
+    "Y": -13159.7754,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35952.36,
+    "Y": -13137.6816,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35947.2734,
+    "Y": -13133.1611,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -34138.1641,
+    "Y": -14077.8789,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -34100.55,
+    "Y": -14108.9424,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -34123.91,
+    "Y": -14111.0889,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -34128.5352,
+    "Y": -14116.64,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -33734.82,
+    "Y": -14504.2344,
+    "Name": "parking_ico",
     "Type": "Overlay",
-    "Width": 64,
-    "Height": 64,
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false,
+    "ZoomLevelVisibility": 1
+  },
+  {
+    "X": -35981.27,
+    "Y": -14165.3809,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": -35998.16,
+    "Y": -14182.0166,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
     "DlcGuard": 0,
     "IsSecret": false
   },
@@ -116812,8 +119275,8 @@
     "IsSecret": false
   },
   {
-    "X": 23556.3125,
-    "Y": -1716.46094,
+    "X": 23556.6445,
+    "Y": -1714.90234,
     "Name": "bus_stop",
     "Type": "Bus Stop",
     "Width": 32,
@@ -116822,9 +119285,29 @@
     "IsSecret": false
   },
   {
-    "X": 22438.78,
-    "Y": -627.1992,
-    "Name": "euroacres",
+    "X": 21053.8516,
+    "Y": -972.1719,
+    "Name": "train_ico",
+    "Type": "Train",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 20972.418,
+    "Y": -660.042969,
+    "Name": "bus_stop",
+    "Type": "Bus Stop",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21111.1152,
+    "Y": -838.099854,
+    "Name": "cargotras",
     "Type": "Company",
     "Width": 128,
     "Height": 32,
@@ -116842,6 +119325,16 @@
     "IsSecret": false
   },
   {
+    "X": 20976.1113,
+    "Y": -1065.12439,
+    "Name": "acc",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
     "X": 23605.5078,
     "Y": -1805.53223,
     "Name": "trameri",
@@ -116852,8 +119345,70 @@
     "IsSecret": false
   },
   {
-    "X": 23675.0684,
-    "Y": -1710.43408,
+    "X": 20732.0527,
+    "Y": -941.7432,
+    "Name": "subse",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 22438.78,
+    "Y": -627.1992,
+    "Name": "euroacres",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 20968.9375,
+    "Y": -693.7617,
+    "Name": "viewpoint",
+    "Type": "Viewpoint",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21059.668,
+    "Y": -214.738281,
+    "Name": "viewpoint",
+    "Type": "Viewpoint",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21424.05,
+    "Y": -332.390625,
+    "Name": "parking_ico",
+    "Type": "Overlay",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false,
+    "ZoomLevelVisibility": 1
+  },
+  {
+    "X": 21464.5273,
+    "Y": -494.5664,
+    "Name": "parking_ico",
+    "Type": "Overlay",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false,
+    "ZoomLevelVisibility": 1
+  },
+  {
+    "X": 20659.19,
+    "Y": -139.7008,
     "Name": "parking_ico",
     "Type": "Parking",
     "Width": 32,
@@ -116862,8 +119417,8 @@
     "IsSecret": false
   },
   {
-    "X": 23713.2461,
-    "Y": -1705.93555,
+    "X": 20680.3418,
+    "Y": -50.5704727,
     "Name": "gas_ico",
     "Type": "Fuel",
     "Width": 32,
@@ -116872,8 +119427,8 @@
     "IsSecret": false
   },
   {
-    "X": 23686.6328,
-    "Y": -1682.45776,
+    "X": 20687.82,
+    "Y": -88.45979,
     "Name": "garage_large_ico",
     "Type": "Garage",
     "Width": 32,
@@ -116882,42 +119437,122 @@
     "IsSecret": false
   },
   {
-    "X": 21640.07,
-    "Y": -1078.54688,
-    "Name": "pl_s8",
-    "Type": "Overlay",
-    "Width": 64,
-    "Height": 64,
+    "X": 21759.91,
+    "Y": 18.7042961,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
     "DlcGuard": 0,
     "IsSecret": false
   },
   {
-    "X": 21682.2617,
-    "Y": -964.6211,
-    "Name": "pl_e67",
-    "Type": "Overlay",
-    "Width": 64,
-    "Height": 64,
+    "X": 21766.4922,
+    "Y": 20.6169147,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
     "DlcGuard": 0,
     "IsSecret": false
   },
   {
-    "X": 22967.6328,
-    "Y": -609.792969,
-    "Name": "pl_e40",
-    "Type": "Overlay",
-    "Width": 64,
-    "Height": 64,
+    "X": 21772.8555,
+    "Y": 22.4652348,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
     "DlcGuard": 0,
     "IsSecret": false
   },
   {
-    "X": 21561.59,
-    "Y": -1732.375,
-    "Name": "pl_e40",
-    "Type": "Overlay",
-    "Width": 64,
-    "Height": 64,
+    "X": 21778.4023,
+    "Y": 24.0770645,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21783.4,
+    "Y": 25.5292377,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 20990.76,
+    "Y": -861.0786,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 20967.55,
+    "Y": -865.9336,
+    "Name": "service_ico",
+    "Type": "Service",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21119.62,
+    "Y": -199.911987,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21053.05,
+    "Y": -226.297012,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 21079.4238,
+    "Y": -199.258774,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 20663.2559,
+    "Y": -792.3454,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 20746.248,
+    "Y": -680.240845,
+    "Name": "recruitment_ico",
+    "Type": "Recruitment",
+    "Width": 32,
+    "Height": 32,
     "DlcGuard": 0,
     "IsSecret": false
   },
@@ -116928,6 +119563,36 @@
     "Type": "Overlay",
     "Width": 64,
     "Height": 64,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 23677.002,
+    "Y": -1704.53748,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 23662.5859,
+    "Y": -1671.576,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 23681.7773,
+    "Y": -1678.35083,
+    "Name": "garage_large_ico",
+    "Type": "Garage",
+    "Width": 32,
+    "Height": 32,
     "DlcGuard": 0,
     "IsSecret": false
   },
@@ -118344,6 +121009,16 @@
     "IsSecret": false
   },
   {
+    "X": 20689.7715,
+    "Y": 11.1096916,
+    "Name": "stokes",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
     "X": 21965.3633,
     "Y": 1208.26392,
     "Name": "quarry",
@@ -118354,32 +121029,32 @@
     "IsSecret": false
   },
   {
-    "X": 21191.8438,
-    "Y": 3594.40234,
-    "Name": "cz_14",
-    "Type": "Overlay",
-    "Width": 64,
-    "Height": 64,
+    "X": 20777.9141,
+    "Y": 149.918488,
+    "Name": "trameri",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
     "DlcGuard": 0,
     "IsSecret": false
   },
   {
-    "X": 22090.02,
-    "Y": 1910.96484,
-    "Name": "pl_e67",
-    "Type": "Overlay",
-    "Width": 64,
-    "Height": 64,
+    "X": 21063.9277,
+    "Y": 116.451942,
+    "Name": "kaarfor",
+    "Type": "Company",
+    "Width": 128,
+    "Height": 32,
     "DlcGuard": 0,
     "IsSecret": false
   },
   {
-    "X": 21868.6953,
-    "Y": 1946.79688,
-    "Name": "pl_8",
+    "X": 21980.9375,
+    "Y": 1249.86328,
+    "Name": "quarry",
     "Type": "Overlay",
-    "Width": 64,
-    "Height": 64,
+    "Width": 32,
+    "Height": 32,
     "DlcGuard": 0,
     "IsSecret": false
   },
@@ -118412,6 +121087,17 @@
     "Height": 32,
     "DlcGuard": 0,
     "IsSecret": false
+  },
+  {
+    "X": 20627.3867,
+    "Y": 1922.52344,
+    "Name": "parking_ico",
+    "Type": "Overlay",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false,
+    "ZoomLevelVisibility": 1
   },
   {
     "X": 22104.8711,
@@ -118667,86 +121353,6 @@
     "X": 19415.09,
     "Y": -4874.03125,
     "Name": "pl_e65",
-    "Type": "Overlay",
-    "Width": 64,
-    "Height": 64,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": 19410.64,
-    "Y": -514.894531,
-    "Name": "pl_e65",
-    "Type": "Overlay",
-    "Width": 64,
-    "Height": 64,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": 19856.39,
-    "Y": -1545.19141,
-    "Name": "pl_e65",
-    "Type": "Overlay",
-    "Width": 64,
-    "Height": 64,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": 19982.16,
-    "Y": -265.140625,
-    "Name": "pl_5",
-    "Type": "Overlay",
-    "Width": 64,
-    "Height": 64,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": 19856.1289,
-    "Y": -1676.41016,
-    "Name": "pl_3",
-    "Type": "Overlay",
-    "Width": 64,
-    "Height": 64,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": 19207.2344,
-    "Y": -522.7422,
-    "Name": "pl_3",
-    "Type": "Overlay",
-    "Width": 64,
-    "Height": 64,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": 17985.2773,
-    "Y": -182.890625,
-    "Name": "cz_e65",
-    "Type": "Overlay",
-    "Width": 64,
-    "Height": 64,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": 17872.1641,
-    "Y": -47.86328,
-    "Name": "cz_10_b",
-    "Type": "Overlay",
-    "Width": 64,
-    "Height": 64,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": 18425.7188,
-    "Y": -2448.28125,
-    "Name": "pl_e40",
     "Type": "Overlay",
     "Width": 64,
     "Height": 64,
@@ -119462,46 +122068,6 @@
     "Type": "Fuel",
     "Width": 32,
     "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": 19899.9375,
-    "Y": 1780.11328,
-    "Name": "cz_14",
-    "Type": "Overlay",
-    "Width": 64,
-    "Height": 64,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": 19833.4453,
-    "Y": 2367.98047,
-    "Name": "cz_33",
-    "Type": "Overlay",
-    "Width": 64,
-    "Height": 64,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": 19757.793,
-    "Y": 2527.08984,
-    "Name": "cz_e67",
-    "Type": "Overlay",
-    "Width": 64,
-    "Height": 64,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": 16901.457,
-    "Y": 3566.33984,
-    "Name": "cz_e67",
-    "Type": "Overlay",
-    "Width": 64,
-    "Height": 64,
     "DlcGuard": 0,
     "IsSecret": false
   },
@@ -123967,6 +126533,16 @@
     "IsSecret": false
   },
   {
+    "X": 4182.711,
+    "Y": -12260.5273,
+    "Name": "tmphw25",
+    "Type": "Company",
+    "Width": 256,
+    "Height": 64,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
     "X": 7750.67529,
     "Y": -12457.5488,
     "Name": "gas_ico",
@@ -124137,16 +126713,6 @@
     "IsSecret": false
   },
   {
-    "X": 4432.50635,
-    "Y": -9151.693,
-    "Name": "steinbr_str",
-    "Type": "Company",
-    "Width": 128,
-    "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
     "X": 4365.27832,
     "Y": -8380.08,
     "Name": "lkwlog",
@@ -124177,31 +126743,11 @@
     "IsSecret": false
   },
   {
-    "X": 4277.41553,
-    "Y": -8492.75,
-    "Name": "parking_ico",
-    "Type": "Parking",
-    "Width": 32,
-    "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": 4314.29443,
-    "Y": -8481.899,
-    "Name": "gas_ico",
-    "Type": "Fuel",
-    "Width": 32,
-    "Height": 32,
-    "DlcGuard": 0,
-    "IsSecret": false
-  },
-  {
-    "X": 4284.115,
-    "Y": -8463.228,
-    "Name": "garage_large_ico",
-    "Type": "Garage",
-    "Width": 32,
+    "X": 4432.50635,
+    "Y": -9151.693,
+    "Name": "steinbr_str",
+    "Type": "Company",
+    "Width": 128,
     "Height": 32,
     "DlcGuard": 0,
     "IsSecret": false
@@ -124219,6 +126765,36 @@
   {
     "X": 4489.91455,
     "Y": -8496.558,
+    "Name": "gas_ico",
+    "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 4264.27637,
+    "Y": -8496.897,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 4280.554,
+    "Y": -8460.238,
+    "Name": "garage_large_ico",
+    "Type": "Garage",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 4260.498,
+    "Y": -8456.786,
     "Name": "gas_ico",
     "Type": "Fuel",
     "Width": 32,
@@ -125981,9 +128557,9 @@
     "IsSecret": false
   },
   {
-    "X": 1089.23547,
-    "Y": -15015.8066,
-    "Name": "feldbinder",
+    "X": 1560.117,
+    "Y": -15173.57,
+    "Name": "feldbinder_t",
     "Type": "Company",
     "Width": 128,
     "Height": 32,
@@ -125991,9 +128567,9 @@
     "IsSecret": false
   },
   {
-    "X": 1560.117,
-    "Y": -15173.57,
-    "Name": "feldbinder_t",
+    "X": 1089.23547,
+    "Y": -15015.8066,
+    "Name": "feldbinder",
     "Type": "Company",
     "Width": 128,
     "Height": 32,
@@ -127488,6 +130064,176 @@
     "Y": 1783.989,
     "Name": "gas_ico",
     "Type": "Fuel",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 7944.297,
+    "Y": -12459.4609,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 7918.992,
+    "Y": -12468.4414,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 7973.078,
+    "Y": -12459.5273,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 7745.449,
+    "Y": -12374.5156,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 7908.176,
+    "Y": -12502.9688,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 7772.27734,
+    "Y": -12365.2813,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 7725.55469,
+    "Y": -12384.16,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 7736.40234,
+    "Y": -12407.4531,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 7717.13672,
+    "Y": -12410.9961,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 7933.85156,
+    "Y": -12493.3594,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 7759.96875,
+    "Y": -12404.207,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 7962.758,
+    "Y": -12492.2188,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 4491.38672,
+    "Y": -8568.402,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 4443.289,
+    "Y": -8579.363,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 4467.676,
+    "Y": -8582.422,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 0,
+    "IsSecret": false
+  },
+  {
+    "X": 1051.19531,
+    "Y": -15015.18,
+    "Name": "parking_ico",
+    "Type": "Parking",
+    "Width": 32,
+    "Height": 32,
+    "DlcGuard": 19,
+    "IsSecret": false
+  },
+  {
+    "X": 20597.8633,
+    "Y": 1899.25,
+    "Name": "parking_ico",
+    "Type": "Parking",
     "Width": 32,
     "Height": 32,
     "DlcGuard": 0,
