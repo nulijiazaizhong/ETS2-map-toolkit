@@ -11,7 +11,6 @@
   const basemapSelect = $('#basemap');
   const cityToggle = $('#show-cities');
   const dlcBoundaryToggle = $('#show-dlc-boundaries');
-  const backgroundToggle = $('#show-game-background');
   const sidebar = $('#sidebar');
   const backdrop = $('#backdrop');
 
@@ -78,8 +77,6 @@
   let info;
   let cities = [];
   let dlcRegions = [];
-  let backgroundInfo;
-  let backgroundLayer;
   let tileLayer;
   let dataPrefix;
   let mapManifest;
@@ -415,15 +412,12 @@
       fetchJson(`${metadataPath}/Countries.json`),
       fetchJson(`${dataPrefix}/${game}/map-manifest.json?v=1`)
     ]);
-    const [regionsData, background] = await Promise.all([
-      fetchJson(`${dataPrefix}/${game}/metadata/${source}/DlcRegions.json?v=3`),
-      fetchJson(`${dataPrefix}/${game}/metadata/${source}/Background.json?v=1`)
-    ]);
-    return { mapInfo, cityList, countryList, manifest, regionsData, background, source };
+    const regionsData = await fetchJson(`${dataPrefix}/${game}/metadata/${source}/DlcRegions.json?v=3`);
+    return { mapInfo, cityList, countryList, manifest, regionsData, source };
   }
 
   function applyGameData(data) {
-    [allCityLayer, cityLabelLayer, dlcBoundaryLayer, backgroundLayer, tileLayer, selectedLabel, selectedMarker, sharedHeadingLayer]
+    [allCityLayer, cityLabelLayer, dlcBoundaryLayer, tileLayer, selectedLabel, selectedMarker, sharedHeadingLayer]
       .forEach((layer) => layer?.remove());
     selectedMarker = null;
     selectedLabel = null;
@@ -435,7 +429,6 @@
     cities = data.cityList;
     countries = new Map(data.countryList.map((country) => [country.CountryId, country]));
     dlcRegions = data.regionsData;
-    backgroundInfo = data.background;
     mapManifest = data.manifest;
     const availableSources = new Set(mapManifest.sources);
     const source = availableSources.has(data.source) ? data.source : mapManifest.sources[0];
@@ -457,17 +450,7 @@
       });
       map.attributionControl.setPrefix(false).addAttribution('地图数据 © SCS Software · <a href="https://github.com/dariowouters/ts-map" target="_blank" rel="noreferrer">TsMap</a> · Leaflet');
       L.control.zoom({ position: 'bottomright' }).addTo(map);
-      map.createPane('gameBackground');
-      map.getPane('gameBackground').style.zIndex = '150';
-      map.getPane('gameBackground').style.pointerEvents = 'none';
       map.on('moveend', rebuildCityLabels);
-    }
-    if (backgroundInfo) {
-      backgroundLayer = L.imageOverlay(`${dataPrefix}/${currentGame}/metadata/${source}/Background.png?v=1`, backgroundInfo.bounds, {
-        pane: 'gameBackground',
-        opacity: 0.28,
-        interactive: false
-      }).addTo(map);
     }
     basemapSelect.replaceChildren(...sourceOptions[currentGame].map(([value, label]) => new Option(label, value)));
     for (const option of basemapSelect.options) {
@@ -511,7 +494,6 @@
     $('#map').setAttribute('aria-label', currentGame === 'ATS' ? '美国卡车模拟互动地图' : '欧洲卡车模拟2互动地图');
     document.title = currentGame === 'ATS' ? 'ATS 全 DLC 地图' : 'ETS2 全 DLC 地图';
     dlcBoundaryToggle.closest('label').hidden = dlcRegions.length === 0;
-    backgroundToggle.closest('label').hidden = !backgroundInfo;
     buildLocaleOptions();
     buildDlcBoundaries();
     buildRegions();
@@ -589,11 +571,7 @@
     if (dlcBoundaryToggle.checked) dlcBoundaryLayer.addTo(map);
     else dlcBoundaryLayer.remove();
   });
-  backgroundToggle.addEventListener('change', () => {
-    if (!backgroundLayer) return;
-    if (backgroundToggle.checked) backgroundLayer.addTo(map);
-    else backgroundLayer.remove();
-  });
+
   $('#reset-view').addEventListener('click', resetView);
   const panelToggle = $('#panel-toggle');
   const handlePanelToggle = (event) => {

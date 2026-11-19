@@ -166,7 +166,7 @@ kbd { padding: 2px 8px; border: 1px solid #525252; border-radius: 4px; color: va
 .select-wrap.compact > svg { top: 8px; }
 .layer-options { display: grid; grid-template-columns: 1fr 1fr; column-gap: 12px; padding: 4px 12px; border: 1px solid var(--border); border-radius: 12px; background: #1f1f1f; }
 .toggle { min-width: 0; min-height: 40px; display: flex; align-items: center; justify-content: space-between; gap: 8px; color: #d4d4d4; font-size: 12px; line-height: 16px; white-space: nowrap; cursor: pointer; }
-.toggle:last-child { grid-column: 1 / -1; }
+.toggle:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .toggle input {
   position: relative;
   width: 32px;

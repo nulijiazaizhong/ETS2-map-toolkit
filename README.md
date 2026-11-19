@@ -1,6 +1,6 @@
 # ETS2 / ATS Map Toolkit
 
-从本机 Euro Truck Simulator 2、American Truck Simulator 和 TruckersMP MOD 生成可部署的瓦片地图及互动浏览页面。包含全部官方地图 DLC、游戏官方陆地底图、多语言城市名、精细 DLC 边界、城市区域和坐标分享链接。
+从本机 Euro Truck Simulator 2、American Truck Simulator 和 TruckersMP MOD 生成可部署的瓦片地图及互动浏览页面。包含全部官方地图 DLC、多语言城市名、精细 DLC 边界、城市区域和坐标分享链接。
 
 ## 仓库结构
 
@@ -103,9 +103,9 @@ bash tools/rebuild-ats-maps.sh "F:/Game/steam/steamapps/common/American Truck Si
 
 数据按 ATS 大版本保存到 `data/maps/<版本>/ATS/`。四套数据均为 0–8 级、512×512 PNG，每套 87,381 张；城市、国家、覆盖物和地图边界分别保存在 `metadata/<瓦片源>/`。第四参数是最大缩放级别，默认为 8；可用 `ATS_VERSION=x.y.z` 覆盖版本检测。
 
-ETS2 与 ATS 导出器均直接生成 RGBA 透明瓦片，不再填充蓝色背景。道路抗锯齿和渡轮航线的半透明效果会保留，可与页面背景及官方拼接底图叠加。已有旧瓦片不会被自动修改，需要重新运行对应导出脚本才能替换为透明版本。
+ETS2 与 ATS 导出器均直接生成 RGBA 透明瓦片，不再填充蓝色背景。道路抗锯齿和渡轮航线的半透明效果会保留，可直接与页面背景叠加。已有旧瓦片不会被自动修改，需要重新运行对应导出脚本才能替换为透明版本。
 
-脚本还会从官方 `map0–3.dds` 拼接 ATS 底图并执行道路配准（当前配准率 96.22%），再根据实际 DLC 扇区生成海岸与区域边界。前端提供带官方图标的 ETS2 / ATS 游戏切换，并分别支持原版、TruckersMP、ProMods 和 TMP ProMods 的城市搜索、多语言、区域导航和 DLC 边界框选。`tools/prepare_game_icons.py` 从两款游戏的 `material/ui/loading/logo.dds` 提取带透明通道的官方图标。
+脚本还会根据官方 `map0–3.dds` 和实际 DLC 扇区生成海岸与区域边界，这些参考图仅用于内部数据生成，不在前端叠加显示。前端提供带官方图标的 ETS2 / ATS 游戏切换，并分别支持原版、TruckersMP、ProMods 和 TMP ProMods 的城市搜索、多语言、区域导航和 DLC 边界框选。`tools/prepare_game_icons.py` 从两款游戏的 `material/ui/loading/logo.dds` 提取带透明通道的官方图标。
 
 脚本结束后自动执行 `ets2-map/scripts/verify-ats.mjs`，检查瓦片数量与尺寸、城市/国家/多语言数据和 ProMods 渲染差异。原始游戏、TruckersMP 和 ProMods 文件不会被修改。
 
