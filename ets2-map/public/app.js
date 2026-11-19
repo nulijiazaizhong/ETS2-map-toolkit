@@ -7,6 +7,7 @@
   const searchInput = $('#search');
   const resultsPanel = $('#search-results');
   const localeSelect = $('#locale');
+  const gameSelect = $('#game');
   const basemapSelect = $('#basemap');
   const cityToggle = $('#show-cities');
   const dlcBoundaryToggle = $('#show-dlc-boundaries');
@@ -30,6 +31,49 @@
     { name: '冰岛', dlc: 'Iceland', archive: 'dlc_iceland.scs', cities: ['Reykjavík', 'Reykjavik', '雷克雅未克'] }
   ];
 
+  const atsRegions = [
+    { name: '美国全图', dlc: '全部区域', cities: [] },
+    { name: '基础地图', dlc: 'Base map', archive: 'base_map.scs', cities: ['Los Angeles', 'San Francisco'] },
+    { name: '亚利桑那', dlc: 'Arizona', archive: 'dlc_arizona.scs', cities: ['Phoenix', 'Tucson'] },
+    { name: '新墨西哥', dlc: 'New Mexico', archive: 'dlc_nm.scs', cities: ['Albuquerque', 'Santa Fe'] },
+    { name: '俄勒冈', dlc: 'Oregon', archive: 'dlc_or.scs', cities: ['Portland', 'Eugene'] },
+    { name: '华盛顿', dlc: 'Washington', archive: 'dlc_wa.scs', cities: ['Seattle', 'Olympia'] },
+    { name: '犹他', dlc: 'Utah', archive: 'dlc_ut.scs', cities: ['Salt Lake City', 'Provo'] },
+    { name: '爱达荷', dlc: 'Idaho', archive: 'dlc_id.scs', cities: ['Boise', 'Idaho Falls'] },
+    { name: '科罗拉多', dlc: 'Colorado', archive: 'dlc_co.scs', cities: ['Denver', 'Colorado Springs'] },
+    { name: '怀俄明', dlc: 'Wyoming', archive: 'dlc_wy.scs', cities: ['Cheyenne', 'Casper'] },
+    { name: '蒙大拿', dlc: 'Montana', archive: 'dlc_mt.scs', cities: ['Billings', 'Helena'] },
+    { name: '得克萨斯', dlc: 'Texas', archive: 'dlc_tx.scs', cities: ['Houston', 'Dallas'] },
+    { name: '俄克拉何马', dlc: 'Oklahoma', archive: 'dlc_ok.scs', cities: ['Oklahoma City', 'Tulsa'] },
+    { name: '堪萨斯', dlc: 'Kansas', archive: 'dlc_ks.scs', cities: ['Topeka', 'Wichita'] },
+    { name: '内布拉斯加', dlc: 'Nebraska', archive: 'dlc_ne.scs', cities: ['Lincoln', 'Omaha'] },
+    { name: '密苏里', dlc: 'Missouri', archive: 'dlc_mo.scs', cities: ['Kansas City', 'St. Louis'] },
+    { name: '阿肯色', dlc: 'Arkansas', archive: 'dlc_ar.scs', cities: ['Little Rock', 'Fort Smith'] },
+    { name: '路易斯安那', dlc: 'Louisiana', archive: 'dlc_la.scs', cities: ['New Orleans', 'Baton Rouge'] },
+    { name: '艾奥瓦', dlc: 'Iowa', archive: 'dlc_ia.scs', cities: ['Des Moines', 'Cedar Rapids'] },
+    { name: '伊利诺伊', dlc: 'Illinois', archive: 'dlc_il.scs', cities: ['Chicago', 'Springfield'] },
+    { name: '南达科他', dlc: 'South Dakota', archive: 'dlc_sd.scs', cities: ['Sioux Falls', 'Rapid City'] },
+    { name: '内华达', dlc: 'Nevada', archive: 'dlc_nevada.scs', cities: ['Las Vegas', 'Reno'] },
+    { name: 'ProMods 加拿大', dlc: 'ProMods', cities: ['Vancouver'] }
+  ];
+  const regionsByGame = { ETS2: regions, ATS: atsRegions };
+  const defaultSources = { ETS2: 'Europe', ATS: 'American' };
+  const sourceOptions = {
+    ETS2: [
+      ['Europe', 'ETS2-原版'],
+      ['TMP', 'ETS2-TMP-S1'],
+      ['Europe_Promods', 'ETS2-Promods'],
+      ['TMP_Promods', 'ETS2-TMP-Promods']
+    ],
+    ATS: [
+      ['American', 'ATS-原版'],
+      ['TMP', 'ATS-TMP-S1'],
+      ['American_Promods', 'ATS-Promods'],
+      ['TMP_Promods', 'ATS-TMP-Promods']
+    ]
+  };
+
+  let currentGame = 'ETS2';
   let map;
   let info;
   let cities = [];
@@ -116,9 +160,10 @@
   }
 
   function buildDlcBoundaries() {
+    if (dlcBoundaryLayer) dlcBoundaryLayer.remove();
     const colors = ['#38bdf8', '#f59e0b', '#34d399', '#a78bfa', '#f472b6', '#60a5fa', '#f97316', '#2dd4bf', '#e879f9', '#fbbf24', '#818cf8', '#22d3ee'];
     const layers = [];
-    regions.forEach((region, index) => {
+    regionsByGame[currentGame].forEach((region, index) => {
       if (!region.archive) return;
       const data = dlcRegions.find((item) => item.Archive === region.archive);
       if (!data) return;
@@ -134,7 +179,7 @@
       layers.push(...polygons);
     });
     dlcBoundaryLayer = L.layerGroup(layers);
-    if (dlcBoundaryToggle.checked) dlcBoundaryLayer.addTo(map);
+    if (dlcBoundaryToggle.checked && layers.length) dlcBoundaryLayer.addTo(map);
   }
 
   function findCity(aliases) {
@@ -322,7 +367,8 @@
 
   function buildRegions() {
     const fragment = document.createDocumentFragment();
-    regions.forEach((region) => {
+    $('#region-list').replaceChildren();
+    regionsByGame[currentGame].forEach((region) => {
       const button = document.createElement('button');
       button.type = 'button';
       button.className = 'region';
@@ -361,21 +407,42 @@
     return response.json();
   }
 
-  async function init() {
-    try {
-      const requestedVersion = new URLSearchParams(window.location.search).get('version') || window.ETS2_MAP_VERSION || '1.62';
-      dataPrefix = /^\d+\.\d+$/.test(requestedVersion || '') ? `./${requestedVersion}` : '.';
-      [info, cities, dlcRegions, backgroundInfo, mapManifest] = await Promise.all([
-        fetchJson(`${dataPrefix}/ETS2/metadata/Europe/TileMapInfo.json?v=2`),
-        fetchJson(`${dataPrefix}/ETS2/metadata/Europe/Cities.json?v=3`),
-        fetchJson(`${dataPrefix}/ETS2/metadata/Europe/DlcRegions.json?v=3`),
-        fetchJson(`${dataPrefix}/ETS2/metadata/Europe/Background.json?v=1`),
-        fetchJson(`${dataPrefix}/ETS2/map-manifest.json?v=1`)
-      ]);
-      const countryList = await fetchJson(`${dataPrefix}/ETS2/metadata/Europe/Countries.json`);
-      countries = new Map(countryList.map((country) => [country.CountryId, country]));
-      const bounds = L.latLngBounds([-512, 0], [0, 512]);
+  async function fetchGameData(game, source) {
+    const metadataPath = `${dataPrefix}/${game}/metadata/${source}`;
+    const [mapInfo, cityList, countryList, manifest] = await Promise.all([
+      fetchJson(`${metadataPath}/TileMapInfo.json?v=2`),
+      fetchJson(`${metadataPath}/Cities.json?v=3`),
+      fetchJson(`${metadataPath}/Countries.json`),
+      fetchJson(`${dataPrefix}/${game}/map-manifest.json?v=1`)
+    ]);
+    const [regionsData, background] = await Promise.all([
+      fetchJson(`${dataPrefix}/${game}/metadata/${source}/DlcRegions.json?v=3`),
+      fetchJson(`${dataPrefix}/${game}/metadata/${source}/Background.json?v=1`)
+    ]);
+    return { mapInfo, cityList, countryList, manifest, regionsData, background, source };
+  }
 
+  function applyGameData(data) {
+    [allCityLayer, cityLabelLayer, dlcBoundaryLayer, backgroundLayer, tileLayer, selectedLabel, selectedMarker, sharedHeadingLayer]
+      .forEach((layer) => layer?.remove());
+    selectedMarker = null;
+    selectedLabel = null;
+    selectedCity = null;
+    sharedLocation = null;
+    resultsPanel.classList.remove('visible');
+    searchInput.value = '';
+    info = data.mapInfo;
+    cities = data.cityList;
+    countries = new Map(data.countryList.map((country) => [country.CountryId, country]));
+    dlcRegions = data.regionsData;
+    backgroundInfo = data.background;
+    mapManifest = data.manifest;
+    const availableSources = new Set(mapManifest.sources);
+    const source = availableSources.has(data.source) ? data.source : mapManifest.sources[0];
+    if (!source) throw new Error('地图清单中没有可用的底图数据');
+    const bounds = L.latLngBounds([-512, 0], [0, 512]);
+
+    if (!map) {
       map = L.map('map', {
         crs: L.CRS.Simple,
         minZoom: info.minZoom,
@@ -393,65 +460,106 @@
       map.createPane('gameBackground');
       map.getPane('gameBackground').style.zIndex = '150';
       map.getPane('gameBackground').style.pointerEvents = 'none';
-      backgroundLayer = L.imageOverlay(`${dataPrefix}/ETS2/metadata/Europe/Background.png?v=1`, backgroundInfo.bounds, {
+      map.on('moveend', rebuildCityLabels);
+    }
+    if (backgroundInfo) {
+      backgroundLayer = L.imageOverlay(`${dataPrefix}/${currentGame}/metadata/${source}/Background.png?v=1`, backgroundInfo.bounds, {
         pane: 'gameBackground',
         opacity: 0.28,
         interactive: false
       }).addTo(map);
-      const requestedTileSource = new URLSearchParams(window.location.search).get('tiles') || 'Europe';
-      const availableSources = new Set(mapManifest.sources);
-      const initialTileSource = availableSources.has(requestedTileSource) ? requestedTileSource : mapManifest.sources[0];
-      if (!initialTileSource) throw new Error('地图清单中没有可用的底图数据');
-      for (const option of basemapSelect.options) {
-        option.disabled = !availableSources.has(option.value);
-        if (option.disabled) option.textContent += '（暂无数据）';
-      }
-      basemapSelect.value = initialTileSource;
-      basemapSelect.disabled = false;
-      tileLayer = L.tileLayer(`${dataPrefix}/ETS2/${initialTileSource}/{z}/{x}/{y}.png?v=3`, {
-        tileSize: 512,
-        bounds,
-        minZoom: info.minZoom,
-        maxZoom: info.maxZoom,
-        noWrap: true,
-        keepBuffer: 4,
-        updateWhenIdle: false
-      }).addTo(map);
-      map.fitBounds(bounds, { padding: [0, 0] });
-      map.on('moveend', rebuildCityLabels);
+    }
+    basemapSelect.replaceChildren(...sourceOptions[currentGame].map(([value, label]) => new Option(label, value)));
+    for (const option of basemapSelect.options) {
+      const label = option.dataset.label || option.textContent;
+      option.dataset.label = label;
+      option.disabled = !availableSources.has(option.value);
+      option.textContent = option.disabled ? `${label}（暂无数据）` : label;
+    }
+    basemapSelect.value = source;
+    basemapSelect.disabled = false;
+    tileLayer = L.tileLayer(`${dataPrefix}/${currentGame}/${source}/{z}/{x}/{y}.png?v=3`, {
+      tileSize: 512,
+      bounds,
+      minZoom: info.minZoom,
+      maxZoom: info.maxZoom,
+      noWrap: true,
+      keepBuffer: 4,
+      updateWhenIdle: false
+    }).addTo(map);
+    map.fitBounds(bounds, { padding: [0, 0] });
 
-      cities.forEach((city) => {
-        const country = countries.get(city.CountryId);
-        city.searchText = normalize([
-          city.Name,
-          ...Object.values(city.LocalizedNames || {}),
-          country?.Name,
-          ...Object.values(country?.LocalizedNames || {})
-        ].join(' '));
-      });
-      $('#city-count').textContent = cities.length;
-      buildLocaleOptions();
-      buildDlcBoundaries();
-      buildRegions();
-      rebuildCityLayer();
-      rebuildCityLabels();
-      showSharedLocation();
-      loading.hidden = true;
+    cities.forEach((city) => {
+      const country = countries.get(city.CountryId);
+      city.searchText = normalize([
+        city.Name,
+        ...Object.values(city.LocalizedNames || {}),
+        country?.Name,
+        ...Object.values(country?.LocalizedNames || {})
+      ].join(' '));
+    });
+    $('#city-count').textContent = cities.length;
+    $('#dlc-count').textContent = currentGame === 'ATS' ? 21 : 12;
+    $('.eyebrow').textContent = currentGame === 'ATS' ? 'AMERICAN TRUCK SIMULATOR' : 'EURO TRUCK SIMULATOR 2';
+    $('h1').textContent = currentGame === 'ATS' ? '美国全图' : '欧洲全图';
+    $('#map').setAttribute('aria-label', currentGame === 'ATS' ? '美国卡车模拟互动地图' : '欧洲卡车模拟2互动地图');
+    document.title = currentGame === 'ATS' ? 'ATS 全 DLC 地图' : 'ETS2 全 DLC 地图';
+    dlcBoundaryToggle.closest('label').hidden = dlcRegions.length === 0;
+    backgroundToggle.closest('label').hidden = !backgroundInfo;
+    buildLocaleOptions();
+    buildDlcBoundaries();
+    buildRegions();
+    rebuildCityLayer();
+    rebuildCityLabels();
+    return source;
+  }
+
+  async function loadGameData(game, source, showLocation = false) {
+    loading.hidden = false;
+    errorPanel.hidden = true;
+    try {
+      const data = await fetchGameData(game, source);
+      const selectedSource = applyGameData(data);
+      if (showLocation) showSharedLocation();
+      return selectedSource;
     } catch (error) {
-      loading.hidden = true;
       errorPanel.hidden = false;
       $('#error-message').textContent = `${error.message}。请通过项目服务器访问，不要直接双击 HTML 文件。`;
+      return null;
+    } finally {
+      loading.hidden = true;
     }
+  }
+
+  function syncUrl(source) {
+    const url = new URL(window.location.href);
+    if (currentGame === 'ATS') url.searchParams.set('game', 'ATS');
+    else url.searchParams.delete('game');
+    if (source === defaultSources[currentGame]) url.searchParams.delete('tiles');
+    else url.searchParams.set('tiles', source);
+    for (const key of ['x', 'y', 'heading', 'zoom']) url.searchParams.delete(key);
+    window.history.replaceState(null, '', url);
+  }
+
+  async function init() {
+    const requestedVersion = new URLSearchParams(window.location.search).get('version') || window.ETS2_MAP_VERSION || '1.62';
+    dataPrefix = /^\d+\.\d+$/.test(requestedVersion || '') ? `./${requestedVersion}` : '.';
+    const params = new URLSearchParams(window.location.search);
+    currentGame = params.get('game') === 'ATS' ? 'ATS' : 'ETS2';
+    gameSelect.value = currentGame;
+    await loadGameData(currentGame, params.get('tiles') || defaultSources[currentGame], true);
   }
 
   searchInput.addEventListener('input', renderResults);
   searchInput.addEventListener('focus', renderResults);
-  basemapSelect.addEventListener('change', () => {
-    tileLayer.setUrl(`${dataPrefix}/ETS2/${basemapSelect.value}/{z}/{x}/{y}.png?v=3`);
-    const url = new URL(window.location.href);
-    if (basemapSelect.value === 'Europe') url.searchParams.delete('tiles');
-    else url.searchParams.set('tiles', basemapSelect.value);
-    window.history.replaceState(null, '', url);
+  basemapSelect.addEventListener('change', async () => {
+    const source = await loadGameData(currentGame, basemapSelect.value);
+    if (source) syncUrl(source);
+  });
+  gameSelect.addEventListener('change', async () => {
+    currentGame = gameSelect.value;
+    const source = await loadGameData(currentGame, defaultSources[currentGame]);
+    if (source) syncUrl(source);
   });
   localeSelect.addEventListener('change', () => {
     rebuildCityLayer();
@@ -468,6 +576,7 @@
     else dlcBoundaryLayer.remove();
   });
   backgroundToggle.addEventListener('change', () => {
+    if (!backgroundLayer) return;
     if (backgroundToggle.checked) backgroundLayer.addTo(map);
     else backgroundLayer.remove();
   });

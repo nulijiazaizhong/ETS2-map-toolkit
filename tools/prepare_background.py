@@ -9,14 +9,14 @@ from scipy.optimize import differential_evolution
 from scipy.ndimage import map_coordinates
 
 ROOT = Path(__file__).resolve().parent.parent
-SOURCE = ROOT / "work/base/material/ui/map"
 TILE_SIZE = 512
 GRID_SIZE = 4
 MOSAIC_SIZE = TILE_SIZE * GRID_SIZE
-if len(sys.argv) != 2:
-    raise SystemExit("Usage: prepare_background.py <version-data-dir>")
+if len(sys.argv) < 2 or len(sys.argv) > 5:
+    raise SystemExit("Usage: prepare_background.py <version-data-dir> [map-source-dir] [tile-source] [tiles-dir]")
 OUTPUT = Path(sys.argv[1]).resolve()
-TILES = OUTPUT / "Europe/2"
+SOURCE = Path(sys.argv[2]).resolve() if len(sys.argv) >= 3 else ROOT / "work/base/material/ui/map"
+TILES = (Path(sys.argv[4]).resolve() if len(sys.argv) == 5 else OUTPUT / (sys.argv[3] if len(sys.argv) >= 4 else "Europe")) / "2"
 WORK = ROOT / "work"
 
 

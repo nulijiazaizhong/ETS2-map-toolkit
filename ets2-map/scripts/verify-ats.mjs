@@ -12,6 +12,11 @@ for (const source of sources) {
   const info = JSON.parse(await readFile(path.join(root, 'metadata', source, 'TileMapInfo.json'), 'utf8'));
   const cities = JSON.parse(await readFile(path.join(root, 'metadata', source, 'Cities.json'), 'utf8'));
   const countries = JSON.parse(await readFile(path.join(root, 'metadata', source, 'Countries.json'), 'utf8'));
+  const background = JSON.parse(await readFile(path.join(root, 'metadata', source, 'Background.json'), 'utf8'));
+  const dlcRegions = JSON.parse(await readFile(path.join(root, 'metadata', source, 'DlcRegions.json'), 'utf8'));
+  assert.ok(background.alignmentScore > 0.9, `${source}: background alignment is too low`);
+  assert.ok(dlcRegions.length >= 19, `${source}: missing DLC regions`);
+  assert.ok(dlcRegions.find((region) => region.Archive === 'dlc_wa.scs')?.Polygons.length > 0, `${source}: missing Washington boundary`);
   const locales = new Set(cities.flatMap((city) => Object.keys(city.LocalizedNames || {})));
   assert.equal(info.minZoom, 0);
   assert.equal(info.maxZoom, 8);

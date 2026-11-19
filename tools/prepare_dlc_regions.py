@@ -8,15 +8,23 @@ import numpy as np
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
-if len(sys.argv) != 2:
-    raise SystemExit("Usage: prepare_dlc_regions.py <version-data-dir>")
+if len(sys.argv) < 2 or len(sys.argv) > 3:
+    raise SystemExit("Usage: prepare_dlc_regions.py <version-data-dir> [land-max-gray]")
 PUBLIC = Path(sys.argv[1]).resolve()
+LAND_MAX_GRAY = int(sys.argv[2]) if len(sys.argv) == 3 else 110
 SECTOR_SIZE = 4000
 sectors = json.loads((PUBLIC / "DlcSectors.json").read_text(encoding="utf-8"))
 background = json.loads((PUBLIC / "Background.json").read_text(encoding="utf-8"))
 tile_info = json.loads((PUBLIC / "TileMapInfo.json").read_text(encoding="utf-8"))
 gray = np.asarray(Image.open(PUBLIC / "Background.png").convert("L"))
-land = (gray > 20) & (gray < 110)
+if LAND_MAX_GRAY >= 150:
+    ocean = (gray < 110).astype(np.uint8)
+    ocean = cv2.morphologyEx(ocean, cv2.MORPH_CLOSE, np.ones((11, 11), np.uint8))
+    flood_mask = np.zeros((gray.shape[0] + 2, gray.shape[1] + 2), np.uint8)
+    cv2.floodFill(ocean, flood_mask, (0, 0), 2)
+    land = ocean != 2
+else:
+    land = (gray > 20) & (gray < LAND_MAX_GRAY)
 land = cv2.morphologyEx(land.astype(np.uint8), cv2.MORPH_CLOSE, np.ones((5, 5), np.uint8)) > 0
 height, width = gray.shape
 world_width = tile_info["x2"] - tile_info["x1"]

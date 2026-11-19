@@ -78,4 +78,10 @@ render TMP "$TMP_MODS_DIR"
 render American_Promods "$PROMODS_DIR"
 render TMP_Promods "$PROMODS_DIR" "$TMP_MODS_DIR"
 
+python "$ROOT/tools/prepare_background.py" "$DATA_DIR/metadata/American" "$EXTRACT_DIR/base/material/ui/map" American "$DATA_DIR/American"
+python "$ROOT/tools/prepare_dlc_regions.py" "$DATA_DIR/metadata/American" 200
+for source in TMP American_Promods TMP_Promods; do
+  cp "$DATA_DIR/metadata/American/Background.png" "$DATA_DIR/metadata/American/Background.json" "$DATA_DIR/metadata/American/DlcRegions.json" "$DATA_DIR/metadata/$source/"
+done
+
 node "$ROOT/ets2-map/scripts/verify-ats.mjs" "$DATA_DIR"
