@@ -2,7 +2,7 @@ import { mapCacheControl, mapContentType, mapDataLocation } from '../../shared/m
 
 export default {
   async fetch(request, env) {
-    const location = mapDataLocation(new URL(request.url).pathname, env.MAP_VERSION);
+    const location = mapDataLocation(new URL(request.url).pathname);
     if (!location) return env.ASSETS.fetch(request);
     if (!['GET', 'HEAD'].includes(request.method)) {
       return new Response('Method not allowed', { status: 405, headers: { Allow: 'GET, HEAD' } });

@@ -1,16 +1,17 @@
 import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
-import { projectRoot, resolveDataDir } from './data.mjs';
+import { projectRoot, resolveGameDataDir } from './data.mjs';
 import { mapDataKey } from '../../shared/map-data.js';
 
-const root = await resolveDataDir();
-const info = JSON.parse(await readFile(path.join(root, 'TileMapInfo.json'), 'utf8'));
-const cities = JSON.parse(await readFile(path.join(root, 'Cities.json'), 'utf8'));
-const countries = JSON.parse(await readFile(path.join(root, 'Countries.json'), 'utf8'));
-const dlcSectors = JSON.parse(await readFile(path.join(root, 'DlcSectors.json'), 'utf8'));
-const dlcRegions = JSON.parse(await readFile(path.join(root, 'DlcRegions.json'), 'utf8'));
-const background = JSON.parse(await readFile(path.join(root, 'Background.json'), 'utf8'));
+const root = await resolveGameDataDir('ETS2');
+const metadataRoot = path.join(root, 'metadata', 'Europe');
+const info = JSON.parse(await readFile(path.join(metadataRoot, 'TileMapInfo.json'), 'utf8'));
+const cities = JSON.parse(await readFile(path.join(metadataRoot, 'Cities.json'), 'utf8'));
+const countries = JSON.parse(await readFile(path.join(metadataRoot, 'Countries.json'), 'utf8'));
+const dlcSectors = JSON.parse(await readFile(path.join(metadataRoot, 'DlcSectors.json'), 'utf8'));
+const dlcRegions = JSON.parse(await readFile(path.join(metadataRoot, 'DlcRegions.json'), 'utf8'));
+const background = JSON.parse(await readFile(path.join(metadataRoot, 'Background.json'), 'utf8'));
 assert.equal(dlcSectors.length, 1148);
 assert.equal(dlcRegions.length, 12);
 const iceland = dlcRegions.find((region) => region.Archive === 'dlc_iceland.scs');
@@ -20,7 +21,7 @@ assert.ok(dlcRegions.every((region) => region.Polygons.every((polygon) => polygo
 assert.ok(background.alignmentScore > 0.9);
 assert.equal(background.tileSize, 512);
 assert.equal(background.mosaicSize, 2048);
-const backgroundPng = await readFile(path.join(root, 'Background.png'));
+const backgroundPng = await readFile(path.join(metadataRoot, 'Background.png'));
 assert.equal(backgroundPng.readUInt32BE(16), 4096);
 assert.equal(backgroundPng.readUInt32BE(20), 4096);
 assert.equal(info.minZoom, 0);
@@ -74,15 +75,19 @@ async function verifyTiles(source) {
   }
   return count;
 }
-const tileCount = await verifyTiles('ets');
-const tmpTileCount = await verifyTiles('tmp_s1');
+const tileCount = await verifyTiles('Europe');
+const tmpTileCount = await verifyTiles('TMP');
 assert.equal(tileCount, 87381);
 assert.equal(tmpTileCount, 87381);
-assert.equal(mapDataKey('/tmp_s1/6/12/7.png', 'v1.62'), 'v1.62/tmp_s1/6/12/7.png');
-assert.equal(mapDataKey('/v1.62/ets/6/12/7.png', 'v0.0'), 'v1.62/ets/6/12/7.png');
-assert.equal(mapDataKey('/v1.62/Cities.json', 'v0.0'), 'v1.62/Cities.json');
-assert.equal(mapDataKey('/ets/6/64/7.png', 'v1.62'), null);
-assert.equal(mapDataKey('/data/maps/active.json', 'v1.62'), null);
+assert.equal(mapDataKey('/1.62/ETS2/TMP/6/12/7.png'), '1.62/ETS2/TMP/6/12/7.png');
+assert.equal(mapDataKey('/1.62/ATS/American/6/12/7.png'), '1.62/ATS/American/6/12/7.png');
+assert.equal(mapDataKey('/1.62/ETS2/Europe_Promods/6/12/7.png'), '1.62/ETS2/Europe_Promods/6/12/7.png');
+assert.equal(mapDataKey('/1.62/ETS2/TMP_Promods/6/12/7.png'), '1.62/ETS2/TMP_Promods/6/12/7.png');
+assert.equal(mapDataKey('/1.62/ETS2/metadata/Europe/Cities.json'), '1.62/ETS2/metadata/Europe/Cities.json');
+assert.equal(mapDataKey('/tmp_s1/6/12/7.png'), null);
+assert.equal(mapDataKey('/v1.62/ets/6/12/7.png'), null);
+assert.equal(mapDataKey('/1.62/ETS2/TMP/6/64/7.png'), null);
+assert.equal(mapDataKey('/data/maps/active.json'), null);
 for (const file of ['index.html', 'app.css', 'app.js', 'map-config.js', 'vendor/leaflet.js', 'vendor/leaflet.css']) {
   assert.ok((await readFile(path.join(projectRoot, 'ets2-map/public', file))).length > 0, `Missing ${file}`);
 }

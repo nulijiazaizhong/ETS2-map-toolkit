@@ -16,7 +16,7 @@ MOSAIC_SIZE = TILE_SIZE * GRID_SIZE
 if len(sys.argv) != 2:
     raise SystemExit("Usage: prepare_background.py <version-data-dir>")
 OUTPUT = Path(sys.argv[1]).resolve()
-TILES = OUTPUT / "ets/2"
+TILES = OUTPUT / "Europe/2"
 WORK = ROOT / "work"
 
 

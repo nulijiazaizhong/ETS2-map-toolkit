@@ -7,6 +7,7 @@
   const searchInput = $('#search');
   const resultsPanel = $('#search-results');
   const localeSelect = $('#locale');
+  const basemapSelect = $('#basemap');
   const cityToggle = $('#show-cities');
   const dlcBoundaryToggle = $('#show-dlc-boundaries');
   const backgroundToggle = $('#show-game-background');
@@ -35,6 +36,9 @@
   let dlcRegions = [];
   let backgroundInfo;
   let backgroundLayer;
+  let tileLayer;
+  let dataPrefix;
+  let mapManifest;
   let countries = new Map();
   let allCityLayer;
   let cityLabelLayer;
@@ -359,15 +363,16 @@
 
   async function init() {
     try {
-      const requestedVersion = new URLSearchParams(window.location.search).get('version') || window.ETS2_MAP_VERSION;
-      const dataPrefix = /^v\d+\.\d+$/.test(requestedVersion || '') ? `./${requestedVersion}` : '.';
-      [info, cities, dlcRegions, backgroundInfo] = await Promise.all([
-        fetchJson(`${dataPrefix}/TileMapInfo.json?v=2`),
-        fetchJson(`${dataPrefix}/Cities.json?v=3`),
-        fetchJson(`${dataPrefix}/DlcRegions.json?v=3`),
-        fetchJson(`${dataPrefix}/Background.json?v=1`)
+      const requestedVersion = new URLSearchParams(window.location.search).get('version') || window.ETS2_MAP_VERSION || '1.62';
+      dataPrefix = /^\d+\.\d+$/.test(requestedVersion || '') ? `./${requestedVersion}` : '.';
+      [info, cities, dlcRegions, backgroundInfo, mapManifest] = await Promise.all([
+        fetchJson(`${dataPrefix}/ETS2/metadata/Europe/TileMapInfo.json?v=2`),
+        fetchJson(`${dataPrefix}/ETS2/metadata/Europe/Cities.json?v=3`),
+        fetchJson(`${dataPrefix}/ETS2/metadata/Europe/DlcRegions.json?v=3`),
+        fetchJson(`${dataPrefix}/ETS2/metadata/Europe/Background.json?v=1`),
+        fetchJson(`${dataPrefix}/ETS2/map-manifest.json?v=1`)
       ]);
-      const countryList = await fetchJson(`${dataPrefix}/Countries.json`);
+      const countryList = await fetchJson(`${dataPrefix}/ETS2/metadata/Europe/Countries.json`);
       countries = new Map(countryList.map((country) => [country.CountryId, country]));
       const bounds = L.latLngBounds([-512, 0], [0, 512]);
 
@@ -388,13 +393,22 @@
       map.createPane('gameBackground');
       map.getPane('gameBackground').style.zIndex = '150';
       map.getPane('gameBackground').style.pointerEvents = 'none';
-      backgroundLayer = L.imageOverlay(`${dataPrefix}/Background.png?v=1`, backgroundInfo.bounds, {
+      backgroundLayer = L.imageOverlay(`${dataPrefix}/ETS2/metadata/Europe/Background.png?v=1`, backgroundInfo.bounds, {
         pane: 'gameBackground',
         opacity: 0.28,
         interactive: false
       }).addTo(map);
-      const tileSource = new URLSearchParams(window.location.search).get('tiles') === 'tmp_s1' ? 'tmp_s1' : 'ets';
-      L.tileLayer(`${dataPrefix}/${tileSource}/{z}/{x}/{y}.png?v=3`, {
+      const requestedTileSource = new URLSearchParams(window.location.search).get('tiles') || 'Europe';
+      const availableSources = new Set(mapManifest.sources);
+      const initialTileSource = availableSources.has(requestedTileSource) ? requestedTileSource : mapManifest.sources[0];
+      if (!initialTileSource) throw new Error('地图清单中没有可用的底图数据');
+      for (const option of basemapSelect.options) {
+        option.disabled = !availableSources.has(option.value);
+        if (option.disabled) option.textContent += '（暂无数据）';
+      }
+      basemapSelect.value = initialTileSource;
+      basemapSelect.disabled = false;
+      tileLayer = L.tileLayer(`${dataPrefix}/ETS2/${initialTileSource}/{z}/{x}/{y}.png?v=3`, {
         tileSize: 512,
         bounds,
         minZoom: info.minZoom,
@@ -432,6 +446,13 @@
 
   searchInput.addEventListener('input', renderResults);
   searchInput.addEventListener('focus', renderResults);
+  basemapSelect.addEventListener('change', () => {
+    tileLayer.setUrl(`${dataPrefix}/ETS2/${basemapSelect.value}/{z}/{x}/{y}.png?v=3`);
+    const url = new URL(window.location.href);
+    if (basemapSelect.value === 'Europe') url.searchParams.delete('tiles');
+    else url.searchParams.set('tiles', basemapSelect.value);
+    window.history.replaceState(null, '', url);
+  });
   localeSelect.addEventListener('change', () => {
     rebuildCityLayer();
     rebuildCityLabels();

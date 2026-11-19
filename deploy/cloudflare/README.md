@@ -5,7 +5,7 @@
 ```text
 Connect GitHub
   -> npm run build:cloud
-  -> 读取仓库 data/maps/v1.62/
+  -> 读取仓库 data/maps/1.62/
   -> npm run upload:cloudflare -- --resume
   -> 写入 Cloudflare R2 并部署 Worker
 ```
@@ -40,7 +40,7 @@ CLOUDFLARE_ACCOUNT_ID=实际账户 ID
 CLOUDFLARE_R2_ACCESS_KEY_ID=实际 Access Key ID
 CLOUDFLARE_R2_SECRET_ACCESS_KEY=实际 Secret Access Key
 CLOUDFLARE_R2_BUCKET=ets2-map
-MAP_VERSION=v1.62
+MAP_VERSION=1.62
 ```
 
 密钥必须保存在受保护的环境变量中，不要写入源码、Wrangler 配置或 GitHub。
@@ -61,7 +61,7 @@ MAP_VERSION=v1.62
 3. 查询 R2 对象清单，跳过已有对象，只上传缺失文件。
 4. 上传完成后部署 Worker；上传失败会使构建失败。
 
-首次上传仍需处理 17 万余个对象。后续构建使用 `--resume` 增量补传，避免每次修改页面都覆盖全部对象。对象键为 `<版本>/<相对路径>`，例如 `v1.62/tmp_s1/6/12/7.png`，不能包含 `data/maps/` 前缀。
+首次上传仍需处理 17 万余个对象。后续构建使用 `--resume` 增量补传，避免每次修改页面都覆盖全部对象。对象键为 `<版本>/<相对路径>`，例如 `1.62/ETS2/TMP/6/12/7.png`，不能包含 `data/maps/` 前缀。
 
 上传默认使用 128 路并发，单文件失败会自动重试 3 次。遇到 R2 限流或网络不稳定时，可通过 `CLOUDFLARE_UPLOAD_CONCURRENCY` 将并发调整为 32、16 或 8。构建超时后再次运行相同命令，会从已有对象继续。
 
@@ -72,11 +72,11 @@ MAP_VERSION=v1.62
 等待构建、R2 上传和 Worker 部署全部完成后检查：
 
 ```bash
-curl -I https://example.com/v1.62/tmp_s1/6/12/7.png
-curl https://example.com/v1.62/map-manifest.json
+curl -I https://example.com/1.62/ETS2/TMP/6/12/7.png
+curl https://example.com/1.62/ETS2/map-manifest.json
 ```
 
-无版本地址使用 `MAP_VERSION`，`/v1.62/...` 固定读取指定版本。看到 `Progress 175904/175904 objects for v1.62` 才表示当前清单全部处理完成。
+所有请求必须使用完整的版本、游戏和地图类型路径。看到 `Progress 175904/175904 objects for 1.62` 才表示当前清单全部处理完成。
 
 ## 4. 备用：本机直接上传或断点续传
 
@@ -122,13 +122,13 @@ Pages 与 Worker 选择一种作为同一个域名的入口即可。
 
 ## 版本与地址
 
-以 `v1.63` 为例，将新地图提交到 `data/maps/v1.63/`，把构建环境变量及两个 Wrangler 配置中的 `MAP_VERSION` 改为 `v1.63`，再推送代码。Git 构建会使用 `--resume` 上传新版本对象并部署，旧版本无需删除。
+以 `1.63` 为例，将新地图提交到 `data/maps/1.63/`，把构建环境变量及两个 Wrangler 配置中的 `MAP_VERSION` 改为 `1.63`，再推送代码。Git 构建会使用 `--resume` 上传新版本对象并部署，旧版本无需删除。
 
 ```text
-https://example.com/ets/{z}/{x}/{y}.png
-https://example.com/tmp_s1/{z}/{x}/{y}.png
-https://example.com/v1.62/ets/{z}/{x}/{y}.png
-https://example.com/v1.62/tmp_s1/{z}/{x}/{y}.png
+https://example.com/1.62/ETS2/Europe/{z}/{x}/{y}.png
+https://example.com/1.62/ETS2/TMP/{z}/{x}/{y}.png
+https://example.com/1.62/ETS2/Europe/{z}/{x}/{y}.png
+https://example.com/1.62/ETS2/TMP/{z}/{x}/{y}.png
 ```
 
 Pages 配置参考：<https://developers.cloudflare.com/pages/functions/wrangler-configuration/>。R2 Workers API 参考：<https://developers.cloudflare.com/r2/api/workers/workers-api-reference/>。

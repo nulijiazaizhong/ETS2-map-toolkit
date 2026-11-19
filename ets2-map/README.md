@@ -1,8 +1,8 @@
-# ETS2 全 DLC 瓦片地图页面
+# ETS2 / ATS 瓦片地图页面
 
-基于本机 Euro Truck Simulator 2 游戏数据生成的互动地图。包含基础地图及 Going East!、Scandinavia、Vive la France!、Italia、Beyond the Baltic Sea、Road to the Black Sea、Iberia、West Balkans、Greece、Nordic Horizons、Iceland，共 12 个地图区域。
+基于本机 Euro Truck Simulator 2 和 American Truck Simulator 游戏数据生成的互动地图。
 
-- 0–8 级、512 × 512 PNG 瓦片，标准 `ets/{z}/{x}/{y}.png` 和 `tmp_s1/{z}/{x}/{y}.png` 路径。
+- 0–8 级、512 × 512 PNG 瓦片，严格按照版本、游戏和地图类型组织。
 - 游戏提供的全部语言城市搜索与动态地图标签，语言切换会同步更新城市名和国家名。
 - 城市标签使用游戏的城市名称关联节点和各级官方偏移；“显示城市”绘制编辑器中的城市矩形区域。
 - DLC 边界由实际扇区与官方陆地遮罩相交生成，保留精细海岸和分离岛屿。
@@ -11,29 +11,38 @@
 
 ## 数据目录
 
-`public/` 只包含页面。提取数据统一存放在仓库根目录：
+`public/` 只包含页面。所有地图数据统一采用以下结构：
 
 ```text
-data/maps/<游戏版本>/
-  ets/
-  tmp_s1/
-  Overlays/
-  Background.png
-  Background.json
-  Cities.json
-  Countries.json
-  DlcRegions.json
-  DlcSectors.json
-  Overlays.json
-  TileMapInfo.json
-  map-manifest.json
+data/maps/1.62/
+  ATS/
+    American/
+    TMP/
+    American_Promods/
+    TMP_Promods/
+    metadata/
+      American/
+      TMP/
+      American_Promods/
+      TMP_Promods/
+  ETS2/
+    Europe/
+    TMP/
+    Europe_Promods/
+    TMP_Promods/
+    metadata/
+      Europe/
+      TMP/
+      Europe_Promods/
+      TMP_Promods/
+    map-manifest.json
 ```
 
-`data/maps/active.json` 选择本地默认版本。生成器从游戏程序读取版本，不会把瓦片写入 `public/`；构建会将完整数据复制到服务器产物 `dist/`，云端轻量产物为 `dist-cloud/`。
+`data/maps/active.json` 选择本地默认版本。生成器从游戏程序读取大版本，不会把瓦片写入 `public/`。构建会将完整数据复制到服务器产物 `dist/1.62/`，云端轻量产物为 `dist-cloud/`。
 
 ## 运行
 
-需要 Node.js 18 或更高版本。在仓库根目录执行：
+需要 Node.js 22 或更高版本。在仓库根目录执行：
 
 ```bash
 npm install
@@ -51,20 +60,26 @@ npm run build
 npm run preview
 ```
 
-`dist/` 包含完整静态页面和 `v<大版本>/` 版本化地图数据，不保留根目录 `ets/`、`tmp_s1/` 或重复元数据；页面通过 `map-config.js` 自动使用版本路径，可直接上传到普通静态服务器。`dist-cloud/` 只包含页面和平台函数，供 EdgeOne/Cloudflare 配合对象存储使用。`preview` 直接读取完整 `dist/`。校验覆盖瓦片数量与尺寸、城市和国家数据、多语言、前端资源、版本路由以及每个地图 DLC 的代表城市。
+`dist/` 只保留完整的版本化结构，不包含旧名称或重复元数据。页面通过 `map-config.js` 自动使用版本路径。`dist-cloud/` 只包含页面和平台函数，供 EdgeOne/Cloudflare 配合对象存储使用。`preview` 直接读取完整 `dist/`。校验覆盖瓦片数量与尺寸、城市和国家数据、多语言、前端资源、版本路由以及每个地图 DLC 的代表城市。
 
 ## 插件瓦片源
 
 在 [astrbot-plugin-tmp-bot](https://github.com/BGYdook/astrbot-plugin-tmp-bot) 的 **自定义 ETS2 地图瓦片地址** 中填写：
 
 ```text
-https://example.com/tmp_s1/{z}/{x}/{y}.png
+https://example.com/1.62/ETS2/TMP/{z}/{x}/{y}.png
 ```
 
-官方全 DLC 地图使用 `/ets/{z}/{x}/{y}.png`。需要固定版本时使用：
+官方 ETS2 全 DLC 地图使用：
 
 ```text
-https://example.com/v1.62/tmp_s1/{z}/{x}/{y}.png
+https://example.com/1.62/ETS2/Europe/{z}/{x}/{y}.png
+```
+
+ATS 官方地图使用：
+
+```text
+https://example.com/1.62/ATS/American/{z}/{x}/{y}.png
 ```
 
 插件要求地址包含 `{z}`、`{x}`、`{y}` 占位符。地图使用项目标准坐标系，不包含插件专用坐标修正。服务器必须允许插件服务器通过公网 HTTPS 访问图片。
@@ -72,10 +87,10 @@ https://example.com/v1.62/tmp_s1/{z}/{x}/{y}.png
 ## 坐标与版本链接
 
 ```text
-https://example.com/?x=-28130&y=-4971&heading=1.94&zoom=6&tiles=tmp_s1&version=v1.62&mp_id=5931334&name=HarsshhEditzz&server=Simulation%201
+https://example.com/?x=-28130&y=-4971&heading=1.94&zoom=6&tiles=TMP&version=1.62&mp_id=5931334&name=HarsshhEditzz&server=Simulation%201
 ```
 
-必需参数为 `x` 和 `y`。`version` 固定地图版本；省略时使用服务端 `MAP_VERSION`。`heading` 显示朝向线，`tiles` 可设为 `tmp_s1` 或默认的 `ets`，`mp_id`、`name`、`server` 用于位置标签。
+必需参数为 `x` 和 `y`。`version` 固定地图版本，`tiles` 可设为 `Europe`、`TMP`、`Europe_Promods` 或 `TMP_Promods`，`mp_id`、`name`、`server` 用于位置标签。底图选择器会将所选分类同步到 `tiles` 参数，清单中不存在的分类不可选择。
 
 ## 重新生成与部署
 

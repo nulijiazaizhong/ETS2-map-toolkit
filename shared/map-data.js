@@ -6,9 +6,9 @@ const metadataFiles = new Set([
   'DlcRegions.json',
   'DlcSectors.json',
   'Overlays.json',
-  'TileMapInfo.json',
-  'map-manifest.json'
+  'TileMapInfo.json'
 ]);
+const mapTypes = '(?:American|TMP|American_Promods|TMP_Promods|Europe|Europe_Promods)';
 
 export function mapDataPath(pathname) {
   let relative;
@@ -19,8 +19,11 @@ export function mapDataPath(pathname) {
   }
   if (!relative || relative.includes('\\') || relative.includes('\0')) return null;
   if (relative.split('/').some((part) => !part || part === '.' || part === '..')) return null;
-  if (metadataFiles.has(relative) || /^Overlays\/[A-Za-z0-9_.-]+\.png$/.test(relative)) return relative;
-  const match = /^(ets|tmp_s1)\/(\d{1,2})\/(\d+)\/(\d+)\.png$/.exec(relative);
+  if (/^(ATS|ETS2)\/map-manifest\.json$/.test(relative)) return relative;
+  const metadata = new RegExp(`^(ATS|ETS2)/metadata/${mapTypes}/([^/]+)$`).exec(relative);
+  if (metadata && metadataFiles.has(metadata[2])) return relative;
+  if (new RegExp(`^(ATS|ETS2)/metadata/${mapTypes}/Overlays/[A-Za-z0-9_.-]+\\.png$`).test(relative)) return relative;
+  const match = new RegExp(`^(ATS|ETS2)/${mapTypes}/(\\d{1,2})/(\\d+)/(\\d+)\\.png$`).exec(relative);
   if (!match) return null;
   const z = Number(match[2]);
   const x = Number(match[3]);
@@ -29,16 +32,17 @@ export function mapDataPath(pathname) {
   return z <= 12 && x < dimension && y < dimension ? relative : null;
 }
 
-export function mapDataLocation(pathname, defaultVersion) {
-  const versioned = /^\/(v\d+\.\d+)(\/.*)$/.exec(pathname);
-  const version = versioned ? versioned[1] : defaultVersion;
-  const relative = mapDataPath(versioned ? versioned[2] : pathname);
-  if (!relative || !/^v\d+\.\d+$/.test(version || '')) return null;
+export function mapDataLocation(pathname) {
+  const versioned = /^\/(\d+\.\d+)(\/.*)$/.exec(pathname);
+  if (!versioned) return null;
+  const version = versioned[1];
+  const relative = mapDataPath(versioned[2]);
+  if (!relative) return null;
   return { key: `${version}/${relative}`, relative, version };
 }
 
-export function mapDataKey(pathname, version) {
-  return mapDataLocation(pathname, version)?.key || null;
+export function mapDataKey(pathname) {
+  return mapDataLocation(pathname)?.key || null;
 }
 
 export function mapContentType(pathname) {

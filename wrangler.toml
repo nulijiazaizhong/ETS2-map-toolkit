@@ -3,7 +3,7 @@ pages_build_output_dir = "./ets2-map/dist-cloud"
 compatibility_date = "2026-11-18"
 
 [vars]
-MAP_VERSION = "v1.62"
+MAP_VERSION = "1.62"
 
 [[r2_buckets]]
 binding = "MAP_DATA"

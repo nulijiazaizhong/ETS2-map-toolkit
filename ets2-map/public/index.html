@@ -7,7 +7,7 @@
   <meta name="description" content="欧洲卡车模拟2全地图 DLC 离线瓦片地图，支持城市搜索与区域导航。">
   <title>ETS2 全 DLC 地图</title>
   <link rel="stylesheet" href="./vendor/leaflet.css">
-  <link rel="stylesheet" href="./app.css?v=4">
+  <link rel="stylesheet" href="./app.css?v=5">
 </head>
 <body>
   <main id="app">
@@ -27,6 +27,15 @@
         <div><strong id="city-count">—</strong><span>城市</span></div>
         <div><strong>12</strong><span>地图 DLC</span></div>
         <div><strong>9</strong><span>缩放层级</span></div>
+      </section>
+      <section class="basemap-section">
+        <label for="basemap">底图数据</label>
+        <select id="basemap" aria-label="底图数据分类" disabled>
+          <option value="Europe">ETS2-原版</option>
+          <option value="TMP">ETS2-TMP-S1</option>
+          <option value="Europe_Promods">ETS2-Promods</option>
+          <option value="TMP_Promods">ETS2-TMP-Promods</option>
+        </select>
       </section>
       <section class="search-section">
         <label for="search">城市搜索</label>
@@ -68,6 +77,6 @@
   </main>
   <script src="./vendor/leaflet.js"></script>
   <script src="./map-config.js"></script>
-  <script src="./app.js?v=13"></script>
+  <script src="./app.js?v=14"></script>
 </body>
 </html>

@@ -1,9 +1,9 @@
 import { readdir, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import { resolveDataDir } from './data.mjs';
+import { resolveGameDataDir } from './data.mjs';
 
-const dataDir = await resolveDataDir();
-const version = path.basename(dataDir);
+const dataDir = await resolveGameDataDir('ETS2');
+const version = path.basename(path.dirname(dataDir));
 const files = [];
 let bytes = 0;
 
@@ -25,7 +25,7 @@ const manifest = {
   generatedAt: new Date().toISOString(),
   files: files.length,
   bytes,
-  sources: ['ets', 'tmp_s1'].filter((source) => files.some((file) => file.startsWith(`${source}/`)))
+  sources: ['Europe', 'TMP', 'Europe_Promods', 'TMP_Promods'].filter((source) => files.some((file) => file.startsWith(`${source}/`)))
 };
 await writeFile(path.join(dataDir, 'map-manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`);
 console.log(`Map ${version}: ${manifest.files} files, ${(bytes / 1024 / 1024).toFixed(1)} MiB`);

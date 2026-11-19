@@ -28,7 +28,7 @@ createServer(async (request, response) => {
       return;
     }
     const pathname = new URL(request.url, 'http://localhost').pathname;
-    const dataLocation = mapDataLocation(pathname, activeVersion);
+    const dataLocation = mapDataLocation(pathname);
     let filePath;
     if (dataLocation) {
       filePath = path.join(mapsRoot, dataLocation.key);

@@ -5,7 +5,7 @@
 ```text
 导入 Git 项目
   -> npm run build:cloud
-  -> 读取仓库 data/maps/v1.62/
+  -> 读取仓库 data/maps/1.62/
   -> npm run upload:edgeone
   -> 写入 Makers Blob 并完成部署
 ```
@@ -35,7 +35,7 @@ Node 版本：22.11.0
 EDGEONE_PROJECT_ID=替换为实际项目 ID
 EDGEONE_API_TOKEN=替换为实际 API Token
 EDGEONE_BLOB_STORE=ets2-map
-MAP_VERSION=v1.62
+MAP_VERSION=1.62
 ```
 
 `EDGEONE_BLOB_STORE` 可省略，默认值为 `ets2-map`。API Token 必须保存在受保护的环境变量中，不要写入 `edgeone.json`、源码或 Git。
@@ -46,15 +46,15 @@ MAP_VERSION=v1.62
 "buildCommand": "npm run build:cloud && npm run upload:edgeone -- --resume"
 ```
 
-该配置会覆盖控制台中的同名构建设置，应以仓库文件为准。推送代码后，Makers 会自动构建并直接从 Git 仓库读取 `data/maps/v1.62/`，再上传到当前项目的 Blob。上传失败会使构建失败，上传成功后才完成部署。
+该配置会覆盖控制台中的同名构建设置，应以仓库文件为准。推送代码后，Makers 会自动构建并直接从 Git 仓库读取 `data/maps/1.62/`，再上传到当前项目的 Blob。上传失败会使构建失败，上传成功后才完成部署。
 
 对象键为 `<版本>/<相对路径>`，例如：
 
 ```text
-v1.62/ets/6/12/7.png
-v1.62/tmp_s1/6/12/7.png
-v1.62/Cities.json
-v1.62/map-manifest.json
+1.62/ETS2/Europe/6/12/7.png
+1.62/ETS2/TMP/6/12/7.png
+1.62/ETS2/metadata/Europe/Cities.json
+1.62/ETS2/map-manifest.json
 ```
 
 不要添加 `data/maps/` 前缀。上传默认使用 32 路并发，单文件失败会自动重试 3 次。遇到平台限流或网络不稳定时，可通过 `EDGEONE_UPLOAD_CONCURRENCY` 将并发调整为 16 或 8。构建超时后再次运行相同命令，会利用 `--resume` 从已有对象继续。如果凭证无权执行 Blob LIST（403），脚本会记录警告并回退为覆盖式 PUT 上传，不会中止构建。
@@ -70,18 +70,18 @@ v1.62/map-manifest.json
 等待构建和 Blob 上传全部完成后检查：
 
 ```bash
-curl -I https://example.com/v1.62/tmp_s1/6/12/7.png
-curl https://example.com/v1.62/map-manifest.json
+curl -I https://example.com/1.62/ETS2/TMP/6/12/7.png
+curl https://example.com/1.62/ETS2/map-manifest.json
 ```
 
 以下地址读取同一对象：
 
 ```text
-https://example.com/tmp_s1/6/12/7.png
-https://example.com/v1.62/tmp_s1/6/12/7.png
+https://example.com/1.62/ETS2/TMP/6/12/7.png
+https://example.com/1.62/ETS2/TMP/6/12/7.png
 ```
 
-无版本地址使用 `MAP_VERSION`，固定版本地址始终使用 URL 中的版本。函数使用强一致 Blob 读取，上传完成后即可读取最新对象。
+所有请求必须使用完整的版本、游戏和地图类型路径。函数使用强一致 Blob 读取，上传完成后即可读取最新对象。
 
 ## 备用：从本机直接上传或断点续传
 
@@ -108,14 +108,14 @@ npm run upload:edgeone
 npm run upload:edgeone -- --resume
 ```
 
-`--resume` 会列出 Blob 中已有对象，只补传缺失文件。看到 `Progress 175904/175904 objects for v1.62` 才表示当前清单全部处理完成。Token 只从环境变量读取，不要发到聊天或提交到仓库。
+`--resume` 会列出 Blob 中已有对象，只补传缺失文件。看到 `Progress 175904/175904 objects for 1.62` 才表示当前清单全部处理完成。Token 只从环境变量读取，不要发到聊天或提交到仓库。
 
 ## 版本更新
 
 以 `v1.63` 为例：
 
-1. 将新地图提交到 `data/maps/v1.63/`。
+1. 将新地图提交到 `data/maps/1.63/`。
 2. 把 Makers 构建环境变量 `MAP_VERSION` 改为 `v1.63`。
 3. 推送代码，构建过程会自动上传新版本并部署页面。
 
-旧版本对象无需删除，`/v1.62/...` 与 `/v1.63/...` 可以并存。无版本地址会切换到新的 `MAP_VERSION`。
+旧版本对象无需删除，`/1.62/...` 与 `/1.63/...` 可以并存。

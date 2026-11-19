@@ -4,7 +4,7 @@ export async function onRequest(context) {
   if (!['GET', 'HEAD'].includes(context.request.method)) {
     return new Response('Method not allowed', { status: 405, headers: { Allow: 'GET, HEAD' } });
   }
-  const location = mapDataLocation(new URL(context.request.url).pathname, context.env.MAP_VERSION);
+  const location = mapDataLocation(new URL(context.request.url).pathname);
   if (!location) return context.next();
   const object = await context.env.MAP_DATA.get(location.key);
   if (!object) return new Response('Not found', { status: 404 });

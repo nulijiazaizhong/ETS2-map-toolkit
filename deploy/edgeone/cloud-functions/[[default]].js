@@ -8,7 +8,7 @@ export async function onRequest(context) {
   if (!['GET', 'HEAD'].includes(context.request.method)) {
     return new Response('Method not allowed', { status: 405, headers: { Allow: 'GET, HEAD' } });
   }
-  const location = mapDataLocation(new URL(context.request.url).pathname, context.env.MAP_VERSION);
+  const location = mapDataLocation(new URL(context.request.url).pathname);
   if (!location) return new Response('Not found', { status: 404, headers: corsHeaders });
   try {
     const store = getStore({ name: context.env.EDGEONE_BLOB_STORE || 'ets2-map', consistency: 'strong' });

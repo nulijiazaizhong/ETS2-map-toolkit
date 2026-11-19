@@ -1,13 +1,25 @@
-# ETS2 Map Toolkit
+# ETS2 / ATS Map Toolkit
 
-从本机 Euro Truck Simulator 2 和 TruckersMP MOD 生成可部署的瓦片地图及互动浏览页面。包含全部官方地图 DLC、游戏官方陆地底图、多语言城市名、精细 DLC 边界、城市区域和坐标分享链接。
+从本机 Euro Truck Simulator 2、American Truck Simulator 和 TruckersMP MOD 生成可部署的瓦片地图及互动浏览页面。包含全部官方地图 DLC、游戏官方陆地底图、多语言城市名、精细 DLC 边界、城市区域和坐标分享链接。
 
 ## 仓库结构
 
 ```text
 data/maps/
   active.json             本地默认地图版本（提交到 Git）
-  <游戏版本>/             该版本的瓦片、底图和元数据（随仓库提供）
+  1.62/
+    ATS/
+      American/
+      TMP/
+      American_Promods/
+      TMP_Promods/
+      metadata/
+    ETS2/
+      Europe/
+      TMP/
+      Europe_Promods/
+      TMP_Promods/
+      metadata/
 ets2-map/
   public/                 轻量静态页面，不含提取数据
   scripts/                本地服务、校验、清单和构建脚本
@@ -28,10 +40,11 @@ tools/
   rebuild-all.sh          一键重建、校验与部署构建
   rebuild-map.sh          官方 ETS2 地图
   rebuild-tmp-map.sh      TruckersMP Simulation 1 地图
+  rebuild-ats-maps.sh     ATS 官方、TMP、ProMods 和 TMP ProMods 地图
 work/                     本地解包和临时文件，不提交到 Git
 ```
 
-生成器从 `eurotrucks2.exe` 读取游戏版本，将数据写入 `data/maps/<版本>/`，并更新 `active.json`。例如 `v1.62/ets/6/12/7.png`。可用 `ETS2_VERSION=x.y.z` 显式覆盖版本检测。旧版本目录不会被新版本覆盖。
+生成器从游戏程序读取大版本，将数据写入 `data/maps/<版本>/<游戏>/`，并更新 `active.json`。例如 `1.62/ETS2/Europe/6/12/7.png`。可用 `ETS2_VERSION=x.y.z` 显式覆盖版本检测。旧版本目录不会被新版本覆盖。
 
 ## 克隆
 
@@ -47,7 +60,7 @@ cd ETS2-map-toolkit
 仅在重新提取和生成地图时需要：
 
 - Windows、Git Bash 和 Git
-- 已安装的 ETS2 及需要生成的地图 DLC
+- 已安装的 ETS2 / ATS 及需要生成的地图 DLC
 - .NET Framework 4.7.2 开发组件
 - Node.js 22+（Wrangler 要求；Makers 使用 22.11.0）
 - Python 3，以及 Pillow、NumPy、SciPy、OpenCV：
@@ -64,7 +77,7 @@ python -m pip install pillow numpy scipy opencv-python
 bash tools/rebuild-all.sh "F:/Game/steam/steamapps/common/Euro Truck Simulator 2" "C:/Users/bi/AppData/Roaming/TruckersMP/installation/data/ets2/mods"
 ```
 
-脚本会初始化 TsMap、解包基础资源和全部地图 DLC、生成 `/ets` 瓦片，并在 MOD 目录存在时生成 `/tmp_s1` 瓦片。随后拼接官方底图、生成精细 DLC 边界、校验数据、写入版本清单，并构建完整 `dist/` 与轻量 `dist-cloud/`。原始游戏及 MOD 文件不会被修改。
+脚本会初始化 TsMap、解包基础资源和全部地图 DLC、生成 `ETS2/Europe` 瓦片，并在 MOD 目录存在时生成 `ETS2/TMP` 瓦片。随后拼接官方底图、生成精细 DLC 边界、校验数据、写入版本清单，并构建完整 `dist/` 与轻量 `dist-cloud/`。原始游戏及 MOD 文件不会被修改。
 
 单独生成：
 
@@ -73,6 +86,25 @@ bash tools/rebuild-map.sh "F:/Game/steam/steamapps/common/Euro Truck Simulator 2
 bash tools/rebuild-tmp-map.sh "F:/Game/steam/steamapps/common/Euro Truck Simulator 2" "C:/Users/bi/AppData/Roaming/TruckersMP/installation/data/ets2/mods"
 ```
 
+## ATS 四套地图提取
+
+```bash
+bash tools/rebuild-ats-maps.sh "F:/Game/steam/steamapps/common/American Truck Simulator" "C:/Users/bi/AppData/Roaming/TruckersMP/installation/data/ats/mods" "E:/文档/American Truck Simulator/mod" 8
+```
+
+脚本使用 `scs_extractor.exe` 解包基础地图和全部官方地图 DLC，并使用 TsMap 分别生成：
+
+| 路径 | 数据内容 |
+| --- | --- |
+| `ATS/American/` | ATS 官方全部地图 DLC |
+| `ATS/TMP/` | 官方地图 + TruckersMP ATS MOD |
+| `ATS/American_Promods/` | 官方地图 + 原版 ProMods |
+| `ATS/TMP_Promods/` | 官方地图 + ProMods + TruckersMP ATS MOD |
+
+数据按 ATS 大版本保存到 `data/maps/<版本>/ATS/`。四套数据均为 0–8 级、512×512 PNG，每套 87,381 张；城市、国家、覆盖物和地图边界分别保存在 `metadata/<瓦片源>/`。第四参数是最大缩放级别，默认为 8；可用 `ATS_VERSION=x.y.z` 覆盖版本检测。
+
+脚本结束后自动执行 `ets2-map/scripts/verify-ats.mjs`，检查瓦片数量与尺寸、城市/国家/多语言数据和 ProMods 渲染差异。原始游戏、TruckersMP 和 ProMods 文件不会被修改。
+
 ## 本地运行
 
 ```bash
@@ -80,7 +112,7 @@ npm install
 npm run dev
 ```
 
-访问 `http://localhost:8080`。开发服务同时提供 `ets2-map/public/` 和当前版本数据。`npm run build && npm run preview` 会直接预览完整 `dist/`，页面通过自动生成的 `map-config.js` 使用 `v1.62/` 版本路径。
+访问 `http://localhost:8080`。开发服务同时提供 `ets2-map/public/` 和当前版本数据。`npm run build && npm run preview` 会直接预览完整 `dist/`，页面通过自动生成的 `map-config.js` 使用 `1.62/` 版本路径。
 
 ```bash
 npm run verify
@@ -90,24 +122,19 @@ npm run build
 
 ## 瓦片地址与版本
 
-Node 服务和云端函数的无版本地址使用服务端配置的 `MAP_VERSION`，保持原有插件配置兼容。完整静态 `dist/` 只保留版本化地址，不提供根目录 `ets/`、`tmp_s1/`：
+所有瓦片与元数据请求都必须包含完整的版本、游戏和地图类型路径，不提供旧名称或兼容映射：
 
 ```text
-https://example.com/ets/{z}/{x}/{y}.png
-https://example.com/tmp_s1/{z}/{x}/{y}.png
+https://example.com/1.62/ETS2/Europe/{z}/{x}/{y}.png
+https://example.com/1.62/ETS2/TMP/{z}/{x}/{y}.png
+https://example.com/1.62/ATS/American/{z}/{x}/{y}.png
+https://example.com/1.62/ATS/TMP/{z}/{x}/{y}.png
 ```
 
-需要固定游戏版本时：
+ProMods 使用 `Europe_Promods`、`TMP_Promods` 或 `American_Promods`。互动页面可通过 `?version=1.62` 固定版本。底图选择器对应 `Europe`、`TMP`、`Europe_Promods`、`TMP_Promods` 目录；清单中尚未生成的来源会标记为“暂无数据”并禁止选择。坐标分享链接示例：
 
 ```text
-https://example.com/v1.62/ets/{z}/{x}/{y}.png
-https://example.com/v1.62/tmp_s1/{z}/{x}/{y}.png
-```
-
-互动页面可通过 `?version=v1.62` 固定版本。坐标分享链接示例：
-
-```text
-https://example.com/?x=-28130&y=-4971&heading=1.94&zoom=6&tiles=tmp_s1&version=v1.62
+https://example.com/?x=-28130&y=-4971&heading=1.94&zoom=6&tiles=TMP&version=1.62
 ```
 
 ## 部署总览
@@ -124,8 +151,8 @@ https://example.com/?x=-28130&y=-4971&heading=1.94&zoom=6&tiles=tmp_s1&version=v
 以下示例均使用：
 
 - 域名：`map.yean.team`，请替换为自己的域名。
-- 当前版本：`v1.62`。
-- 插件瓦片地址：`https://map.yean.team/v1.62/tmp_s1/{z}/{x}/{y}.png`。
+- 当前版本：`1.62`。
+- 插件瓦片地址：`https://map.yean.team/1.62/ETS2/TMP/{z}/{x}/{y}.png`。
 
 ---
 
@@ -159,7 +186,7 @@ npm ci
 npm run build
 ```
 
-仓库已经包含 `v1.62` 地图数据。如果使用的是本机新生成但尚未提交到仓库的版本，可额外同步整个目录：
+仓库已经包含 `1.62` 地图数据。如果使用的是本机新生成但尚未提交到仓库的版本，可额外同步整个目录：
 
 ```bash
 rsync -av --progress data/maps/ user@server:/srv/ets2-map-toolkit/data/maps/
@@ -169,20 +196,20 @@ rsync -av --progress data/maps/ user@server:/srv/ets2-map-toolkit/data/maps/
 
 ```text
 /srv/ets2-map-toolkit/data/maps/active.json
-/srv/ets2-map-toolkit/data/maps/v1.62/TileMapInfo.json
-/srv/ets2-map-toolkit/data/maps/v1.62/ets/6/12/7.png
-/srv/ets2-map-toolkit/data/maps/v1.62/tmp_s1/6/12/7.png
+/srv/ets2-map-toolkit/data/maps/1.62/ETS2/metadata/Europe/TileMapInfo.json
+/srv/ets2-map-toolkit/data/maps/1.62/ETS2/Europe/6/12/7.png
+/srv/ets2-map-toolkit/data/maps/1.62/ETS2/TMP/6/12/7.png
 ```
 
 服务器上的 `active.json` 应包含：
 
 ```json
 {
-  "version": "v1.62"
+  "version": "1.62"
 }
 ```
 
-完整构建只把当前版本数据复制到 `dist/v1.62/`，不会保留重复的根目录 `ets/`、`tmp_s1/` 和元数据。生成的 `map-config.js` 会让页面自动请求版本路径；普通静态托管和插件均应使用 `/v1.62/...` 地址。如果数据已经生成但缺少清单，可执行 `npm run manifest`。然后运行完整校验和构建：
+完整构建只把当前版本数据复制到 `dist/1.62/`，只保留版本、游戏和地图类型目录，不保留旧名称或重复数据。生成的 `map-config.js` 会让页面自动请求版本路径；普通静态托管和插件均应使用 `/1.62/...` 地址。如果数据已经生成但缺少清单，可执行 `npm run manifest`。然后运行完整校验和构建：
 
 ```bash
 cd /srv/ets2-map-toolkit
@@ -193,18 +220,18 @@ npm run build
 ### 3. 先验证 Node 服务
 
 ```bash
-MAP_VERSION=v1.62 PORT=8080 npm run preview
+MAP_VERSION=1.62 PORT=8080 npm run preview
 ```
 
 另开一个终端检查：
 
 ```bash
 curl -I http://127.0.0.1:8080/
-curl -I http://127.0.0.1:8080/v1.62/tmp_s1/6/12/7.png
-curl http://127.0.0.1:8080/v1.62/map-manifest.json
+curl -I http://127.0.0.1:8080/1.62/ETS2/TMP/6/12/7.png
+curl http://127.0.0.1:8080/1.62/ETS2/map-manifest.json
 ```
 
-瓦片响应应为 `200 OK`、`Content-Type: image/png`，并包含 `X-Map-Version: v1.62`。验证期间保持服务运行，下一步将它交给 systemd 管理。
+瓦片响应应为 `200 OK`、`Content-Type: image/png`，并包含 `X-Map-Version: 1.62`。验证期间保持服务运行，下一步将它交给 systemd 管理。
 
 ### 4. 配置 systemd 常驻运行
 
@@ -221,7 +248,7 @@ User=www-data
 Group=www-data
 WorkingDirectory=/srv/ets2-map-toolkit
 Environment=NODE_ENV=production
-Environment=MAP_VERSION=v1.62
+Environment=MAP_VERSION=1.62
 Environment=PORT=8080
 ExecStart=/usr/bin/node /srv/ets2-map-toolkit/ets2-map/scripts/serve.mjs --dist
 Restart=on-failure
@@ -278,10 +305,10 @@ sudo certbot renew --dry-run
 最后验证公网：
 
 ```bash
-curl -I https://map.yean.team/v1.62/tmp_s1/6/12/7.png
+curl -I https://map.yean.team/1.62/ETS2/TMP/6/12/7.png
 ```
 
-网页地址为 `https://map.yean.team/?version=v1.62&tiles=tmp_s1`。
+网页地址为 `https://map.yean.team/?version=1.62&tiles=TMP`。
 
 ### 6. 服务器更新流程
 
@@ -295,7 +322,7 @@ npm run build
 sudo systemctl restart ets2-map
 ```
 
-发布新大版本时，先上传新的 `data/maps/v<大版本>/`，再修改 `active.json` 和 systemd 中的 `MAP_VERSION`，然后执行：
+发布新大版本时，先上传新的 `data/maps/<大版本>/`，再修改 `active.json` 和 systemd 中的 `MAP_VERSION`，然后执行：
 
 ```bash
 npm run verify
@@ -303,7 +330,7 @@ sudo systemctl daemon-reload
 sudo systemctl restart ets2-map
 ```
 
-显式版本地址仍可访问旧目录。无版本地址会在重启后使用新版本。
+旧版本目录仍可独立保留和访问；新请求使用对应版本的完整路径。
 
 ---
 
@@ -314,7 +341,7 @@ sudo systemctl restart ets2-map
 ```text
 导入 Git 项目
   -> npm run build:cloud
-  -> 读取仓库 data/maps/v1.62/
+  -> 读取仓库 data/maps/1.62/
   -> npm run upload:edgeone
   -> 写入 Makers Blob 并完成部署
 ```
@@ -344,7 +371,7 @@ Node 版本：22.11.0
 EDGEONE_PROJECT_ID=替换为实际项目 ID
 EDGEONE_API_TOKEN=替换为实际 API Token
 EDGEONE_BLOB_STORE=ets2-map
-MAP_VERSION=v1.62
+MAP_VERSION=1.62
 ```
 
 `EDGEONE_BLOB_STORE` 可省略，默认值为 `ets2-map`。API Token 必须保存在受保护的环境变量中，不要写入 `edgeone.json`、源码或 Git。
@@ -355,16 +382,16 @@ MAP_VERSION=v1.62
 "buildCommand": "npm run build:cloud && npm run upload:edgeone -- --resume"
 ```
 
-该配置会覆盖控制台中的同名构建设置，应以仓库文件为准。推送代码后，Makers 会自动构建并直接从 Git 仓库读取 `data/maps/v1.62/`，再上传到当前项目的 Blob。上传失败会使构建失败，上传成功后才完成部署。
+该配置会覆盖控制台中的同名构建设置，应以仓库文件为准。推送代码后，Makers 会自动构建并直接从 Git 仓库读取 `data/maps/1.62/`，再上传到当前项目的 Blob。上传失败会使构建失败，上传成功后才完成部署。
 
 对象键为 `<版本>/<相对路径>`，例如：
 
 ```text
-v1.62/ets/6/12/7.png
-v1.62/tmp_s1/6/12/7.png
-v1.62/Cities.json
-v1.62/Background.png
-v1.62/map-manifest.json
+1.62/ETS2/Europe/6/12/7.png
+1.62/ETS2/TMP/6/12/7.png
+1.62/ETS2/metadata/Europe/Cities.json
+1.62/ETS2/metadata/Europe/Background.png
+1.62/ETS2/map-manifest.json
 ```
 
 不要添加 `data/maps/` 前缀。上传默认使用 32 路并发，单文件失败会自动重试 3 次。遇到平台限流或网络不稳定时，可通过 `EDGEONE_UPLOAD_CONCURRENCY` 将并发调整为 16 或 8。构建超时后再次运行相同命令，会利用 `--resume` 从已有对象继续。如果凭证无权执行 Blob LIST（403），脚本会记录警告并回退为覆盖式 PUT 上传，不会中止构建。
@@ -376,11 +403,11 @@ v1.62/map-manifest.json
 等待构建和 Blob 上传全部完成后，在 Makers 控制台为项目添加 `map.yean.team`，按照控制台给出的记录值配置 DNS CNAME，并等待证书生效。然后检查：
 
 ```bash
-curl -I https://map.yean.team/v1.62/tmp_s1/6/12/7.png
-curl https://map.yean.team/v1.62/map-manifest.json
+curl -I https://map.yean.team/1.62/ETS2/TMP/6/12/7.png
+curl https://map.yean.team/1.62/ETS2/map-manifest.json
 ```
 
-无版本地址使用 `MAP_VERSION`，`/v1.62/...` 固定读取指定版本。函数使用强一致 Blob 读取，上传完成后即可读取最新对象。更多说明见 `deploy/edgeone/README.md`。
+所有请求均使用 `1.62/...` 这样的完整版本路径。函数使用强一致 Blob 读取，上传完成后即可读取最新对象。更多说明见 `deploy/edgeone/README.md`。
 
 ### 4. 备用：本机直接上传与断点续传
 
@@ -405,17 +432,17 @@ npm run upload:edgeone
 npm run upload:edgeone -- --resume
 ```
 
-`--resume` 会列出 Blob 中已有对象，只补传缺失文件。看到 `Progress 175904/175904 objects for v1.62` 才表示当前清单全部处理完成。Token 只从环境变量读取，不要发到聊天或提交到仓库。
+`--resume` 会列出 Blob 中已有对象，只补传缺失文件。看到 `Progress 175904/175904 objects for 1.62` 才表示当前清单全部处理完成。Token 只从环境变量读取，不要发到聊天或提交到仓库。
 
 ### 5. Makers 版本更新
 
-以 `v1.63` 为例：
+以 `1.63` 为例：
 
-1. 将新地图提交到 `data/maps/v1.63/`。
-2. 把 Makers 构建环境变量 `MAP_VERSION` 改为 `v1.63`。
+1. 将新地图提交到 `data/maps/1.63/`。
+2. 把 Makers 构建环境变量 `MAP_VERSION` 改为 `1.63`。
 3. 推送代码，构建过程会自动上传新版本并部署页面。
 
-旧版本对象无需删除，`/v1.62/...` 与 `/v1.63/...` 可以并存。无版本地址会切换到新的 `MAP_VERSION`。
+旧版本对象无需删除，`/1.62/...` 与 `/1.63/...` 可以并存。
 
 ---
 
@@ -456,7 +483,7 @@ CLOUDFLARE_ACCOUNT_ID=实际账户 ID
 CLOUDFLARE_R2_ACCESS_KEY_ID=实际 Access Key ID
 CLOUDFLARE_R2_SECRET_ACCESS_KEY=实际 Secret Access Key
 CLOUDFLARE_R2_BUCKET=ets2-map
-MAP_VERSION=v1.62
+MAP_VERSION=1.62
 ```
 
 密钥必须保存在受保护的环境变量中，不要写入源码、Wrangler 配置或 GitHub。
@@ -490,7 +517,7 @@ PowerShell 使用 `$env:变量名="值"` 设置环境变量。脚本默认使用
 npm run upload:cloudflare -- --resume
 ```
 
-`--resume` 使用 R2 对象清单跳过已有文件，只补传缺失对象。看到 `Progress 175904/175904 objects for v1.62` 才表示当前清单全部处理完成。不要将密钥提交到 Git 或发到聊天中。
+`--resume` 使用 R2 对象清单跳过已有文件，只补传缺失对象。看到 `Progress 175904/175904 objects for 1.62` 才表示当前清单全部处理完成。不要将密钥提交到 Git 或发到聊天中。
 
 ### 4A. 部署到 Cloudflare Pages
 
@@ -498,7 +525,7 @@ npm run upload:cloudflare -- --resume
 
 ```text
 pages_build_output_dir = ./ets2-map/dist-cloud
-MAP_VERSION = v1.62
+MAP_VERSION = 1.62
 MAP_DATA -> ets2-map R2 桶
 ```
 
@@ -529,17 +556,17 @@ Connect GitHub 的构建上传配置见上文推荐流程。此处 CLI 命令用
 在 Pages 或 Worker 的自定义域名设置中添加 `map.yean.team`。如果域名 DNS 已托管在 Cloudflare，通常可直接完成绑定；否则按控制台提示添加 CNAME。完成后验证：
 
 ```bash
-curl -I https://map.yean.team/v1.62/tmp_s1/6/12/7.png
-curl -I https://map.yean.team/tmp_s1/6/12/7.png
+curl -I https://map.yean.team/1.62/ETS2/TMP/6/12/7.png
+curl -I https://map.yean.team/1.62/ETS2/TMP/6/12/7.png
 ```
 
-第一个地址固定读取 `v1.62`，第二个地址读取 Wrangler 配置中的 `MAP_VERSION`。
+第一个地址固定读取 `1.62`，第二个地址读取 Wrangler 配置中的 `MAP_VERSION`。
 
 ### 6. Cloudflare 版本更新
 
-以 `v1.63` 为例，将新地图提交到 `data/maps/v1.63/`，把构建环境变量及 `wrangler.toml`、`wrangler.worker.toml` 中的 `MAP_VERSION` 改为 `v1.63`，再推送代码。Git 构建会使用 `--resume` 上传新版本对象并部署，旧版本无需删除。
+以 `1.63` 为例，将新地图提交到 `data/maps/1.63/`，把构建环境变量及 `wrangler.toml`、`wrangler.worker.toml` 中的 `MAP_VERSION` 改为 `1.63`，再推送代码。Git 构建会使用 `--resume` 上传新版本对象并部署，旧版本无需删除。
 
-不经过 Git 构建时，也可在本机执行 `MAP_VERSION=v1.63 npm run upload:cloudflare`，然后重新部署。
+不经过 Git 构建时，也可在本机执行 `MAP_VERSION=1.63 npm run upload:cloudflare`，然后重新部署。
 
 ---
 
@@ -552,26 +579,26 @@ curl -I https://map.yean.team/tmp_s1/6/12/7.png
 curl -I https://map.yean.team/
 
 # 固定版本元数据
-curl https://map.yean.team/v1.62/TileMapInfo.json
-curl https://map.yean.team/v1.62/map-manifest.json
+curl https://map.yean.team/1.62/ETS2/metadata/Europe/TileMapInfo.json
+curl https://map.yean.team/1.62/ETS2/map-manifest.json
 
 # 固定版本瓦片
-curl -I https://map.yean.team/v1.62/tmp_s1/6/12/7.png
+curl -I https://map.yean.team/1.62/ETS2/TMP/6/12/7.png
 
 # 默认版本瓦片
-curl -I https://map.yean.team/tmp_s1/6/12/7.png
+curl -I https://map.yean.team/1.62/ETS2/TMP/6/12/7.png
 ```
 
 浏览器打开：
 
 ```text
-https://map.yean.team/?version=v1.62&tiles=tmp_s1
+https://map.yean.team/?version=1.62&tiles=TMP
 ```
 
 Astrbot 插件的“自定义 ETS2 地图瓦片地址”填写：
 
 ```text
-https://map.yean.team/v1.62/tmp_s1/{z}/{x}/{y}.png
+https://map.yean.team/1.62/ETS2/TMP/{z}/{x}/{y}.png
 ```
 
 占位符必须是 `{z}`、`{x}`、`{y}`，不要误写成 `{x]`。插件服务器必须能通过公网 HTTPS 读取 PNG。
@@ -580,21 +607,21 @@ https://map.yean.team/v1.62/tmp_s1/{z}/{x}/{y}.png
 
 ### 页面能打开，但城市列表为空或所有请求都是 404
 
-只部署了页面，没有部署数据。普通服务器检查 `data/maps/v1.62/`；EdgeOne 检查 Blob；Cloudflare 检查 R2。城市元数据也必须上传，不能只上传瓦片目录。
+只部署了页面，没有部署数据。普通服务器检查 `data/maps/1.62/`；EdgeOne 检查 Blob；Cloudflare 检查 R2。城市元数据也必须上传，不能只上传瓦片目录。
 
 ### 瓦片 404
 
 确认对象键或服务器路径没有多出的 `data/maps/` 前缀，并核对版本、地图源和坐标，例如：
 
 ```text
-v1.62/tmp_s1/6/12/7.png
+1.62/ETS2/TMP/6/12/7.png
 ```
 
 响应头 `X-Map-Version` 可用于确认实际命中的版本。请求不存在的大版本返回 404 是预期行为。
 
-### 无版本地址与固定版本地址内容不同
+### 瓦片路径返回 404
 
-无版本地址由 `MAP_VERSION` 决定。普通服务器检查 systemd 环境变量，Makers 检查项目环境变量，Cloudflare 检查两个 Wrangler 配置并重新部署。
+确认 URL 包含版本、游戏和地图类型，例如 `1.62/ETS2/TMP/6/12/7.png`，并核对 Blob/R2 中的对象键是否完全一致。
 
 ### Cloudflare 报绑定错误
 
@@ -606,7 +633,7 @@ v1.62/tmp_s1/6/12/7.png
 
 ### 更新同一大版本后仍看到旧图片
 
-瓦片响应缓存时间为 24 小时。相同 `v1.62` 路径被覆盖后，客户端或边缘节点可能暂时保留旧内容；可等待缓存到期或清理平台缓存。不同大版本使用不同 URL，不受旧版本缓存影响。
+瓦片响应缓存时间为 24 小时。相同 `1.62` 路径被覆盖后，客户端或边缘节点可能暂时保留旧内容；可等待缓存到期或清理平台缓存。不同大版本使用不同 URL，不受旧版本缓存影响。
 
 ## 数据与版权
 

@@ -5,6 +5,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 GAME_DIR="${1:-F:/Game/steam/steamapps/common/Euro Truck Simulator 2}"
 MAX_ZOOM="${2:-8}"
 source "$ROOT/tools/map-data-path.sh"
+STAGING="$ROOT/work/ets2_export/$MAP_VERSION"
 mkdir -p "$DATA_DIR"
 
 if git -C "$ROOT/tools/ts-map" apply --check "$ROOT/tools/patches/ts-map-export-metadata.patch" 2>/dev/null; then
@@ -20,8 +21,16 @@ for archive in base base_map dlc_east dlc_north dlc_fr dlc_it dlc_balt dlc_balka
 done
 
 dotnet build "$ROOT/tools/exporter/TsMapExporter.csproj" -c Release
-rm -rf "$DATA_DIR/ets"
-"$ROOT/tools/exporter/bin/Release/TsMapExporter.exe" "$GAME_DIR" "$DATA_DIR" "$MAX_ZOOM"
-python "$ROOT/tools/prepare_background.py" "$DATA_DIR"
-python "$ROOT/tools/prepare_dlc_regions.py" "$DATA_DIR"
+rm -rf "$STAGING"
+"$ROOT/tools/exporter/bin/Release/TsMapExporter.exe" "$GAME_DIR" "$STAGING" "$MAX_ZOOM" Europe
+python "$ROOT/tools/prepare_background.py" "$STAGING"
+python "$ROOT/tools/prepare_dlc_regions.py" "$STAGING"
+rm -rf "$DATA_DIR/Europe" "$DATA_DIR/metadata/Europe"
+mkdir -p "$DATA_DIR/metadata/Europe"
+mv "$STAGING/Europe" "$DATA_DIR/Europe"
+for file in Background.png Background.json Cities.json Countries.json DlcRegions.json DlcSectors.json Overlays.json TileMapInfo.json; do
+  mv "$STAGING/$file" "$DATA_DIR/metadata/Europe/$file"
+done
+mv "$STAGING/Overlays" "$DATA_DIR/metadata/Europe/Overlays"
+rm -rf "$STAGING"
 printf '{\n  "version": "%s"\n}\n' "$MAP_VERSION" > "$ROOT/data/maps/active.json"

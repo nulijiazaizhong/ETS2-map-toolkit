@@ -31,9 +31,9 @@ namespace TsMapExporter
 
         private static void Main(string[] args)
         {
-            if (args.Length < 2 || args.Length > 5)
+            if (args.Length < 2)
             {
-                Console.Error.WriteLine("Usage: TsMapExporter.exe <game-dir> <output-dir> [max-zoom=8] [tile-dir=ets] [mods-dir]");
+                Console.Error.WriteLine("Usage: TsMapExporter.exe <game-dir> <output-dir> [max-zoom=8] [tile-dir=ets] [mods-dir ...]");
                 Environment.Exit(2);
             }
 
@@ -41,19 +41,19 @@ namespace TsMapExporter
             var outputDir = Path.GetFullPath(args[1]);
             var maxZoom = args.Length >= 3 ? int.Parse(args[2]) : 8;
             var tileDir = args.Length >= 4 ? args[3] : "ets";
-            var modsDir = args.Length == 5 ? Path.GetFullPath(args[4]) : null;
+            var modsDirs = args.Skip(4).Select(path => Path.GetFullPath(path)).ToArray();
             if (!Directory.Exists(gameDir) || maxZoom < 0 || maxZoom > 12 ||
                 string.IsNullOrWhiteSpace(tileDir) || Path.GetFileName(tileDir) != tileDir || tileDir == "." || tileDir == ".." ||
-                modsDir != null && !Directory.Exists(modsDir))
+                modsDirs.Any(path => !Directory.Exists(path)))
             {
                 Console.Error.WriteLine("Invalid game directory, zoom level, tile directory, or mods directory.");
                 Environment.Exit(2);
             }
 
-            var mods = modsDir == null ? new List<Mod>() : Directory.GetFiles(modsDir)
+            var mods = modsDirs.SelectMany(path => Directory.GetFiles(path))
                 .Where(path => new[] { ".mp", ".scs", ".zip" }.Contains(Path.GetExtension(path).ToLowerInvariant()))
                 .OrderBy(path => path, StringComparer.Ordinal).Select(path => new Mod(path) { Load = true }).ToList();
-            if (modsDir != null && mods.Count == 0) throw new InvalidOperationException("No supported mods were found.");
+            if (modsDirs.Length > 0 && mods.Count == 0) throw new InvalidOperationException("No supported mods were found.");
             Console.WriteLine($"Loading {mods.Count} mod archives into {tileDir}.");
 
             Directory.CreateDirectory(outputDir);
