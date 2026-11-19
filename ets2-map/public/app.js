@@ -500,6 +500,12 @@
     });
     $('#city-count').textContent = cities.length;
     $('#dlc-count').textContent = currentGame === 'ATS' ? 21 : 12;
+    gameSelect.dataset.value = currentGame;
+    gameSelect.querySelectorAll('button').forEach((button) => {
+      const active = button.dataset.game === currentGame;
+      button.classList.toggle('active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
     $('.eyebrow').textContent = currentGame === 'ATS' ? 'AMERICAN TRUCK SIMULATOR' : 'EURO TRUCK SIMULATOR 2';
     $('h1').textContent = currentGame === 'ATS' ? '美国全图' : '欧洲全图';
     $('#map').setAttribute('aria-label', currentGame === 'ATS' ? '美国卡车模拟互动地图' : '欧洲卡车模拟2互动地图');
@@ -546,7 +552,12 @@
     dataPrefix = /^\d+\.\d+$/.test(requestedVersion || '') ? `./${requestedVersion}` : '.';
     const params = new URLSearchParams(window.location.search);
     currentGame = params.get('game') === 'ATS' ? 'ATS' : 'ETS2';
-    gameSelect.value = currentGame;
+    gameSelect.dataset.value = currentGame;
+    gameSelect.querySelectorAll('button').forEach((button) => {
+      const active = button.dataset.game === currentGame;
+      button.classList.toggle('active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
     await loadGameData(currentGame, params.get('tiles') || defaultSources[currentGame], true);
   }
 
@@ -556,10 +567,12 @@
     const source = await loadGameData(currentGame, basemapSelect.value);
     if (source) syncUrl(source);
   });
-  gameSelect.addEventListener('change', async () => {
-    currentGame = gameSelect.value;
-    const source = await loadGameData(currentGame, defaultSources[currentGame]);
-    if (source) syncUrl(source);
+  gameSelect.querySelectorAll('button').forEach((button) => {
+    button.addEventListener('click', async () => {
+      currentGame = button.dataset.game;
+      const source = await loadGameData(currentGame, defaultSources[currentGame]);
+      if (source) syncUrl(source);
+    });
   });
   localeSelect.addEventListener('change', () => {
     rebuildCityLayer();

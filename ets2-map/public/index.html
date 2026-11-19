@@ -7,7 +7,7 @@
   <meta name="description" content="ETS2 与 ATS 全地图 DLC 离线瓦片地图，支持城市搜索与区域导航。">
   <title>ETS2 / ATS 全 DLC 地图</title>
   <link rel="stylesheet" href="./vendor/leaflet.css">
-  <link rel="stylesheet" href="./app.css?v=5">
+  <link rel="stylesheet" href="./app.css?v=6">
 </head>
 <body>
   <main id="app">
@@ -29,11 +29,17 @@
         <div><strong>9</strong><span>缩放层级</span></div>
       </section>
       <section class="basemap-section">
-        <label for="game">游戏</label>
-        <select id="game" aria-label="游戏分类">
-          <option value="ETS2">Euro Truck Simulator 2</option>
-          <option value="ATS">American Truck Simulator</option>
-        </select>
+        <label id="game-label">游戏</label>
+        <div id="game" class="game-switch" role="group" aria-labelledby="game-label" data-value="ETS2">
+          <button class="game-option active" type="button" data-game="ETS2" aria-pressed="true">
+            <img src="./vendor/icons/ets2.png" alt="Euro Truck Simulator 2">
+            <span>ETS2</span>
+          </button>
+          <button class="game-option" type="button" data-game="ATS" aria-pressed="false">
+            <img src="./vendor/icons/ats.png" alt="American Truck Simulator">
+            <span>ATS</span>
+          </button>
+        </div>
       </section>
       <section class="basemap-section">
         <label for="basemap">底图数据</label>
@@ -84,6 +90,6 @@
   </main>
   <script src="./vendor/leaflet.js"></script>
   <script src="./map-config.js"></script>
-  <script src="./app.js?v=15"></script>
+  <script src="./app.js?v=16"></script>
 </body>
 </html>

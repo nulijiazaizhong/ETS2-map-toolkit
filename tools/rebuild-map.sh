@@ -25,6 +25,7 @@ rm -rf "$STAGING"
 "$ROOT/tools/exporter/bin/Release/TsMapExporter.exe" "$GAME_DIR" "$STAGING" "$MAX_ZOOM" Europe
 python "$ROOT/tools/prepare_background.py" "$STAGING"
 python "$ROOT/tools/prepare_dlc_regions.py" "$STAGING"
+python "$ROOT/tools/prepare_game_icons.py" "$ROOT/work/base/material/ui" "$ROOT/work/ats/1.62/base/material/ui"
 rm -rf "$DATA_DIR/Europe" "$DATA_DIR/metadata/Europe"
 mkdir -p "$DATA_DIR/metadata/Europe"
 mv "$STAGING/Europe" "$DATA_DIR/Europe"

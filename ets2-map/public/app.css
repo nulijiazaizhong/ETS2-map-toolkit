@@ -49,6 +49,11 @@ h1 { margin: 0; font-size: 23px; letter-spacing: 1px; }
 .basemap-section { padding: 0 18px 18px; }
 .basemap-section > label, .search-section > label, .section-title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; color: #b6c2d3; font-size: 12px; font-weight: 600; }
 .basemap-section select { width: 100%; height: 38px; padding: 0 10px; color: #c4d2e4; font-size: 12px; }
+.game-switch { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.game-option { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 6px; min-height: 88px; padding: 10px 9px 8px; border: 1px solid #ffffff14; border-radius: 10px; color: #8291a8; background: #111d2e; font-size: 11px; font-weight: 600; transition: border-color .15s, background .15s, color .15s; }
+.game-option img { width: 100%; height: 62px; object-fit: contain; filter: drop-shadow(0 3px 5px #0008); pointer-events: none; }
+.game-option:hover, .game-option:focus-visible { border-color: #38bdf860; color: #e0f2fe; outline: none; }
+.game-option.active { border-color: #38bdf8; color: #e0f2fe; background: #0ea5e918; }
 .search-box { height: 44px; display: flex; align-items: center; gap: 9px; padding: 0 12px; border: 1px solid #ffffff18; border-radius: 11px; background: #111d2e; transition: border-color .2s, box-shadow .2s; }
 .search-box:focus-within { border-color: #38bdf8; box-shadow: 0 0 0 3px #38bdf815; }
 .search-box svg { width: 18px; fill: none; stroke: #718096; stroke-width: 1.8; }

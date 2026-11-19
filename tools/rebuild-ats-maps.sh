@@ -83,5 +83,6 @@ python "$ROOT/tools/prepare_dlc_regions.py" "$DATA_DIR/metadata/American" 200
 for source in TMP American_Promods TMP_Promods; do
   cp "$DATA_DIR/metadata/American/Background.png" "$DATA_DIR/metadata/American/Background.json" "$DATA_DIR/metadata/American/DlcRegions.json" "$DATA_DIR/metadata/$source/"
 done
+python "$ROOT/tools/prepare_game_icons.py" "$ROOT/work/base/material/ui" "$EXTRACT_DIR/base/material/ui"
 
 node "$ROOT/ets2-map/scripts/verify-ats.mjs" "$DATA_DIR"
