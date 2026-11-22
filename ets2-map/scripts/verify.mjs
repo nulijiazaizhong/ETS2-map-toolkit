@@ -88,7 +88,7 @@ assert.equal(mapDataKey('/tmp_s1/6/12/7.png'), null);
 assert.equal(mapDataKey('/v1.62/ets/6/12/7.png'), null);
 assert.equal(mapDataKey('/1.62/ETS2/TMP/6/64/7.png'), null);
 assert.equal(mapDataKey('/data/maps/active.json'), null);
-for (const file of ['index.html', 'app.css', 'app.js', 'map-config.js', 'vendor/leaflet.js', 'vendor/leaflet.css', 'vendor/geist-latin.woff2', 'vendor/GEIST-LICENSE.txt', 'vendor/icons/ets2.png', 'vendor/icons/ats.png']) {
+for (const file of ['index.html', 'app.css', 'app.js', 'sw.js', 'map-config.js', 'vendor/leaflet.js', 'vendor/leaflet.css', 'vendor/geist-latin.woff2', 'vendor/GEIST-LICENSE.txt', 'vendor/icons/ets2.png', 'vendor/icons/ats.png']) {
   assert.ok((await readFile(path.join(projectRoot, 'ets2-map/public', file))).length > 0, `Missing ${file}`);
 }
 console.log(`Verified ${tileCount} ETS2 tiles and ${tmpTileCount} TruckersMP tiles, ${cities.length} cities in ${locales.size} languages, ${dlcSectors.length} DLC sectors, and official background alignment ${(background.alignmentScore * 100).toFixed(1)}%.`);
