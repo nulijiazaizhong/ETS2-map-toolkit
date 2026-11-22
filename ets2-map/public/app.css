@@ -96,7 +96,7 @@ h1 { margin: 0; font-size: 24px; font-weight: 600; line-height: 32px; letter-spa
 .icon-button { display: grid; place-items: center; padding: 8px; border: 1px solid var(--border); border-radius: 8px; background: #1f1f1f; }
 .icon-button:hover { border-color: #525252; background: #313131; }
 .icon-button svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; }
-.panel-close { display: none; margin-left: auto; color: var(--muted); }
+.panel-close { display: grid; margin-left: auto; color: var(--muted); }
 
 .status-card {
   display: grid;
@@ -246,6 +246,11 @@ kbd { padding: 2px 8px; border: 1px solid #525252; border-radius: 4px; color: va
 .sidebar-footer button svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.5; }
 .sidebar-footer > span { color: var(--subtle); font-size: 12px; line-height: 16px; text-align: center; }
 
+@media (min-width: 701px) {
+  .sidebar { transform: translateX(-105%); }
+  .sidebar.open { transform: translateX(0); }
+}
+
 .game-dock {
   position: absolute;
   z-index: 900;
@@ -298,7 +303,8 @@ kbd { padding: 2px 8px; border: 1px solid #525252; border-radius: 4px; color: va
   line-height: 16px;
 }
 .pulse { width: 8px; height: 8px; border-radius: 9999px; background: #4ade80; box-shadow: 0 0 8px rgba(74, 222, 128, 0.6); }
-.panel-toggle { display: none; position: absolute; z-index: 900; top: 16px; left: 16px; width: 48px; height: 48px; background: rgba(24, 24, 24, 0.96); }
+.panel-toggle { display: grid; position: absolute; z-index: 900; top: 16px; left: 16px; width: 48px; height: 48px; background: rgba(24, 24, 24, 0.96); }
+body.sidebar-open .panel-toggle { display: none; }
 .backdrop { display: none; }
 
 .loading, .error { position: absolute; z-index: 2000; inset: 0; display: flex; align-items: center; justify-content: center; padding: 24px; background: #000000; }
