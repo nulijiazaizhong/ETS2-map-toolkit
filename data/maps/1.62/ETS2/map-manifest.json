@@ -1,11 +1,13 @@
 {
   "game": "ETS2",
   "gameVersion": "1.62",
-  "generatedAt": "2026-11-19T12:34:31.782Z",
-  "files": 177040,
-  "bytes": 481827795,
+  "generatedAt": "2026-11-23T12:22:07.270Z",
+  "files": 355663,
+  "bytes": 1054137879,
   "sources": [
     "Europe",
-    "TMP"
+    "TMP",
+    "Europe_Promods",
+    "TMP_Promods"
   ]
 }

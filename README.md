@@ -39,6 +39,7 @@ tools/
   scs_extractor.exe       SCS 解包工具
   rebuild-all.sh          一键重建、校验与部署构建
   rebuild-map.sh          官方 ETS2 地图
+  rebuild-promods-map.sh  ETS2 ProMods Europe / Middle East / Maghreb / The Great Steppe 地图
   rebuild-tmp-map.sh      TruckersMP Simulation 1 地图
   rebuild-ats-maps.sh     ATS 官方、TMP、ProMods 和 TMP ProMods 地图
 work/                     本地解包和临时文件，不提交到 Git
@@ -83,8 +84,12 @@ bash tools/rebuild-all.sh "F:/Game/steam/steamapps/common/Euro Truck Simulator 2
 
 ```bash
 bash tools/rebuild-map.sh "F:/Game/steam/steamapps/common/Euro Truck Simulator 2" 8
+bash tools/rebuild-promods-map.sh "F:/Game/steam/steamapps/common/Euro Truck Simulator 2" "E:/文档/Euro Truck Simulator 2/mod" 8
+bash tools/rebuild-promods-map.sh "F:/Game/steam/steamapps/common/Euro Truck Simulator 2" "E:/文档/Euro Truck Simulator 2/mod" 8 "C:/Users/bi/AppData/Roaming/TruckersMP/installation/data/ets2/mods"
 bash tools/rebuild-tmp-map.sh "F:/Game/steam/steamapps/common/Euro Truck Simulator 2" "C:/Users/bi/AppData/Roaming/TruckersMP/installation/data/ets2/mods"
 ```
+
+ProMods 脚本按 The Great Steppe → Europe → Middle East → Maghreb 的顺序从低到高挂载现有 MOD 文件，生成 `ETS2/Europe_Promods/` 及对应元数据，不会修改原始 MOD。追加第四参数 TruckersMP MOD 目录后，会将联机 MOD 挂载在 ProMods 之上并生成 `ETS2/TMP_Promods/`。
 
 ## ATS 四套地图提取
 

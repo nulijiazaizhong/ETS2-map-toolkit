@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
-import { readFile, readdir } from 'node:fs/promises';
+import { access, readFile, readdir } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { projectRoot, resolveGameDataDir } from './data.mjs';
 import { mapDataKey } from '../../shared/map-data.js';
@@ -72,6 +73,7 @@ async function verifyTiles(source) {
     assert.equal(png.toString('hex', 0, 8), '89504e470d0a1a0a');
     assert.equal(png.readUInt32BE(16), 512);
     assert.equal(png.readUInt32BE(20), 512);
+    assert.equal(png[25], 6, `${source}: tiles must be RGBA`);
   }
   return count;
 }
@@ -79,6 +81,34 @@ const tileCount = await verifyTiles('Europe');
 const tmpTileCount = await verifyTiles('TMP');
 assert.equal(tileCount, 87381);
 assert.equal(tmpTileCount, 87381);
+let promodsMessage = '';
+try {
+  await access(path.join(root, 'metadata', 'Europe_Promods', 'TileMapInfo.json'));
+  const promodsCities = JSON.parse(await readFile(path.join(root, 'metadata', 'Europe_Promods', 'Cities.json'), 'utf8'));
+  const promodsLocales = new Set(promodsCities.flatMap((city) => Object.keys(city.LocalizedNames || {})));
+  assert.ok(promodsCities.length > cities.length, 'ProMods cities missing');
+  assert.ok(promodsLocales.size >= 40, 'ProMods localizations missing');
+  assert.equal(await verifyTiles('Europe_Promods'), 87381);
+  const officialHash = createHash('sha256').update(await readFile(path.join(root, 'Europe', '0', '0', '0.png'))).digest('hex');
+  const promodsHash = createHash('sha256').update(await readFile(path.join(root, 'Europe_Promods', '0', '0', '0.png'))).digest('hex');
+  assert.notEqual(officialHash, promodsHash, 'ProMods did not change the rendered map');
+  promodsMessage = ` and ${promodsCities.length} ProMods cities`;
+  try {
+    await access(path.join(root, 'metadata', 'TMP_Promods', 'TileMapInfo.json'));
+    const tmpPromodsCities = JSON.parse(await readFile(path.join(root, 'metadata', 'TMP_Promods', 'Cities.json'), 'utf8'));
+    const tmpPromodsLocales = new Set(tmpPromodsCities.flatMap((city) => Object.keys(city.LocalizedNames || {})));
+    assert.ok(tmpPromodsCities.length >= promodsCities.length, 'TMP ProMods cities missing');
+    assert.ok(tmpPromodsLocales.size >= 40, 'TMP ProMods localizations missing');
+    assert.equal(await verifyTiles('TMP_Promods'), 87381);
+    const tmpPromodsHash = createHash('sha256').update(await readFile(path.join(root, 'TMP_Promods', '0', '0', '0.png'))).digest('hex');
+    assert.notEqual(promodsHash, tmpPromodsHash, 'TruckersMP did not change the ProMods map');
+    promodsMessage += ` and ${tmpPromodsCities.length} TMP ProMods cities`;
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+  }
+} catch (error) {
+  if (error.code !== 'ENOENT') throw error;
+}
 assert.equal(mapDataKey('/1.62/ETS2/TMP/6/12/7.png'), '1.62/ETS2/TMP/6/12/7.png');
 assert.equal(mapDataKey('/1.62/ATS/American/6/12/7.png'), '1.62/ATS/American/6/12/7.png');
 assert.equal(mapDataKey('/1.62/ETS2/Europe_Promods/6/12/7.png'), '1.62/ETS2/Europe_Promods/6/12/7.png');
@@ -91,4 +121,4 @@ assert.equal(mapDataKey('/data/maps/active.json'), null);
 for (const file of ['index.html', 'app.css', 'app.js', 'sw.js', 'map-config.js', 'vendor/leaflet.js', 'vendor/leaflet.css', 'vendor/geist-latin.woff2', 'vendor/GEIST-LICENSE.txt', 'vendor/icons/ets2.png', 'vendor/icons/ats.png']) {
   assert.ok((await readFile(path.join(projectRoot, 'ets2-map/public', file))).length > 0, `Missing ${file}`);
 }
-console.log(`Verified ${tileCount} ETS2 tiles and ${tmpTileCount} TruckersMP tiles, ${cities.length} cities in ${locales.size} languages, ${dlcSectors.length} DLC sectors, and official background alignment ${(background.alignmentScore * 100).toFixed(1)}%.`);
+console.log(`Verified ${tileCount} ETS2 tiles and ${tmpTileCount} TruckersMP tiles, ${cities.length} cities in ${locales.size} languages${promodsMessage}, ${dlcSectors.length} DLC sectors, and official background alignment ${(background.alignmentScore * 100).toFixed(1)}%.`);
